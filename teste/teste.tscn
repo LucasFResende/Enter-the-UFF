@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://dusrnf8fyvtgp"]
+
+[ext_resource type="PackedScene" uid="uid://pmsnlyqrjkjp" path="res://player/player.tscn" id="1_1wwb4"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_rh7ol"]
+[ext_resource type="PackedScene" uid="uid://clgr7rfxnessy" path="res://objects/table/vertical_table.tscn" id="2_gsib1"]
+[ext_resource type="PackedScene" uid="uid://iapf7gej3aqc" path="res://objects/table/horizontal_table.tscn" id="3_ntm8i"]
+[ext_resource type="Script" path="res://teste/teste_life.gd" id="5_v1k0b"]
+[ext_resource type="PackedScene" uid="uid://tryuq4p768ab" path="res://enemies/c.tscn" id="6_gcpjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uysc"]
+size = Vector2(16, 16)
+
+[node name="Teste" type="Node2D"]
+script = ExtResource("1_rh7ol")
+
+[node name="PlayerShoot" type="Node" parent="."]
+
+[node name="EnimieShoot" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_1wwb4")]
+position = Vector2(-2, -3)
+
+[node name="VerticalTable" parent="." instance=ExtResource("2_gsib1")]
+position = Vector2(31, -4)
+
+[node name="HorizontalTable" parent="." instance=ExtResource("3_ntm8i")]
+position = Vector2(-1, 23)
+
+[node name="heal" type="Area2D" parent="."]
+z_index = -1
+script = ExtResource("5_v1k0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="heal"]
+position = Vector2(-104, -8)
+shape = SubResource("RectangleShape2D_8uysc")
+
+[node name="ColorRect" type="ColorRect" parent="heal/CollisionShape2D"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0, 0.713726, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="damage" type="Area2D" parent="."]
+z_index = -1
+position = Vector2(0, 16)
+script = ExtResource("5_v1k0b")
+tipo = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
+position = Vector2(-152, 8)
+shape = SubResource("RectangleShape2D_8uysc")
+
+[node name="ColorRect" type="ColorRect" parent="damage/CollisionShape2D"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0.866667, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="increase life" type="Area2D" parent="."]
+z_index = -1
+position = Vector2(0, 16)
+script = ExtResource("5_v1k0b")
+tipo = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="increase life"]
+position = Vector2(-56, 24)
+shape = SubResource("RectangleShape2D_8uysc")
+
+[node name="ColorRect" type="ColorRect" parent="increase life/CollisionShape2D"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="increase ammo" type="Area2D" parent="."]
+z_index = -1
+position = Vector2(0, 16)
+script = ExtResource("5_v1k0b")
+tipo = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="increase ammo"]
+position = Vector2(-56, -56)
+shape = SubResource("RectangleShape2D_8uysc")
+
+[node name="ColorRect" type="ColorRect" parent="increase ammo/CollisionShape2D"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0, 0, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="C" parent="Enemies" instance=ExtResource("6_gcpjx")]
+position = Vector2(-80, 0)
