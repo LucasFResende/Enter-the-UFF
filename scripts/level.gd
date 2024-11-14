@@ -1,7 +1,7 @@
 class_name LevelParent
 extends Node2D
 
-var shoot_scene: PackedScene = preload("res://objects/bullet/bullet.tscn")
+var shoot_scene: PackedScene = load("res://objects/bullet/bullet.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

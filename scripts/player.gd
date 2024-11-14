@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-var shoot_scene:PackedScene = preload("res://objects/bullet/bullet.tscn")
+var shoot_scene:PackedScene = load("res://objects/bullet/bullet.tscn")
 
 @export var SPEED = 3
 var angle: float
@@ -16,7 +16,7 @@ var PARAM:float
 var is_flipping:bool = false
 var flipping_cooldown:float = 0.8
 var death_cooldown:float = 0
-var is_in_hall:bool = true
+var can_shoot:bool = false
 
 @onready var anim:AnimatedSprite2D = $AnimatedSprite2D
 @onready var ammo_ui:CanvasLayer = $Camera2D/AmmoUi
@@ -41,6 +41,7 @@ func _ready() -> void:
 	no_enemy.body_entered.connect(on_no_enemy_body_entered)
 
 func _physics_process(delta: float) -> void:
+	print("A")
 	if GameManager.is_scene_changed:
 		position = GameManager.set_position
 		GameManager.is_scene_changed = false
@@ -90,7 +91,7 @@ func _physics_process(delta: float) -> void:
 			flip_table()
 
 func fire():
-	if Input.is_action_just_pressed("mouse1") and actual_ammo>0 and !is_in_hall:
+	if Input.is_action_just_pressed("mouse1") and actual_ammo>0 and !can_shoot:
 		actual_ammo-=1
 		shoot()
 		ammo_ui.update_ui(actual_ammo,bag_ammo)
@@ -246,7 +247,7 @@ func shoot():
 	print(shoot_bullet.position,position)
 	shoot_bullet.direction = (get_global_mouse_position() - position).normalized()
 	shoot_bullet.shoot_owner="player"
-	sprite.texture = preload("res://addons/objects/player_bullet.png")
+	sprite.texture = load("res://addons/objects/player_bullet.png")
 	shoot_node.add_child(shoot_bullet)
 
 func hit(damage:int):

@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1731005411
-export_presets.cfg::TextFile::-1::1731027744::0::1::::<><>::
-tileset.tres::TileSet::8057669237646475746::1731024822::0::1::::<><>::uid://innjy8d3sa5c::::res://addons/tiles/tileset.png<>uid://bjhkpwtt7ues2::::res://addons/tiles/objects_tileset.png
+export_presets.cfg::TextFile::-1::1731450580::0::1::::<><>::
+tileset.tres::TileSet::8057669237646475746::1731448598::0::1::::<><>::uid://innjy8d3sa5c::::res://addons/tiles/tileset.png<>uid://bjhkpwtt7ues2::::res://addons/tiles/objects_tileset.png
 ::res://addons/::1731005526
 ::res://addons/enemies/::1730817433
 and.png::CompressedTexture2D::3242412715585147222::1730928284::1730931436::1::::<><>::
@@ -64,8 +64,8 @@ wifi_walk.png::CompressedTexture2D::8398533569241171271::1730931422::1730931434:
 ::res://addons/fonts/::1731005542
 Perfect DOS VGA 437 Win.ttf::FontFile::4450430195381984397::1219211536::1731005542::1::::<><>::
 Perfect DOS VGA 437.ttf::FontFile::1567785893359091265::1219211542::1731005542::1::::<><>::
-::res://addons/godot-git-plugin/::1731027858
-::res://addons/godot-git-plugin/win64/::1731027858
+::res://addons/godot-git-plugin/::1731028022
+::res://addons/godot-git-plugin/win64/::1731028022
 ::res://addons/icon/::1730572393
 enter_the_uff_icon.png::CompressedTexture2D::4670927009657528137::1727747448::1730572398::1::::<><>::
 ::res://addons/objects/::1730572403
@@ -109,7 +109,7 @@ and.tscn::PackedScene::838126482993338206::1731004129::0::1::::<><>::res://scrip
 arvore.tscn::PackedScene::7911986838955184477::1731004144::0::1::::<><>::res://scripts/enemy.gd<>uid://c4uxagly8r4dy::::res://addons/enemies/arvore.png<>uid://bo5nnl3uedoc3::::res://addons/enemies/arvore_hit.png<>uid://bl1gvwjy4kmdy::::res://addons/enemies/arvore_walk.png
 automato.tscn::PackedScene::3906040577193712089::1731004151::0::1::::<><>::res://scripts/enemy.gd<>uid://bfmkwlupup1uk::::res://addons/enemies/automato.png<>uid://c5o54ksxwdy6b::::res://addons/enemies/automato_hit.png<>uid://v2d8kr2m0rkf::::res://addons/enemies/automato_walk.png
 c++.tscn::PackedScene::6598481943264657738::1731004161::0::1::::<><>::res://scripts/enemy.gd<>uid://bhpegqbgrmg3b::::res://addons/enemies/c++.png<>uid://dgakpehpkp68t::::res://addons/enemies/c++_hit.png<>uid://b6ltqqjxokrek::::res://addons/enemies/c++_walk.png
-c.tscn::PackedScene::1370176260544605597::1731027504::0::1::::<><>::uid://i8fyoxo7j0wa::::res://addons/enemies/c.png<>res://scripts/enemy.gd<>uid://bwe7e1m7cgt0o::::res://addons/enemies/c_hit.png<>uid://ygql5xkkdf8w::::res://addons/enemies/c_walk.png
+c.tscn::PackedScene::1370176260544605597::1731449890::0::1::::<><>::uid://i8fyoxo7j0wa::::res://addons/enemies/c.png<>res://scripts/enemy.gd<>uid://bwe7e1m7cgt0o::::res://addons/enemies/c_hit.png<>uid://ygql5xkkdf8w::::res://addons/enemies/c_walk.png
 derivada.tscn::PackedScene::584568161334740176::1731004176::0::1::::<><>::res://scripts/enemy.gd<>uid://bptsalqjor6gj::::res://addons/enemies/derivada.png<>uid://dap52pj1jatkt::::res://addons/enemies/derivada_hit.png<>uid://chglm0e3p1i6f::::res://addons/enemies/derivada_walk.png
 integral.tscn::PackedScene::5481619044992461874::1731004185::0::1::::<><>::res://scripts/enemy.gd<>uid://cxcqgue08ki3k::::res://addons/enemies/integral.png<>uid://bhvb201prtgdy::::res://addons/enemies/integral_hit.png<>uid://5vg4b4wuuiyy::::res://addons/enemies/integtal_walk.png
 java.tscn::PackedScene::1576592082281615197::1731004193::0::1::::<><>::res://scripts/enemy.gd<>uid://dpvxxb0kpx886::::res://addons/enemies/java.png<>uid://dwx5xyp5ngaag::::res://addons/enemies/java_hit.png<>uid://l1strwgv1tuy::::res://addons/enemies/java_walk.png
@@ -125,31 +125,31 @@ uml.tscn::PackedScene::6685386427936619749::1731004325::0::1::::<><>::res://scri
 vetor.tscn::PackedScene::69471056758551892::1731004331::0::1::::<><>::res://scripts/enemy.gd<>uid://cwojhfy108h31::::res://addons/enemies/vetor.png<>uid://br7vd3a5wi4it::::res://addons/enemies/vetor_hit.png<>uid://bra8mowc4hmkk::::res://addons/enemies/vetor_walk.png
 wifi.tscn::PackedScene::7179449410727728348::1731004337::0::1::::<><>::res://scripts/enemy.gd<>uid://b5nhgn6smrex6::::res://addons/enemies/wifi.png<>uid://dlfgmmalx1aof::::res://addons/enemies/wifi_hit.png<>uid://drwkvdxwtuxtv::::res://addons/enemies/wifi_walk.png
 ::res://map/::1731015594
-uff_floor1.tscn::PackedScene::5198977002598203569::1731027504::0::1::::<><>::uid://dm2gvuged0e71::::res://tileset.tres<>res://scripts/level.gd<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd
-uff_floor2.tscn::PackedScene::3109627933742529228::1731027504::0::1::::<><>::res://scripts/level.gd<>uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd
+uff_floor1.tscn::PackedScene::5198977002598203569::1731449890::0::1::::<><>::uid://dm2gvuged0e71::::res://tileset.tres<>res://scripts/level.gd<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd
+uff_floor2.tscn::PackedScene::3109627933742529228::1731449890::0::1::::<><>::res://scripts/level.gd<>uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd
 ::res://objects/::1730216353
 ::res://objects/bullet/::1731005860
-bullet.tscn::PackedScene::7021923577339743816::1731027504::0::1::::<><>::uid://cmmt2fv8tqt2e::::res://addons/objects/bullet.png<>res://scripts/bullet.gd
+bullet.tscn::PackedScene::7021923577339743816::1731449890::0::1::::<><>::res://scripts/bullet.gd
 ::res://objects/table/::1731005860
 horizontal_table.tscn::PackedScene::562432123176181394::1731019808::0::1::::<><>::uid://7k14yxyllmxr::::res://addons/objects/table_horizontal.png<>res://scripts/table.gd<>uid://cnkpuepb6lnfe::::res://addons/objects/table_horizontal2.png
 vertical_table.tscn::PackedScene::5558395149894443860::1731019808::0::1::::<><>::res://scripts/table.gd<>uid://dwk1b0x82kwef::::res://addons/objects/table_vertical.png
 ::res://player/::1731005860
-player.tscn::PackedScene::1078721924391970753::1731027502::0::1::::<><>::res://scripts/player.gd<>uid://ck72qx6lvlmhc::::res://addons/player/player_shadow.png<>uid://5gnn8yyguy33::::res://addons/player/player_death.png<>uid://bldfhrh5mpvdy::::res://addons/player/player_flip_table.png<>uid://bbdlxty5q5hou::::res://addons/player/player_idle.png<>uid://d20rfkjex65nk::::res://addons/player/player_roll.png<>uid://cfrw4vlekjav8::::res://addons/player/player_table_slide.png<>uid://duqie6flyhuda::::res://addons/player/player_walk.png<>uid://wdrpal760xae::::res://UI/health_bar.tscn<>uid://0sbus5m66axk::::res://UI/change_scene.tscn<>uid://bv41mu5ato7ay::::res://UI/ammo_ui.tscn
+player.tscn::PackedScene::1078721924391970753::1731450358::0::1::::<><>::res://scripts/player.gd<>uid://ck72qx6lvlmhc::::res://addons/player/player_shadow.png<>uid://5gnn8yyguy33::::res://addons/player/player_death.png<>uid://bldfhrh5mpvdy::::res://addons/player/player_flip_table.png<>uid://bbdlxty5q5hou::::res://addons/player/player_idle.png<>uid://d20rfkjex65nk::::res://addons/player/player_roll.png<>uid://cfrw4vlekjav8::::res://addons/player/player_table_slide.png<>uid://duqie6flyhuda::::res://addons/player/player_walk.png<>uid://wdrpal760xae::::res://UI/health_bar.tscn<>uid://0sbus5m66axk::::res://UI/change_scene.tscn<>uid://bv41mu5ato7ay::::res://UI/ammo_ui.tscn
 ::res://scripts/::1731005893
 ammo_ui.gd::GDScript::-1::1730748464::0::1::::<>CanvasLayer<>::
 bullet.gd::GDScript::-1::1730923344::0::1::::Shoot<>Area2D<>::
 change_scene.gd::GDScript::-1::1731026358::0::1::::<>CanvasLayer<>::
 enemy.gd::GDScript::-1::1731004859::0::1::::Enemy<>CharacterBody2D<>::
 game_manager.gd::GDScript::-1::1731025312::0::1::::<>Node<>::
-go_to_scene.gd::GDScript::-1::1731023888::0::1::::<>Area2D<>::
+go_to_scene.gd::GDScript::-1::1731449800::0::1::::<>Area2D<>::
 health_bar.gd::GDScript::-1::1730747296::0::1::::<>HBoxContainer<>::
-level.gd::GDScript::-1::1731015576::0::1::::LevelParent<>Node2D<>::
-player.gd::GDScript::-1::1731027254::0::1::::Player<>CharacterBody2D<>::
+level.gd::GDScript::-1::1731449830::0::1::::LevelParent<>Node2D<>::
+player.gd::GDScript::-1::1731449940::0::1::::Player<>CharacterBody2D<>::
 table.gd::GDScript::-1::1730554966::0::1::::<>Node<>::
 ::res://teste/::1731005892
-teste.tscn::PackedScene::8601253441466213551::1731027502::0::1::::<><>::uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/level.gd<>uid://clgr7rfxnessy::::res://objects/table/vertical_table.tscn<>uid://iapf7gej3aqc::::res://objects/table/horizontal_table.tscn<>res://teste/teste_life.gd<>uid://tryuq4p768ab::::res://enemies/c.tscn
+teste.tscn::PackedScene::8601253441466213551::1731449888::0::1::::<><>::uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/level.gd<>uid://clgr7rfxnessy::::res://objects/table/vertical_table.tscn<>uid://iapf7gej3aqc::::res://objects/table/horizontal_table.tscn<>res://teste/teste_life.gd<>uid://tryuq4p768ab::::res://enemies/c.tscn
 teste_life.gd::GDScript::-1::1731001154::0::1::::<>Area2D<>::
 ::res://UI/::1731005860
 ammo_ui.tscn::PackedScene::3921854523135414456::1731019810::0::1::::<><>::res://scripts/ammo_ui.gd<>uid://3g5tjs2013f3::::res://addons/ui/gum_frame.png<>uid://8l76rk52gv43::::res://addons/ui/pistol_ammo.png<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
-change_scene.tscn::PackedScene::1791977315747055744::1731027718::0::1::::<><>::res://scripts/change_scene.gd
+change_scene.tscn::PackedScene::1791977315747055744::1731449892::0::1::::<><>::res://scripts/change_scene.gd
 health_bar.tscn::PackedScene::1551406687573712856::1730816344::0::1::::<><>::res://scripts/health_bar.gd

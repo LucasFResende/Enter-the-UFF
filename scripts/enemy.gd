@@ -9,7 +9,7 @@ var shoot_cooldown:float = 3.0
 var is_moving:bool = false
 @onready var find_player:Area2D = $FindPlayer
 
-var shoot_scene:PackedScene = preload("res://objects/bullet/bullet.tscn")
+var shoot_scene:PackedScene = load("res://objects/bullet/bullet.tscn")
 
 func _ready() -> void:
 	find_player.body_entered.connect(on_find_player_body_entered)
@@ -45,7 +45,7 @@ func shoot():
 	shoot_bullet.position = position
 	shoot_bullet.direction = (GameManager.player_position - position).normalized()
 	shoot_bullet.shoot_owner = "enemy"
-	sprite.texture = preload("res://addons/objects/enemy_bullet.png")
+	sprite.texture = load("res://addons/objects/enemy_bullet.png")
 	shoot_node.add_child(shoot_bullet)
 
 func move(delta):
