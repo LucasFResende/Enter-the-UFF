@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dusrnf8fyvtgp"]
+[gd_scene load_steps=7 format=3 uid="uid://dusrnf8fyvtgp"]
 
 [ext_resource type="PackedScene" uid="uid://pmsnlyqrjkjp" path="res://player/player.tscn" id="1_1wwb4"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_rh7ol"]
 [ext_resource type="PackedScene" uid="uid://clgr7rfxnessy" path="res://objects/table/vertical_table.tscn" id="2_gsib1"]
 [ext_resource type="PackedScene" uid="uid://iapf7gej3aqc" path="res://objects/table/horizontal_table.tscn" id="3_ntm8i"]
 [ext_resource type="Script" path="res://teste/teste_life.gd" id="5_v1k0b"]
@@ -11,7 +10,6 @@
 size = Vector2(16, 16)
 
 [node name="Teste" type="Node2D"]
-script = ExtResource("1_rh7ol")
 
 [node name="PlayerShoot" type="Node" parent="."]
 
@@ -46,7 +44,6 @@ metadata/_edit_use_anchors_ = true
 z_index = -1
 position = Vector2(0, 16)
 script = ExtResource("5_v1k0b")
-tipo = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
 position = Vector2(-152, 8)
@@ -64,7 +61,6 @@ metadata/_edit_use_anchors_ = true
 z_index = -1
 position = Vector2(0, 16)
 script = ExtResource("5_v1k0b")
-tipo = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="increase life"]
 position = Vector2(-56, 24)
@@ -81,7 +77,6 @@ metadata/_edit_use_anchors_ = true
 z_index = -1
 position = Vector2(0, 16)
 script = ExtResource("5_v1k0b")
-tipo = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="increase ammo"]
 position = Vector2(-56, -56)

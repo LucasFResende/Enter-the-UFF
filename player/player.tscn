@@ -943,15 +943,15 @@ shape = SubResource("CircleShape2D_fpglm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nmcnj")
-animation = &"death"
+animation = &"idle_front1"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="ChangeScene" parent="Camera2D" instance=ExtResource("9_pk5s7")]
-
 [node name="HealthBar" parent="Camera2D" instance=ExtResource("9_6nide")]
 
 [node name="AmmoUi" parent="Camera2D" instance=ExtResource("10_uwx2e")]
+
+[node name="ChangeScene" parent="Camera2D" instance=ExtResource("9_pk5s7")]
 
 [connection signal="body_entered" from="NoEnemy" to="." method="_on_no_enemy_body_entered"]

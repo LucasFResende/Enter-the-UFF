@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=4 uid="uid://xip61p1ri3c7"]
+
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_qehhe"]
+[ext_resource type="TileSet" uid="uid://dm2gvuged0e71" path="res://tileset.tres" id="3_qrln5"]
+[ext_resource type="Script" path="res://scripts/enter_room.gd" id="4_jxdrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f805"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uah82"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50lw3"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcsbv"]
+size = Vector2(16, 64)
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_qehhe")
+
+[node name="Block" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+tile_map_data = PackedByteArray("AAD+//b/AAABAAAAAAD///b/AAABAAAAAAAAAPb/AAABAAAAAAABAPb/AAABAAAAAAAOAP//AAABAAIAAAAOAAAAAAABAAIAAAAOAP7/AAABAAIAAAAOAAEAAAABAAIAAAAOAP3/AAABAAIAAAAOAAIAAAABAAIAAAD9//b/AAABAAAAAAACAPb/AAABAAAAAADx//3/AAAAAAIAAADx//7/AAAAAAIAAADx////AAAAAAIAAADx/wAAAAAAAAIAAADx/wEAAAAAAAIAAADx/wIAAAAAAAIAAAD//wkAAAAAAAAAAAAAAAkAAAAAAAAAAAD+/wkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAD9/wkAAAAAAAAAAAA=")
+tile_set = ExtResource("3_qrln5")
+collision_enabled = false
+
+[node name="EnterRoom" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -136)
+script = ExtResource("4_jxdrt")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="EnterRoom"]
+shape = SubResource("RectangleShape2D_7f805")
+
+[node name="EnterRoom2" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(216, 0)
+script = ExtResource("4_jxdrt")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="EnterRoom2"]
+shape = SubResource("RectangleShape2D_uah82")
+
+[node name="EnterRoom3" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 136)
+script = ExtResource("4_jxdrt")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="EnterRoom3"]
+shape = SubResource("RectangleShape2D_50lw3")
+
+[node name="EnterRoom4" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-216, 0)
+script = ExtResource("4_jxdrt")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="EnterRoom4"]
+shape = SubResource("RectangleShape2D_jcsbv")

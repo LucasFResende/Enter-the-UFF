@@ -456,13 +456,18 @@ speed_scale = 1.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fkhpo")
+animation = &"hit"
+frame = 19
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_unqw0")
 
 [node name="FindPlayer" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FindPlayer"]
+visible = false
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_k28g0")

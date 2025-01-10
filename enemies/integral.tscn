@@ -444,7 +444,7 @@ radius = 13.0384
 [sub_resource type="CircleShape2D" id="CircleShape2D_bddfy"]
 radius = 32.0
 
-[node name="Integral" type="CharacterBody2D"]
+[node name="Integral" type="CharacterBody2D" groups=["enemy"]]
 collision_mask = 3
 script = ExtResource("1_5llfc")
 
@@ -454,7 +454,7 @@ libraries = {
 }
 speed_scale = 1.5
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kvvxc")
 animation = &"walk"
 autoplay = "default"

@@ -2,8 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 var shoot_scene:PackedScene = load("res://objects/bullet/bullet.tscn")
+var menu_scene:PackedScene = load("res://UI/menu_ui.tscn")
 
-@export var SPEED = 3
+@export var SPEED:int = 3
 var angle: float
 var is_moving:bool = false
 var input: Vector2
@@ -36,19 +37,24 @@ const DOWN:Vector2 = Vector2(0,1)
 const LEFT:Vector2 = Vector2(1,0)
 const RIGHT:Vector2 = Vector2(-1,0)
 
+var items: Dictionary
+
 func _ready() -> void:
+	GameManager.is_in_game = true
 	ammo_ui.update_ui(actual_ammo,bag_ammo)
 	no_enemy.body_entered.connect(on_no_enemy_body_entered)
 
 func _physics_process(delta: float) -> void:
-	print("A")
+	GameManager.player_position = global_position
+	if Input.is_action_just_pressed("esc"):
+		$Camera2D.add_child(menu_scene.instantiate())
 	if GameManager.is_scene_changed:
-		position = GameManager.set_position
-		GameManager.is_scene_changed = false
+		GameManager.can_spawn_map = true
+		update_player_info()
 	if death_cooldown>0:
 		death_cooldown-=delta
 		if death_cooldown<=0:
-			get_tree().reload_current_scene()
+			get_tree().change_scene_to_file(GameManager.return_scene_path)
 		return
 	health_bar.update_health(life,max_life)
 	if is_sliding:
@@ -75,12 +81,12 @@ func _physics_process(delta: float) -> void:
 	ver_angle()
 	if input and !is_sliding:
 		is_moving = true
-		position += input*SPEED*delta*50
+		var target_position:Vector2 = position+input*SPEED*delta*50
+		position = lerp(position,target_position,1)
 	else:
 		is_moving = false
 		
 	move_and_slide()
-	GameManager.player_position = position
 	for i in get_slide_collision_count():
 		collision = get_slide_collision(i).get_collider()
 		if (collision.name == "VerticalTable" or collision.name == "HorizontalTable") and Input.is_action_just_pressed("mouse2"):
@@ -239,12 +245,12 @@ func flip_table():
 	if input == UP:
 		anim.play("flip_back")
 
+
 func shoot():
 	var shoot_node:Node = get_parent().get_child(0)
 	var shoot_bullet:Shoot = shoot_scene.instantiate() as Area2D
 	var sprite:Sprite2D = shoot_bullet.get_child(1)
 	shoot_bullet.position = position
-	print(shoot_bullet.position,position)
 	shoot_bullet.direction = (get_global_mouse_position() - position).normalized()
 	shoot_bullet.shoot_owner="player"
 	sprite.texture = load("res://addons/objects/player_bullet.png")
@@ -252,6 +258,7 @@ func shoot():
 
 func hit(damage:int):
 	life-=damage
+	
 	if life==0:
 		anim.play("death")
 		death_cooldown = 3.6
@@ -261,3 +268,13 @@ func hit(damage:int):
 func on_no_enemy_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		body.is_moving = false
+
+func update_player_info():
+	items = GameManager.player_items
+	life = GameManager.player_life
+	actual_ammo = GameManager.player_actual_ammo
+	bag_ammo = GameManager.player_bag_ammo
+	ammo_ui.update_ui(actual_ammo,bag_ammo)
+	health_bar.update_health(life,max_life)
+	position = GameManager.set_position
+	GameManager.is_scene_changed = false

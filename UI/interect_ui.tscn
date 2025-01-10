@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3p1tukliho5n"]
+
+[ext_resource type="Texture2D" uid="uid://dl0xxvmmoh0xc" path="res://addons/input_keys/Keyboard & Mouse/keyboard_e_outline.svg" id="1_hxqva"]
+[ext_resource type="Texture2D" uid="uid://c1272k3uierhu" path="res://addons/cursor/navigation_s.svg" id="2_3nj2f"]
+
+[node name="InterectUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="KeyboardEOutline" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
+texture = ExtResource("1_hxqva")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(0, 11)
+texture = ExtResource("2_3nj2f")

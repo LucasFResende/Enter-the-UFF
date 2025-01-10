@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://ks6jgyhajq8s"]
+
+[ext_resource type="Script" path="res://scripts/in_game_settings_ui.gd" id="1_g3ibe"]
+[ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="2_1875m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b4x1c"]
+font = ExtResource("2_1875m")
+font_size = 100
+
+[node name="SettingsUi" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_g3ibe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1168.0
+offset_bottom = 656.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_right = 225.0
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_b4x1c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1875m")
+theme_override_font_sizes/font_size = 50
+text = "CONTROLS
+"
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.5
+offset_top = -59.0
+offset_right = 60.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_1875m")
+theme_override_font_sizes/font_size = 50
+text = "BACK"
+
+[connection signal="pressed" from="VBoxContainer/ControlButton" to="." method="_on_control_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0ik05xt7m864"]
+
+[ext_resource type="PackedScene" uid="uid://pmsnlyqrjkjp" path="res://player/player.tscn" id="1_4xj1t"]
+[ext_resource type="PackedScene" uid="uid://bddjgwm0w0xck" path="res://objects/itens/pendrive.tscn" id="2_gg78b"]
+[ext_resource type="PackedScene" uid="uid://iy3p7wsmn0o2" path="res://objects/itens/hd.tscn" id="3_53wc4"]
+[ext_resource type="PackedScene" uid="uid://dy1032o3dyusa" path="res://objects/chest/chest.tscn" id="3_g2fk6"]
+[ext_resource type="PackedScene" uid="uid://bnkiuywd3mi6v" path="res://objects/itens/ssd.tscn" id="5_t7ffx"]
+[ext_resource type="PackedScene" uid="uid://bmsetn3spvcdm" path="res://objects/itens/nvme.tscn" id="6_ao0j3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_4xj1t")]
+position = Vector2(-76, -2)
+
+[node name="Node2D" parent="." instance=ExtResource("3_g2fk6")]
+position = Vector2(-142, -4)
+
+[node name="Hd" parent="." instance=ExtResource("3_53wc4")]
+position = Vector2(-191, -8)
+
+[node name="Pendrive" parent="." instance=ExtResource("2_gg78b")]
+
+[node name="Ssd" parent="." instance=ExtResource("5_t7ffx")]
+position = Vector2(-194, -54)
+
+[node name="Nvme" parent="." instance=ExtResource("6_ao0j3")]
+position = Vector2(-139, 55)

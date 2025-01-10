@@ -452,12 +452,10 @@ script = ExtResource("1_i8hgx")
 libraries = {
 "": SubResource("AnimationLibrary_5mg6a")
 }
-autoplay = "walk_low_life"
 speed_scale = 1.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aclgw")
-animation = &"walk"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

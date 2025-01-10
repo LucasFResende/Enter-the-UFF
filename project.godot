@@ -8,32 +8,49 @@
 
 config_version=5
 
+[GD-Sync]
+
+version="0.7"
+
 [application]
 
 config/name="Enter the uff"
-run/main_scene="res://map/uff_floor1.tscn"
+run/main_scene="res://game/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://addons/icon/enter_the_uff_icon.png"
 
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
+DownPath="*res://addons/procedural map generator/down_path.tscn"
+InitialRoom="*res://addons/procedural map generator/Initial_room.tscn"
+LeftPath="*res://addons/procedural map generator/left_path.tscn"
+RightPath="*res://addons/procedural map generator/right_path.tscn"
+UpPath="*res://addons/procedural map generator/up_path.tscn"
+Room="*res://addons/procedural map generator/room.tscn"
+Exit="*res://addons/procedural map generator/exit_room.tscn"
+
+[display]
+
+mouse_cursor/custom_image="res://addons/cursor/pointer.svg"
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
-[editor_plugins]
+[file_customization]
 
-enabled=PackedStringArray()
+folder_colors={
+"res://MULTIPLAYER/": "green"
+}
 
 [global_group]
 
 player=""
 enemy=""
 object=""
+PlayerSpawPoint=""
 
 [input]
 
@@ -57,19 +74,9 @@ down={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
 }
-espace={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
-]
-}
 esc={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
-}
-roll={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
 ]
 }
 interact={

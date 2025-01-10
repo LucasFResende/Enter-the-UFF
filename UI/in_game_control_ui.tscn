@@ -1,0 +1,238 @@
+[gd_scene load_steps=22 format=3 uid="uid://c4xm8t8iqfwy7"]
+
+[ext_resource type="Script" path="res://scripts/in_game_control_ui.gd" id="1_mmjc0"]
+[ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="2_kdhyf"]
+[ext_resource type="Texture2D" uid="uid://d3s6h1iqds386" path="res://addons/input_keys/Keyboard & Mouse/keyboard_w_outline.svg" id="3_lbgfp"]
+[ext_resource type="Texture2D" uid="uid://cxrc33ytjj1gm" path="res://addons/input_keys/Keyboard & Mouse/keyboard_a_outline.svg" id="4_603xw"]
+[ext_resource type="Texture2D" uid="uid://daclqqa6tg8w1" path="res://addons/input_keys/Keyboard & Mouse/keyboard_s_outline.svg" id="5_2xhrh"]
+[ext_resource type="Texture2D" uid="uid://6osvipnn23vr" path="res://addons/input_keys/Keyboard & Mouse/keyboard_d_outline.svg" id="6_6qnko"]
+[ext_resource type="Texture2D" uid="uid://dl0xxvmmoh0xc" path="res://addons/input_keys/Keyboard & Mouse/keyboard_e_outline.svg" id="7_0o5sg"]
+[ext_resource type="Texture2D" uid="uid://uujl4kiahkro" path="res://addons/input_keys/Keyboard & Mouse/keyboard_r_outline.svg" id="8_mrii5"]
+[ext_resource type="Texture2D" uid="uid://ce3skx3huwd5i" path="res://addons/input_keys/Keyboard & Mouse/mouse_left_outline.svg" id="9_8jf6b"]
+[ext_resource type="Texture2D" uid="uid://bfgvfgu314it" path="res://addons/input_keys/Keyboard & Mouse/mouse_right_outline.svg" id="10_hc7ma"]
+[ext_resource type="Texture2D" uid="uid://dlpm6vvbm84vb" path="res://addons/input_keys/Keyboard & Mouse/keyboard_escape_outline.svg" id="11_3u1wu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_us6hl"]
+font = ExtResource("2_kdhyf")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_v11k1"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkmnf"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_72gkr"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_7qu1g"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_7cq5q"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_58a8r"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_e4jpe"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_4rma4"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4nl4"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
+[node name="ControlUi" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_mmjc0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1168.0
+offset_bottom = 656.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_right = 225.0
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "CONTROLS"
+label_settings = SubResource("LabelSettings_us6hl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.5
+offset_top = -59.0
+offset_right = 60.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_kdhyf")
+theme_override_font_sizes/font_size = 50
+text = "BACK"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -220.0
+offset_right = 106.5
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Foward" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Foward"]
+layout_mode = 2
+text = "Move foward:"
+label_settings = SubResource("LabelSettings_v11k1")
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Foward"]
+layout_mode = 2
+icon = ExtResource("3_lbgfp")
+
+[node name="Left" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 21
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Left"]
+layout_mode = 2
+text = "Move left:"
+label_settings = SubResource("LabelSettings_nkmnf")
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Left"]
+layout_mode = 2
+icon = ExtResource("4_603xw")
+
+[node name="Back" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 21
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Back"]
+layout_mode = 2
+text = "Move back:"
+label_settings = SubResource("LabelSettings_72gkr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Back"]
+layout_mode = 2
+icon = ExtResource("5_2xhrh")
+
+[node name="Right" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Right"]
+layout_mode = 2
+text = "Move right:"
+label_settings = SubResource("LabelSettings_7qu1g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Right"]
+layout_mode = 2
+icon = ExtResource("6_6qnko")
+
+[node name="Interact" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Interact"]
+layout_mode = 2
+text = "Interact:"
+label_settings = SubResource("LabelSettings_7cq5q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Interact"]
+layout_mode = 2
+icon = ExtResource("7_0o5sg")
+
+[node name="Reload" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 46
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Reload"]
+layout_mode = 2
+text = "Reload:"
+label_settings = SubResource("LabelSettings_58a8r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Reload"]
+layout_mode = 2
+icon = ExtResource("8_mrii5")
+
+[node name="Fire" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 63
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Fire"]
+layout_mode = 2
+text = "Fire:"
+label_settings = SubResource("LabelSettings_e4jpe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Fire"]
+layout_mode = 2
+icon = ExtResource("9_8jf6b")
+
+[node name="Roll" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 63
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Roll"]
+layout_mode = 2
+text = "Roll:"
+label_settings = SubResource("LabelSettings_4rma4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Roll"]
+layout_mode = 2
+icon = ExtResource("10_hc7ma")
+
+[node name="Menu" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 63
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Menu"]
+layout_mode = 2
+text = "Menu:"
+label_settings = SubResource("LabelSettings_x4nl4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("11_3u1wu")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
