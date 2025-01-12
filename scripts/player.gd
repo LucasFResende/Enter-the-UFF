@@ -43,6 +43,10 @@ func _ready() -> void:
 	GameManager.is_in_game = true
 	ammo_ui.update_ui(actual_ammo,bag_ammo)
 	no_enemy.body_entered.connect(on_no_enemy_body_entered)
+	material.set("shader_parameter/hair_replace_color",GameManager.player_custom_hair)
+	material.set("shader_parameter/shirt_replace_color",GameManager.player_custom_shirt)
+	material.set("shader_parameter/emblem_replace_color",GameManager.player_custom_emblem)
+	material.set("shader_parameter/shorts_replace_color",GameManager.player_custom_short)
 
 func _physics_process(delta: float) -> void:
 	GameManager.player_position = global_position

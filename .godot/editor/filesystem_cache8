@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1735847122
+::res://::1736443381
 export_presets.cfg::TextFile::-1::1735840194::0::1::::<><>::
 README.md::TextFile::-1::1732112496::0::1::::<><>::
-tileset.tres::TileSet::8057669237646475746::1735843663::0::1::::<><>::uid://innjy8d3sa5c::::res://addons/tiles/tileset.png<>uid://bjhkpwtt7ues2::::res://addons/tiles/objects_tileset.png
+tileset.tres::TileSet::8057669237646475746::1736631232::0::1::::<><>::uid://innjy8d3sa5c::::res://addons/tiles/tileset.png<>uid://bjhkpwtt7ues2::::res://addons/tiles/objects_tileset.png
 ::res://addons/::1735324827
 ::res://addons/cursor/::1735570705
 navigation_s.svg::CompressedTexture2D::6655481230946218470::1717599221::1735325330::1::::<><>::
@@ -620,18 +620,18 @@ trace_04_rotated.png::CompressedTexture2D::8136786949749552026::1734972290::1734
 trace_05_rotated.png::CompressedTexture2D::1083968618102955628::1734972290::1734972348::1::::<><>::
 trace_06_rotated.png::CompressedTexture2D::2507899033170800898::1734972290::1734972348::1::::<><>::
 trace_07_rotated.png::CompressedTexture2D::3545508025957298004::1734972290::1734972348::1::::<><>::
-::res://addons/player/::1730572339
-player_death.png::CompressedTexture2D::2118865883337201588::1729810144::1730572356::1::::<><>::
-player_flip_table.png::CompressedTexture2D::3165008087585099274::1729805306::1730572356::1::::<><>::
-player_idle.png::CompressedTexture2D::2463512657178147004::1729805170::1730572356::1::::<><>::
-player_idle_one_hand.png::CompressedTexture2D::6068153830180776411::1729805434::1730572356::1::::<><>::
-player_idle_two_hand.png::CompressedTexture2D::5504227934953531948::1729805516::1730572356::1::::<><>::
-player_roll.png::CompressedTexture2D::9107011930354698468::1729806046::1730572356::1::::<><>::
+::res://addons/player/::1736446539
+player_death.png::CompressedTexture2D::2118865883337201588::1736446097::1736446100::1::::<><>::
+player_flip_table.png::CompressedTexture2D::3165008087585099274::1736446173::1736446539::1::::<><>::
+player_idle.png::CompressedTexture2D::2463512657178147004::1736445960::1736445922::1::::<><>::
+player_idle_one_hand.png::CompressedTexture2D::6068153830180776411::1736446244::1736446539::1::::<><>::
+player_idle_two_hand.png::CompressedTexture2D::5504227934953531948::1736446292::1736446539::1::::<><>::
+player_roll.png::CompressedTexture2D::9107011930354698468::1736446375::1736446539::1::::<><>::
 player_shadow.png::CompressedTexture2D::5542459079857901032::1729720560::1730572356::1::::<><>::
-player_table_slide.png::CompressedTexture2D::5160268689438145555::1729805534::1730572356::1::::<><>::
-player_walk.png::CompressedTexture2D::8596563483502695182::1729805660::1730572356::1::::<><>::
-player_walk_one_hand.png::CompressedTexture2D::3919979043893247835::1729805768::1730572356::1::::<><>::
-player_walk_two_hand.png::CompressedTexture2D::549981304977994333::1729805910::1730572356::1::::<><>::
+player_table_slide.png::CompressedTexture2D::5160268689438145555::1736446390::1736446539::1::::<><>::
+player_walk.png::CompressedTexture2D::8596563483502695182::1736446442::1736446539::1::::<><>::
+player_walk_one_hand.png::CompressedTexture2D::3919979043893247835::1736446536::1736446539::1::::<><>::
+player_walk_two_hand.png::CompressedTexture2D::549981304977994333::1736446494::1736446539::1::::<><>::
 ::res://addons/procedural map generator/::1734972303
 down_path.png::CompressedTexture2D::3221852753239424444::1732303834::1732799558::1::::<><>::
 down_path.tscn::PackedScene::980582025845351764::1732799556::0::1::::<><>::uid://bl5xpdn8jby0s::::res://addons/procedural map generator/down_path.png
@@ -665,8 +665,8 @@ teste3.png::CompressedTexture2D::244774421273240610::1730552166::1730572388::1::
 teste4.png::CompressedTexture2D::5612521345118616801::1730553184::1730572388::1::::<><>::
 teste5.png::CompressedTexture2D::4179955984087828915::1730555380::1730572388::1::::<><>::
 teste.png::CompressedTexture2D::4004551882404504208::1730573424::1730573500::1::::<><>::
-::res://dungeon/::1735848188
-dungeon.tscn::PackedScene::3586286406163409155::1735848188::0::1::::<><>::res://scripts/map_generator.gd<>uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>uid://c0t6tu025oq3q::::res://objects/life_ammo drop/life_ammo__drop.tscn
+::res://dungeon/::1736447186
+dungeon.tscn::PackedScene::3586286406163409155::1736633322::0::1::::<><>::res://scripts/map_generator.gd<>uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>uid://c0t6tu025oq3q::::res://objects/life_ammo drop/life_ammo__drop.tscn
 ::res://enemies/::1735843813
 and.tscn::PackedScene::838126482993338206::1731004129::0::1::::<><>::res://scripts/enemy.gd<>uid://bmgwcfv17w5i5::::res://addons/enemies/and.png<>uid://cyvtfgl0lm0m8::::res://addons/enemies/and_hit.png<>uid://chaorc1fpqhap::::res://addons/enemies/and_walk.png
 arvore.tscn::PackedScene::7911986838955184477::1735843813::0::1::::<><>::res://scripts/enemy.gd<>uid://c4uxagly8r4dy::::res://addons/enemies/arvore.png<>uid://bo5nnl3uedoc3::::res://addons/enemies/arvore_hit.png<>uid://bl1gvwjy4kmdy::::res://addons/enemies/arvore_walk.png
@@ -687,11 +687,11 @@ ucp.tscn::PackedScene::2834863792813125715::1731004318::0::1::::<><>::res://scri
 uml.tscn::PackedScene::6685386427936619749::1731004325::0::1::::<><>::res://scripts/enemy.gd<>uid://0hhxa0jp0olp::::res://addons/enemies/uml.png<>uid://dv0fbfa3u6it::::res://addons/enemies/uml_hit.png<>uid://su2amqhfb36g::::res://addons/enemies/uml_walk.png
 vetor.tscn::PackedScene::69471056758551892::1731004331::0::1::::<><>::res://scripts/enemy.gd<>uid://cwojhfy108h31::::res://addons/enemies/vetor.png<>uid://br7vd3a5wi4it::::res://addons/enemies/vetor_hit.png<>uid://bra8mowc4hmkk::::res://addons/enemies/vetor_walk.png
 wifi.tscn::PackedScene::7179449410727728348::1735843769::0::1::::<><>::res://scripts/enemy.gd<>uid://b5nhgn6smrex6::::res://addons/enemies/wifi.png<>uid://dlfgmmalx1aof::::res://addons/enemies/wifi_hit.png<>uid://drwkvdxwtuxtv::::res://addons/enemies/wifi_walk.png
-::res://game/::1735848188
-game.gd::GDScript::-1::1735844657::0::1::::<>Node<>::
-game.tscn::PackedScene::5356516775290887151::1735848188::0::1::::<><>::res://game/game.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
-::res://map/::1735848603
-uff_floor1.tscn::PackedScene::5198977002598203569::1735848603::0::1::::<><>::uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd<>res://scripts/go_up_go_down_stairs.gd<>uid://tryuq4p768ab::::res://enemies/c.tscn<>uid://ilf0ts5imkai::::res://enemies/derivada.tscn<>uid://dq2fubc3uhbks::::res://enemies/ponto_virgula.tscn<>uid://bgnh17d8m37j8::::res://enemies/ucp.tscn<>uid://8wgb7g5mtai::::res://enemies/vetor.tscn<>uid://ckdlp2kmiiut3::::res://enemies/integral.tscn<>uid://l68250x2rvm1::::res://enemies/and.tscn<>uid://dpcbesietak7y::::res://enemies/matriz.tscn<>uid://dkyvjc8imc8y0::::res://enemies/arvore.tscn<>uid://dku481ngfy3u2::::res://enemies/oo.tscn<>uid://wpyig5f8v65n::::res://enemies/java.tscn<>uid://dhnarr0ufwc52::::res://enemies/o(n).tscn<>uid://c2iplqn1v41rd::::res://enemies/uml.tscn<>uid://brqs02dddqb3e::::res://enemies/r.tscn<>uid://c1ambe14e6ec5::::res://enemies/c++.tscn<>uid://bvwd6g1nuv6rt::::res://enemies/automato.tscn<>uid://b20rbjocbqa8t::::res://enemies/sql.tscn<>uid://buveoql63w6pb::::res://enemies/tcp.tscn
+::res://game/::1736447186
+game.gd::GDScript::-1::1736631694::0::1::::<>Node<>::
+game.tscn::PackedScene::5356516775290887151::1736633322::0::1::::<><>::res://game/game.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
+::res://map/::1736447186
+uff_floor1.tscn::PackedScene::5198977002598203569::1736633324::0::1::::<><>::uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd<>res://scripts/go_up_go_down_stairs.gd<>uid://tryuq4p768ab::::res://enemies/c.tscn<>uid://ilf0ts5imkai::::res://enemies/derivada.tscn<>uid://dq2fubc3uhbks::::res://enemies/ponto_virgula.tscn<>uid://bgnh17d8m37j8::::res://enemies/ucp.tscn<>uid://8wgb7g5mtai::::res://enemies/vetor.tscn<>uid://ckdlp2kmiiut3::::res://enemies/integral.tscn<>uid://l68250x2rvm1::::res://enemies/and.tscn<>uid://dpcbesietak7y::::res://enemies/matriz.tscn<>uid://dkyvjc8imc8y0::::res://enemies/arvore.tscn<>uid://dku481ngfy3u2::::res://enemies/oo.tscn<>uid://wpyig5f8v65n::::res://enemies/java.tscn<>uid://dhnarr0ufwc52::::res://enemies/o(n).tscn<>uid://c2iplqn1v41rd::::res://enemies/uml.tscn<>uid://brqs02dddqb3e::::res://enemies/r.tscn<>uid://c1ambe14e6ec5::::res://enemies/c++.tscn<>uid://bvwd6g1nuv6rt::::res://enemies/automato.tscn<>uid://b20rbjocbqa8t::::res://enemies/sql.tscn<>uid://buveoql63w6pb::::res://enemies/tcp.tscn
 uff_floor2.tscn::PackedScene::3109627933742529228::1734987530::0::1::::<><>::uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd<>res://scripts/go_up_go_down_stairs.gd<>uid://daj1qogqssu0k::::res://enemies/wifi.tscn<>uid://b20rbjocbqa8t::::res://enemies/sql.tscn
 ::res://objects/::1735323501
 ::res://objects/bullet/::1734987530
@@ -708,12 +708,14 @@ life_ammo__drop.tscn::PackedScene::6568702882878630392::1735310712::0::1::::<><>
 ::res://objects/table/::1735327560
 horizontal_table.tscn::PackedScene::562432123176181394::1735327560::0::1::::<><>::uid://7k14yxyllmxr::::res://addons/objects/table_horizontal.png<>res://scripts/table.gd<>uid://cnkpuepb6lnfe::::res://addons/objects/table_horizontal2.png
 vertical_table.tscn::PackedScene::5558395149894443860::1731019808::0::1::::<><>::res://scripts/table.gd<>uid://dwk1b0x82kwef::::res://addons/objects/table_vertical.png
-::res://player/::1735848188
-player.tscn::PackedScene::1078721924391970753::1735848188::0::1::::<><>::res://scripts/player.gd<>uid://ck72qx6lvlmhc::::res://addons/player/player_shadow.png<>uid://5gnn8yyguy33::::res://addons/player/player_death.png<>uid://bldfhrh5mpvdy::::res://addons/player/player_flip_table.png<>uid://bbdlxty5q5hou::::res://addons/player/player_idle.png<>uid://d20rfkjex65nk::::res://addons/player/player_roll.png<>uid://cfrw4vlekjav8::::res://addons/player/player_table_slide.png<>uid://duqie6flyhuda::::res://addons/player/player_walk.png<>uid://wdrpal760xae::::res://UI/health_bar.tscn<>uid://0sbus5m66axk::::res://UI/change_scene.tscn<>uid://bv41mu5ato7ay::::res://UI/ammo_ui.tscn
-::res://room/::1735848188
+::res://player/::1736447256
+player.gdshader::Shader::-1::1736633382::0::1::::<><>::
+player.tscn::PackedScene::1078721924391970753::1736633324::0::1::::<><>::res://scripts/player.gd<>uid://cxrb5fdf0l11j::::res://player/player_shader.tres<>uid://ck72qx6lvlmhc::::res://addons/player/player_shadow.png<>uid://5gnn8yyguy33::::res://addons/player/player_death.png<>uid://bldfhrh5mpvdy::::res://addons/player/player_flip_table.png<>uid://bbdlxty5q5hou::::res://addons/player/player_idle.png<>uid://d20rfkjex65nk::::res://addons/player/player_roll.png<>uid://cfrw4vlekjav8::::res://addons/player/player_table_slide.png<>uid://duqie6flyhuda::::res://addons/player/player_walk.png<>uid://wdrpal760xae::::res://UI/health_bar.tscn<>uid://0sbus5m66axk::::res://UI/change_scene.tscn<>uid://bv41mu5ato7ay::::res://UI/ammo_ui.tscn
+player_shader.tres::ShaderMaterial::6422393751202089261::1736633320::0::1::::<><>::res://player/player.gdshader
+::res://room/::1736447186
 exit.tscn::PackedScene::6259478563601508210::1735570977::0::1::::<><>::res://scripts/go_back.gd
-room.tscn::PackedScene::1631825930193327396::1735848188::0::1::::<><>::res://scripts/room.gd<>uid://dm2gvuged0e71::::res://tileset.tres<>res://scripts/enter_room.gd
-::res://scripts/::1735848603
+room.tscn::PackedScene::1631825930193327396::1736633324::0::1::::<><>::res://scripts/room.gd<>uid://dm2gvuged0e71::::res://tileset.tres<>res://scripts/enter_room.gd
+::res://scripts/::1736443381
 ammo_ui.gd::GDScript::-1::1730748464::0::1::::<>CanvasLayer<>::
 bullet.gd::GDScript::-1::1735309945::0::1::::Shoot<>Area2D<>::
 change_scene.gd::GDScript::-1::1735568963::0::1::::<>CanvasLayer<>::
@@ -721,9 +723,9 @@ chest.gd::GDScript::-1::1735570145::0::1::::<>StaticBody2D<>::
 control_ui.gd::GDScript::-1::1735848603::0::1::::<>CanvasLayer<>::
 enemy.gd::GDScript::-1::1735568446::0::1::::Enemy<>CharacterBody2D<>::
 enter_room.gd::GDScript::-1::1734976827::0::1::::<>Area2D<>::
-game_manager.gd::GDScript::-1::1735847052::0::1::::<>Node<>::
+game_manager.gd::GDScript::-1::1736632662::0::1::::<>Node<>::
 go_back.gd::GDScript::-1::1735569738::0::1::::<>Area2D<>::
-go_to_scene.gd::GDScript::-1::1735843663::0::1::::<>Area2D<>::
+go_to_scene.gd::GDScript::-1::1736631232::0::1::::<>Area2D<>::
 go_up_go_down_stairs.gd::GDScript::-1::1735843663::0::1::::<>Area2D<>::
 health_bar.gd::GDScript::-1::1730747296::0::1::::<>HBoxContainer<>::
 in_game_control_ui.gd::GDScript::-1::1735848102::0::1::::<>CanvasLayer<>::
@@ -732,21 +734,25 @@ item.gd::GDScript::-1::1735398387::0::1::::Item<>Sprite2D<>::
 life_ammo_drop.gd::GDScript::-1::1735311087::0::1::::<>Node2D<>::
 map_generator.gd::GDScript::-1::1735566728::0::1::::<>Node2D<>::
 menu_ui.gd::GDScript::-1::1735848180::0::1::::<>CanvasLayer<>::
-player.gd::GDScript::-1::1735847257::0::1::::Player<>CharacterBody2D<>::
+player.gd::GDScript::-1::1736632810::0::1::::Player<>CharacterBody2D<>::
+player_customizer.gd::GDScript::-1::1736633322::0::1::::<>CanvasLayer<>::
+play_ui.gd::GDScript::-1::1736632040::0::1::::<>CanvasLayer<>::
 room.gd::GDScript::-1::1735570095::0::1::::<>Node2D<>::
-settings_ui.gd::GDScript::-1::1735845423::0::1::::<>CanvasLayer<>::
+settings_ui.gd::GDScript::-1::1736632232::0::1::::<>CanvasLayer<>::
 table.gd::GDScript::-1::1735311476::0::1::::<>Node<>::
 ::res://teste/::1735570977
 teste.tscn::PackedScene::8601253441466213551::1734987530::0::1::::<><>::uid://pmsnlyqrjkjp::::res://player/player.tscn<>uid://clgr7rfxnessy::::res://objects/table/vertical_table.tscn<>uid://iapf7gej3aqc::::res://objects/table/horizontal_table.tscn<>res://teste/teste_life.gd<>uid://tryuq4p768ab::::res://enemies/c.tscn
 teste_item.tscn::PackedScene::8931151590975430591::1735570977::0::1::::<><>::uid://pmsnlyqrjkjp::::res://player/player.tscn<>uid://bddjgwm0w0xck::::res://objects/itens/pendrive.tscn<>uid://iy3p7wsmn0o2::::res://objects/itens/hd.tscn<>uid://dy1032o3dyusa::::res://objects/chest/chest.tscn<>uid://bnkiuywd3mi6v::::res://objects/itens/ssd.tscn<>uid://bmsetn3spvcdm::::res://objects/itens/nvme.tscn
 teste_life.gd::GDScript::-1::1734976827::0::1::::<>Area2D<>::
-::res://UI/::1735848188
+::res://UI/::1736447187
 ammo_ui.tscn::PackedScene::3921854523135414456::1734729262::0::1::::<><>::res://scripts/ammo_ui.gd<>uid://3g5tjs2013f3::::res://addons/ui/gum_frame.png<>uid://8l76rk52gv43::::res://addons/ui/pistol_ammo.png<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
 change_scene.tscn::PackedScene::1791977315747055744::1735571244::0::1::::<><>::res://scripts/change_scene.gd<>uid://b4n2618inxka4::::res://addons/fonts/Perfect DOS VGA 437 Win.ttf
-control_ui.tscn::PackedScene::5173865788378028250::1735848188::0::1::::<><>::uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf<>res://scripts/control_ui.gd<>uid://d3s6h1iqds386::::res://addons/input_keys/Keyboard & Mouse/keyboard_w_outline.svg<>uid://cxrc33ytjj1gm::::res://addons/input_keys/Keyboard & Mouse/keyboard_a_outline.svg<>uid://daclqqa6tg8w1::::res://addons/input_keys/Keyboard & Mouse/keyboard_s_outline.svg<>uid://6osvipnn23vr::::res://addons/input_keys/Keyboard & Mouse/keyboard_d_outline.svg<>uid://dl0xxvmmoh0xc::::res://addons/input_keys/Keyboard & Mouse/keyboard_e_outline.svg<>uid://uujl4kiahkro::::res://addons/input_keys/Keyboard & Mouse/keyboard_r_outline.svg<>uid://ce3skx3huwd5i::::res://addons/input_keys/Keyboard & Mouse/mouse_left_outline.svg<>uid://bfgvfgu314it::::res://addons/input_keys/Keyboard & Mouse/mouse_right_outline.svg<>uid://dlpm6vvbm84vb::::res://addons/input_keys/Keyboard & Mouse/keyboard_escape_outline.svg
+control_ui.tscn::PackedScene::5173865788378028250::1736621998::0::1::::<><>::uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf<>res://scripts/control_ui.gd<>uid://d3s6h1iqds386::::res://addons/input_keys/Keyboard & Mouse/keyboard_w_outline.svg<>uid://cxrc33ytjj1gm::::res://addons/input_keys/Keyboard & Mouse/keyboard_a_outline.svg<>uid://daclqqa6tg8w1::::res://addons/input_keys/Keyboard & Mouse/keyboard_s_outline.svg<>uid://6osvipnn23vr::::res://addons/input_keys/Keyboard & Mouse/keyboard_d_outline.svg<>uid://dl0xxvmmoh0xc::::res://addons/input_keys/Keyboard & Mouse/keyboard_e_outline.svg<>uid://uujl4kiahkro::::res://addons/input_keys/Keyboard & Mouse/keyboard_r_outline.svg<>uid://ce3skx3huwd5i::::res://addons/input_keys/Keyboard & Mouse/mouse_left_outline.svg<>uid://bfgvfgu314it::::res://addons/input_keys/Keyboard & Mouse/mouse_right_outline.svg<>uid://dlpm6vvbm84vb::::res://addons/input_keys/Keyboard & Mouse/keyboard_escape_outline.svg
 health_bar.tscn::PackedScene::1551406687573712856::1735569754::0::1::::<><>::res://scripts/health_bar.gd
 interect_ui.tscn::PackedScene::4384287610190845273::1735397473::0::1::::<><>::uid://dl0xxvmmoh0xc::::res://addons/input_keys/Keyboard & Mouse/keyboard_e_outline.svg<>uid://c1272k3uierhu::::res://addons/cursor/navigation_s.svg
-in_game_control_ui.tscn::PackedScene::6856587105651861264::1735848188::0::1::::<><>::res://scripts/in_game_control_ui.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf<>uid://d3s6h1iqds386::::res://addons/input_keys/Keyboard & Mouse/keyboard_w_outline.svg<>uid://cxrc33ytjj1gm::::res://addons/input_keys/Keyboard & Mouse/keyboard_a_outline.svg<>uid://daclqqa6tg8w1::::res://addons/input_keys/Keyboard & Mouse/keyboard_s_outline.svg<>uid://6osvipnn23vr::::res://addons/input_keys/Keyboard & Mouse/keyboard_d_outline.svg<>uid://dl0xxvmmoh0xc::::res://addons/input_keys/Keyboard & Mouse/keyboard_e_outline.svg<>uid://uujl4kiahkro::::res://addons/input_keys/Keyboard & Mouse/keyboard_r_outline.svg<>uid://ce3skx3huwd5i::::res://addons/input_keys/Keyboard & Mouse/mouse_left_outline.svg<>uid://bfgvfgu314it::::res://addons/input_keys/Keyboard & Mouse/mouse_right_outline.svg<>uid://dlpm6vvbm84vb::::res://addons/input_keys/Keyboard & Mouse/keyboard_escape_outline.svg
-in_game_settings_ui.tscn::PackedScene::740945887408132444::1735848188::0::1::::<><>::res://scripts/in_game_settings_ui.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
-menu_ui.tscn::PackedScene::8389409339082028331::1735848188::0::1::::<><>::res://scripts/menu_ui.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
-settings_ui.tscn::PackedScene::8889119804241921266::1735848188::0::1::::<><>::uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf<>res://scripts/settings_ui.gd
+in_game_control_ui.tscn::PackedScene::6856587105651861264::1736622000::0::1::::<><>::res://scripts/in_game_control_ui.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf<>uid://d3s6h1iqds386::::res://addons/input_keys/Keyboard & Mouse/keyboard_w_outline.svg<>uid://cxrc33ytjj1gm::::res://addons/input_keys/Keyboard & Mouse/keyboard_a_outline.svg<>uid://daclqqa6tg8w1::::res://addons/input_keys/Keyboard & Mouse/keyboard_s_outline.svg<>uid://6osvipnn23vr::::res://addons/input_keys/Keyboard & Mouse/keyboard_d_outline.svg<>uid://dl0xxvmmoh0xc::::res://addons/input_keys/Keyboard & Mouse/keyboard_e_outline.svg<>uid://uujl4kiahkro::::res://addons/input_keys/Keyboard & Mouse/keyboard_r_outline.svg<>uid://ce3skx3huwd5i::::res://addons/input_keys/Keyboard & Mouse/mouse_left_outline.svg<>uid://bfgvfgu314it::::res://addons/input_keys/Keyboard & Mouse/mouse_right_outline.svg<>uid://dlpm6vvbm84vb::::res://addons/input_keys/Keyboard & Mouse/keyboard_escape_outline.svg
+in_game_settings_ui.tscn::PackedScene::740945887408132444::1736622000::0::1::::<><>::res://scripts/in_game_settings_ui.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
+menu_ui.tscn::PackedScene::8389409339082028331::1736622000::0::1::::<><>::res://scripts/menu_ui.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
+player_customizer.tscn::PackedScene::6218549285501891576::1736633326::0::1::::<><>::res://scripts/player_customizer.gd<>uid://cxrb5fdf0l11j::::res://player/player_shader.tres<>uid://bbdlxty5q5hou::::res://addons/player/player_idle.png<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
+play_ui.tscn::PackedScene::2942058844865276684::1736633326::0::1::::<><>::res://scripts/play_ui.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
+settings_ui.tscn::PackedScene::8889119804241921266::1736631256::0::1::::<><>::uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf<>res://scripts/settings_ui.gd

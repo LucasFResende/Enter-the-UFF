@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cxrb5fdf0l11j"]
+
+[ext_resource type="Shader" path="res://player/player.gdshader" id="1_oam5p"]
+
+[resource]
+shader = ExtResource("1_oam5p")
+shader_parameter/hair_color = Color(0, 0, 0, 1)
+shader_parameter/hair_replace_color = Color(0, 0, 0, 1)
+shader_parameter/shirt_color = Color(0.0666667, 0.0666667, 0.0745098, 1)
+shader_parameter/shirt_replace_color = Color(0.0666667, 0.0666667, 0.0745098, 1)
+shader_parameter/emblem_color = Color(0.415686, 0.745098, 0.188235, 1)
+shader_parameter/emblem_replace_color = Color(0.415686, 0.745098, 0.188235, 1)
+shader_parameter/shorts_color = Color(0.223529, 0.309804, 0.470588, 1)
+shader_parameter/shorts_replace_color = Color(0.223529, 0.309804, 0.470588, 1)
