@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ty5c1t2g3vq1"]
+
+[ext_resource type="Script" path="res://scripts/guns.gd" id="1_hypx7"]
+[ext_resource type="Texture2D" uid="uid://bntnlcrxtxfd2" path="res://addons/guns/deagle.png" id="1_nn4dh"]
+[ext_resource type="Texture2D" uid="uid://c63mir27giy5n" path="res://addons/guns/deagle_icon.png" id="2_0iam3"]
+
+[node name="Deagle" type="Node2D"]
+script = ExtResource("1_hypx7")
+gun_icon = ExtResource("2_0iam3")
+offset_necessary = Vector2(5, 6)
+bullet_position = Vector2(10, -6.667)
+offset_bullet_position = Vector2(10, 12)
+gun_pent = 7
+bag_ammo = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_nn4dh")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+position = Vector2(10, -6.66667)

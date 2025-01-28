@@ -1,11 +1,16 @@
-C:/Users/lucas/Desktop/Enter the UFF/Linux
+res://addons/icon
 C:/Users/lucas/Desktop/Enter the UFF/Windows
 res://scripts
-res://game
+res://objects/rocket bullet
+res://scripts/guns_scripts
+res://objects/flamethrower fire
+res://addons/cursor
+res://objects/grenade
 res://addons/player
+C:/Users/lucas/Desktop/Enter the UFF/Linux
+res://game
 res://
 res://player
-res://addons/cursor
 res://objects/itens
 res://teste
 res://objects/chest
@@ -14,6 +19,4 @@ res://map
 res://UI
 res://addons/procedural map generator
 res://addons/Procedural map generator
-res://addons/icon
 res://addons/enemies
-res://addons

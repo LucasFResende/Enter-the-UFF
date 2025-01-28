@@ -31,8 +31,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if type == types.life:
 			player.life+=1
 			player.health_bar.update_health(player.life,player.max_life)
-			queue_free()
+			call_deferred("queue_free")
 		elif type == types.ammo:
-			player.bag_ammo+=30
-			player.ammo_ui.update_ui(player.actual_ammo,player.bag_ammo)
-			queue_free()
+			if player.gun_spawner.get_child_count() >0:
+				var gun:Gun = player.gun_spawner.get_child(0)
+				gun.bag_ammo+=gun.gun_pent
+				gun.ammo_ui.update_ui(gun.actual_ammo,gun.bag_ammo)
+			call_deferred("queue_free")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbaqdeced58gk"]
+
+[ext_resource type="Script" path="res://scripts/guns_scripts/automatic.gd" id="1_8s3ai"]
+[ext_resource type="Texture2D" uid="uid://df2fc8v5wnli8" path="res://addons/guns/ar halo.png" id="1_t3d30"]
+[ext_resource type="Texture2D" uid="uid://bl1iikwdbs5u8" path="res://addons/guns/ar halo_icon.png" id="2_p6fys"]
+
+[node name="ArHalo" type="Node2D"]
+script = ExtResource("1_8s3ai")
+gun_icon = ExtResource("2_p6fys")
+offset_necessary = Vector2(3, 3)
+bullet_position = Vector2(21, -2.5)
+offset_bullet_position = Vector2(21, 5.5)
+gun_pent = 30
+bag_ammo = 120
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.5, -0.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_t3d30")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+position = Vector2(21, -2.5)
+scale = Vector2(7.69231, 7.69231)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dusrnf8fyvtgp"]
+[gd_scene load_steps=8 format=3 uid="uid://dusrnf8fyvtgp"]
 
 [ext_resource type="PackedScene" uid="uid://pmsnlyqrjkjp" path="res://player/player.tscn" id="1_1wwb4"]
 [ext_resource type="PackedScene" uid="uid://clgr7rfxnessy" path="res://objects/table/vertical_table.tscn" id="2_gsib1"]
 [ext_resource type="PackedScene" uid="uid://iapf7gej3aqc" path="res://objects/table/horizontal_table.tscn" id="3_ntm8i"]
 [ext_resource type="Script" path="res://teste/teste_life.gd" id="5_v1k0b"]
-[ext_resource type="PackedScene" uid="uid://tryuq4p768ab" path="res://enemies/c.tscn" id="6_gcpjx"]
+[ext_resource type="PackedScene" uid="uid://l68250x2rvm1" path="res://enemies/and.tscn" id="6_n4b4n"]
+[ext_resource type="PackedScene" uid="uid://c0t6tu025oq3q" path="res://objects/life_ammo drop/life_ammo__drop.tscn" id="6_wg8gh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uysc"]
 size = Vector2(16, 16)
@@ -90,7 +91,8 @@ offset_bottom = 8.0
 color = Color(0, 0, 1, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Enemies" type="Node" parent="."]
+[node name="LifeAmmoDrop" parent="." instance=ExtResource("6_wg8gh")]
+position = Vector2(0, -48)
 
-[node name="C" parent="Enemies" instance=ExtResource("6_gcpjx")]
-position = Vector2(-80, 0)
+[node name="And" parent="." instance=ExtResource("6_n4b4n")]
+position = Vector2(80, 48)

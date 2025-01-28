@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://clh3q2f13dldi"]
+
+[ext_resource type="Texture2D" uid="uid://owsoddinesry" path="res://addons/guns/revolver.png" id="1_d2xi2"]
+[ext_resource type="Script" path="res://scripts/guns.gd" id="1_hiy6w"]
+[ext_resource type="Texture2D" uid="uid://cluiasd6u57q0" path="res://addons/guns/revolver_icon.png" id="2_dn1o3"]
+
+[node name="Revolver" type="Node2D"]
+script = ExtResource("1_hiy6w")
+gun_icon = ExtResource("2_dn1o3")
+offset_necessary = Vector2(4, 15)
+bullet_position = Vector2(10, 2.5)
+offset_bullet_position = Vector2(10, 5)
+gun_pent = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, -3)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_d2xi2")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+position = Vector2(10, 2.5)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjrmebi7ca2ti"]
+
+[ext_resource type="Texture2D" uid="uid://byvr0kixbduwf" path="res://addons/guns/nerf.png" id="1_481hq"]
+[ext_resource type="Script" path="res://scripts/guns.gd" id="1_j2xm6"]
+[ext_resource type="Texture2D" uid="uid://i2ry1clb2063" path="res://addons/guns/nerf_icon.png" id="2_srpvx"]
+
+[node name="Nerf" type="Node2D"]
+script = ExtResource("1_j2xm6")
+gun_icon = ExtResource("2_srpvx")
+offset_necessary = Vector2(2, 8)
+bullet_position = Vector2(14, 0)
+offset_bullet_position = Vector2(14, 7)
+gun_pent = 5
+bag_ammo = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_481hq")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+position = Vector2(14, 0)

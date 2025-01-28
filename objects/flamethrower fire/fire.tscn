@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2dci0v6qpta3"]
+
+[ext_resource type="Script" path="res://scripts/fire.gd" id="1_l68cv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p1e2y"]
+emission_shape_offset = Vector3(2, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(3, 1, 1)
+spread = 0.0
+initial_velocity_min = 65.0
+initial_velocity_max = 65.0
+gravity = Vector3(0, 0, 0)
+scale_max = 3.0
+color = Color(1, 0, 0.22385, 1)
+turbulence_noise_speed = Vector3(0, -5, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2j66"]
+size = Vector2(67.5, 7.5)
+
+[node name="Fire" type="GPUParticles2D"]
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_p1e2y")
+script = ExtResource("1_l68cv")
+
+[node name="FireArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea"]
+process_mode = 4
+position = Vector2(33.75, 1.25)
+shape = SubResource("RectangleShape2D_p2j66")
+
+[connection signal="body_entered" from="FireArea" to="." method="_on_fire_area_body_entered"]

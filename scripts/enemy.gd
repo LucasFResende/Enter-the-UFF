@@ -8,6 +8,7 @@ var shoot_cooldown:float = 3.0
 @onready var anim_sprite:AnimatedSprite2D = $AnimatedSprite2D
 var is_moving:bool = false
 @onready var find_player:Area2D = $FindPlayer
+var is_burning:bool = false
 
 var shoot_scene:PackedScene = load("res://objects/bullet/bullet.tscn")
 

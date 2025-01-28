@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1736443381
-export_presets.cfg::TextFile::-1::1735840194::0::1::::<><>::
-README.md::TextFile::-1::1732112496::0::1::::<><>::
-tileset.tres::TileSet::8057669237646475746::1736631232::0::1::::<><>::uid://innjy8d3sa5c::::res://addons/tiles/tileset.png<>uid://bjhkpwtt7ues2::::res://addons/tiles/objects_tileset.png
+export_presets.cfg::TextFile::-1::1736645920::0::1::::<><>::
+README.md::TextFile::-1::1736647532::0::1::::<><>::
+tileset.tres::TileSet::8057669237646475746::1737064340::0::1::::<><>::uid://innjy8d3sa5c::::res://addons/tiles/tileset.png<>uid://bjhkpwtt7ues2::::res://addons/tiles/objects_tileset.png
 ::res://addons/::1735324827
 ::res://addons/cursor/::1735570705
 navigation_s.svg::CompressedTexture2D::6655481230946218470::1717599221::1735325330::1::::<><>::
@@ -69,6 +69,44 @@ wifi_walk.png::CompressedTexture2D::8398533569241171271::1730931422::1730931434:
 ::res://addons/fonts/::1731005542
 Perfect DOS VGA 437 Win.ttf::FontFile::4450430195381984397::1219211536::1731005542::1::::<><>::
 Perfect DOS VGA 437.ttf::FontFile::1567785893359091265::1219211542::1731005542::1::::<><>::
+::res://addons/guns/::1736737628
+ar halo.png::CompressedTexture2D::7566253392285154725::1737557748::1737560962::1::::<><>::
+ar halo_icon.png::CompressedTexture2D::3212672366967966401::1737557756::1737560972::1::::<><>::
+ar.png::CompressedTexture2D::2238922377737041002::1671229872::1737560936::1::::<><>::
+ar_icon.png::CompressedTexture2D::5269544131602679471::1737555976::1737560924::1::::<><>::
+aug.png::CompressedTexture2D::4095818354587842405::1671229192::1737560986::1::::<><>::
+aug_icon.png::CompressedTexture2D::4788691656995788283::1737557790::1737560996::1::::<><>::
+barret.png::CompressedTexture2D::7424471920182144071::1671453426::1737560796::1::::<><>::
+barret_icon.png::CompressedTexture2D::3241221497798856209::1737555934::1737560782::1::::<><>::
+deagle.png::CompressedTexture2D::3338907925333266077::1671626802::1736788830::1::::<><>::
+deagle_icon.png::CompressedTexture2D::7007241923612282953::1737557846::1737558110::1::::<><>::
+empty_grenade_icon.png::CompressedTexture2D::3164603203332240797::1737985024::1737985032::1::::<><>::
+flamethrower.png::CompressedTexture2D::5204577716417494423::1736737518::1736788830::1::::<><>::
+flamethrower_icon.png::CompressedTexture2D::3360543782793378739::1737557874::1737558110::1::::<><>::
+grenade.png::CompressedTexture2D::1449966968393829142::1736737558::1736788830::1::::<><>::
+grenade_icon.png::CompressedTexture2D::35990699243694263::1737984502::1737984526::1::::<><>::
+lightsaber_blue.png::CompressedTexture2D::7375433072273766856::1736737470::1736789444::1::::<><>::
+lightsaber_blue_icon.png::CompressedTexture2D::5513752991215522708::1737557960::1737558110::1::::<><>::
+lightsaber_red.png::CompressedTexture2D::565620154695444870::1736737436::1736789444::1::::<><>::
+lightsaber_red_icon.png::CompressedTexture2D::7054851885910455744::1737557982::1737558110::1::::<><>::
+machine pistol.png::CompressedTexture2D::8237411114510546537::1671115816::1737560712::1::::<><>::
+machine pistol_icon.png::CompressedTexture2D::6622326705758391333::1737558174::1737560694::1::::<><>::
+nerf.png::CompressedTexture2D::4115382236204215497::1737557888::1737560654::1::::<><>::
+nerf_icon.png::CompressedTexture2D::618325365593550182::1737557902::1737560668::1::::<><>::
+pistol.png::CompressedTexture2D::5787356158545111703::1671628010::1737560616::1::::<><>::
+pistol_icon.png::CompressedTexture2D::2939564066143558071::1737558010::1737560628::1::::<><>::
+plasma pistol.png::CompressedTexture2D::5551507182454948791::1671117248::1737560582::1::::<><>::
+plasma pistol_icon.png::CompressedTexture2D::2928546524065101709::1737558030::1737560590::1::::<><>::
+pump shotgun.png::CompressedTexture2D::4192567493654275691::1671283730::1737560536::1::::<><>::
+pump shotgun_icon.png::CompressedTexture2D::8260665828384491263::1737557934::1737560550::1::::<><>::
+revolver.png::CompressedTexture2D::1029178191091731410::1671057506::1737560494::1::::<><>::
+revolver_icon.png::CompressedTexture2D::5586692889919042953::1737557820::1737560456::1::::<><>::
+rocket launcher.png::CompressedTexture2D::2470988953968010138::1737558052::1737560428::1::::<><>::
+rocket launcher_icon.png::CompressedTexture2D::4208174392849305841::1737558068::1737560408::1::::<><>::
+shotgun.png::CompressedTexture2D::4391578192357537984::1671228750::1737560382::1::::<><>::
+shotgun_icon.png::CompressedTexture2D::6406904021168126735::1737558196::1737560368::1::::<><>::
+sniper.png::CompressedTexture2D::2646047448242832347::1737558150::1737558204::1::::<><>::
+sniper_icon.png::CompressedTexture2D::6718349740132585119::1737558150::1737558204::1::::<><>::
 ::res://addons/icon/::1730572393
 enter_the_uff_icon.png::CompressedTexture2D::4670927009657528137::1727747448::1730572398::1::::<><>::
 ::res://addons/input_keys/::1735324936
@@ -624,12 +662,14 @@ trace_07_rotated.png::CompressedTexture2D::3545508025957298004::1734972290::1734
 player_death.png::CompressedTexture2D::2118865883337201588::1736446097::1736446100::1::::<><>::
 player_flip_table.png::CompressedTexture2D::3165008087585099274::1736446173::1736446539::1::::<><>::
 player_idle.png::CompressedTexture2D::2463512657178147004::1736445960::1736445922::1::::<><>::
+player_idle_hand.png::CompressedTexture2D::1379629987801187267::1736699262::1736699272::1::::<><>::
 player_idle_one_hand.png::CompressedTexture2D::6068153830180776411::1736446244::1736446539::1::::<><>::
 player_idle_two_hand.png::CompressedTexture2D::5504227934953531948::1736446292::1736446539::1::::<><>::
 player_roll.png::CompressedTexture2D::9107011930354698468::1736446375::1736446539::1::::<><>::
 player_shadow.png::CompressedTexture2D::5542459079857901032::1729720560::1730572356::1::::<><>::
 player_table_slide.png::CompressedTexture2D::5160268689438145555::1736446390::1736446539::1::::<><>::
 player_walk.png::CompressedTexture2D::8596563483502695182::1736446442::1736446539::1::::<><>::
+player_walk_hand.png::CompressedTexture2D::5263526892621753700::1736699192::1736699272::1::::<><>::
 player_walk_one_hand.png::CompressedTexture2D::3919979043893247835::1736446536::1736446539::1::::<><>::
 player_walk_two_hand.png::CompressedTexture2D::549981304977994333::1736446494::1736446539::1::::<><>::
 ::res://addons/procedural map generator/::1734972303
@@ -690,62 +730,97 @@ wifi.tscn::PackedScene::7179449410727728348::1735843769::0::1::::<><>::res://scr
 ::res://game/::1736447186
 game.gd::GDScript::-1::1736631694::0::1::::<>Node<>::
 game.tscn::PackedScene::5356516775290887151::1736633322::0::1::::<><>::res://game/game.gd<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
+::res://guns/::1736789061
+ar.tscn::PackedScene::3338073150537956328::1737560932::0::1::::<><>::uid://65syvp2rvjwc::::res://addons/guns/ar.png<>res://scripts/guns_scripts/automatic.gd<>uid://chcuve8ofb576::::res://addons/guns/ar_icon.png
+ar_halo.tscn::PackedScene::2457586569967089146::1737560968::0::1::::<><>::res://scripts/guns_scripts/automatic.gd<>uid://df2fc8v5wnli8::::res://addons/guns/ar halo.png<>uid://bl1iikwdbs5u8::::res://addons/guns/ar halo_icon.png
+aug.tscn::PackedScene::487728345101727933::1737560992::0::1::::<><>::res://scripts/guns_scripts/semi_automatic.gd<>uid://bymbsas61l7pp::::res://addons/guns/aug.png<>uid://cahxb1cafgdsl::::res://addons/guns/aug_icon.png
+barret.tscn::PackedScene::3558586816605235294::1737560804::0::1::::<><>::uid://dd1p751jjjo52::::res://addons/guns/barret.png<>res://scripts/guns_scripts/sniper.gd<>uid://bmgcpd4ota60t::::res://addons/guns/barret_icon.png
+deagle.tscn::PackedScene::1384959572785141102::1737560760::0::1::::<><>::res://scripts/guns.gd<>uid://bntnlcrxtxfd2::::res://addons/guns/deagle.png<>uid://c63mir27giy5n::::res://addons/guns/deagle_icon.png
+flamethrower.tscn::PackedScene::2987335775028425931::1738090430::0::1::::<><>::res://scripts/guns_scripts/flamethrower.gd<>uid://cgfevtt75tuh8::::res://addons/guns/flamethrower.png<>uid://bn44wu46fme32::::res://addons/guns/flamethrower_icon.png<>uid://c2dci0v6qpta3::::res://objects/flamethrower fire/fire.tscn
+grenade.tscn::PackedScene::7816177001713394881::1737994618::0::1::::<><>::res://scripts/guns_scripts/grenade.gd<>uid://uwm0khfgsj6e::::res://addons/guns/grenade.png
+lightsaber_blue.tscn::PackedScene::6188280913886794869::1737984372::0::1::::<><>::uid://ddcykm0clxobg::::res://addons/guns/lightsaber_blue.png<>res://scripts/guns_scripts/sword.gd<>uid://cks5yamlbk7ka::::res://addons/guns/lightsaber_blue_icon.png
+lightsaber_red.tscn::PackedScene::2806092371637822325::1737984370::0::1::::<><>::res://scripts/guns_scripts/sword.gd<>uid://ib8xfugw40mc::::res://addons/guns/lightsaber_red.png<>uid://c7rom6dadir7m::::res://addons/guns/lightsaber_red_icon.png
+machine_pistol.tscn::PackedScene::7790557730521328970::1737560720::0::1::::<><>::res://scripts/guns.gd<>uid://dpmi7s60o3ph6::::res://addons/guns/machine pistol.png<>uid://c1l50u3daged6::::res://addons/guns/machine pistol_icon.png
+nerf.tscn::PackedScene::5440371195374750490::1737560672::0::1::::<><>::uid://byvr0kixbduwf::::res://addons/guns/nerf.png<>res://scripts/guns.gd<>uid://i2ry1clb2063::::res://addons/guns/nerf_icon.png
+pistol.tscn::PackedScene::8305078129554261772::1737560634::0::1::::<><>::uid://copo57n5fhatj::::res://addons/guns/pistol.png<>res://scripts/guns.gd<>uid://bh47gqpa4dal0::::res://addons/guns/pistol_icon.png
+plasma_pistol.tscn::PackedScene::6892589447523237956::1737560598::0::1::::<><>::res://scripts/guns.gd<>uid://cldgrod5iec12::::res://addons/guns/plasma pistol.png<>uid://bhyuy618il2bh::::res://addons/guns/plasma pistol_icon.png
+pump_shotgun.tscn::PackedScene::8188139168936055931::1737560558::0::1::::<><>::uid://b0y58ebgpfnxr::::res://addons/guns/pump shotgun.png<>res://scripts/guns_scripts/shotgun.gd<>uid://dpxr7u7eudjad::::res://addons/guns/pump shotgun_icon.png
+revolver.tscn::PackedScene::5561099367256261234::1737560500::0::1::::<><>::uid://owsoddinesry::::res://addons/guns/revolver.png<>res://scripts/guns.gd<>uid://cluiasd6u57q0::::res://addons/guns/revolver_icon.png
+rocket_launcher.tscn::PackedScene::7658335585830539161::1737560428::0::1::::<><>::res://scripts/guns.gd<>uid://bbg73ecurftaw::::res://addons/guns/rocket launcher.png<>uid://b07qaufaae618::::res://addons/guns/rocket launcher_icon.png
+shotgun.tscn::PackedScene::5047227287834917938::1737560378::0::1::::<><>::uid://b3tkwe2gcku1m::::res://addons/guns/shotgun.png<>res://scripts/guns_scripts/shotgun.gd<>uid://cxjs1j1utd5rn::::res://addons/guns/shotgun_icon.png
+sniper.tscn::PackedScene::8532970602410725306::1737560316::0::1::::<><>::res://scripts/guns_scripts/sniper.gd<>uid://bdx1arg36x07p::::res://addons/guns/sniper.png<>uid://c2yoid5fxahox::::res://addons/guns/sniper_icon.png
 ::res://map/::1736447186
 uff_floor1.tscn::PackedScene::5198977002598203569::1736633324::0::1::::<><>::uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd<>res://scripts/go_up_go_down_stairs.gd<>uid://tryuq4p768ab::::res://enemies/c.tscn<>uid://ilf0ts5imkai::::res://enemies/derivada.tscn<>uid://dq2fubc3uhbks::::res://enemies/ponto_virgula.tscn<>uid://bgnh17d8m37j8::::res://enemies/ucp.tscn<>uid://8wgb7g5mtai::::res://enemies/vetor.tscn<>uid://ckdlp2kmiiut3::::res://enemies/integral.tscn<>uid://l68250x2rvm1::::res://enemies/and.tscn<>uid://dpcbesietak7y::::res://enemies/matriz.tscn<>uid://dkyvjc8imc8y0::::res://enemies/arvore.tscn<>uid://dku481ngfy3u2::::res://enemies/oo.tscn<>uid://wpyig5f8v65n::::res://enemies/java.tscn<>uid://dhnarr0ufwc52::::res://enemies/o(n).tscn<>uid://c2iplqn1v41rd::::res://enemies/uml.tscn<>uid://brqs02dddqb3e::::res://enemies/r.tscn<>uid://c1ambe14e6ec5::::res://enemies/c++.tscn<>uid://bvwd6g1nuv6rt::::res://enemies/automato.tscn<>uid://b20rbjocbqa8t::::res://enemies/sql.tscn<>uid://buveoql63w6pb::::res://enemies/tcp.tscn
 uff_floor2.tscn::PackedScene::3109627933742529228::1734987530::0::1::::<><>::uid://dm2gvuged0e71::::res://tileset.tres<>uid://pmsnlyqrjkjp::::res://player/player.tscn<>res://scripts/go_to_scene.gd<>res://scripts/go_up_go_down_stairs.gd<>uid://daj1qogqssu0k::::res://enemies/wifi.tscn<>uid://b20rbjocbqa8t::::res://enemies/sql.tscn
 ::res://objects/::1735323501
 ::res://objects/bullet/::1734987530
-bullet.tscn::PackedScene::7021923577339743816::1734987530::0::1::::<><>::res://scripts/bullet.gd
+bullet.tscn::PackedScene::7021923577339743816::1737064340::0::1::::<><>::res://scripts/bullet.gd
 ::res://objects/chest/::1735400306
 chest.tscn::PackedScene::8899037488081016868::1735400306::0::1::::<><>::res://scripts/chest.gd<>uid://bg4nkk5nuqmx4::::res://addons/objects/chest.png<>uid://bnkiuywd3mi6v::::res://objects/itens/ssd.tscn<>uid://bddjgwm0w0xck::::res://objects/itens/pendrive.tscn<>uid://bmsetn3spvcdm::::res://objects/itens/nvme.tscn<>uid://b3p1tukliho5n::::res://UI/interect_ui.tscn<>uid://iy3p7wsmn0o2::::res://objects/itens/hd.tscn
+::res://objects/flamethrower fire/::1738088649
+fire.tscn::PackedScene::6674270346167165312::1738090432::0::1::::<><>::res://scripts/fire.gd
+::res://objects/grenade/::1737986566
+grenade_object.tscn::PackedScene::3896015769794686176::1737994648::0::1::::<><>::res://scripts/grenade_object.gd<>uid://uwm0khfgsj6e::::res://addons/guns/grenade.png
 ::res://objects/itens/::1735570977
 hd.tscn::PackedScene::612784393475043907::1735570977::0::1::::<><>::uid://cbdobu7nl4gwn::::res://addons/objects/hd.png<>uid://b3p1tukliho5n::::res://UI/interect_ui.tscn<>res://scripts/item.gd<>uid://bs7m0nujq4iej::::res://addons/particles/star_09.png
 nvme.tscn::PackedScene::3266123131874610514::1735570977::0::1::::<><>::uid://brrwyl4p34tgo::::res://addons/objects/nvme.png<>res://scripts/item.gd<>uid://b3p1tukliho5n::::res://UI/interect_ui.tscn<>uid://bs7m0nujq4iej::::res://addons/particles/star_09.png
 pendrive.tscn::PackedScene::2603738690785355506::1735570977::0::1::::<><>::uid://l4xhyggow5gd::::res://addons/objects/pendrive.png<>res://scripts/item.gd<>uid://b3p1tukliho5n::::res://UI/interect_ui.tscn<>uid://bs7m0nujq4iej::::res://addons/particles/star_09.png
 ssd.tscn::PackedScene::3320042175068655699::1735570977::0::1::::<><>::uid://ct3enjom5oc6u::::res://addons/objects/ssd.png<>res://scripts/item.gd<>uid://b3p1tukliho5n::::res://UI/interect_ui.tscn<>uid://bs7m0nujq4iej::::res://addons/particles/star_09.png
 ::res://objects/life_ammo drop/::1735310712
-life_ammo__drop.tscn::PackedScene::6568702882878630392::1735310712::0::1::::<><>::uid://mjmpjl30tuu::::res://addons/particles/circle_05.png<>res://scripts/life_ammo_drop.gd
+life_ammo__drop.tscn::PackedScene::6568702882878630392::1737066300::0::1::::<><>::uid://mjmpjl30tuu::::res://addons/particles/circle_05.png<>res://scripts/life_ammo_drop.gd
 ::res://objects/table/::1735327560
 horizontal_table.tscn::PackedScene::562432123176181394::1735327560::0::1::::<><>::uid://7k14yxyllmxr::::res://addons/objects/table_horizontal.png<>res://scripts/table.gd<>uid://cnkpuepb6lnfe::::res://addons/objects/table_horizontal2.png
 vertical_table.tscn::PackedScene::5558395149894443860::1731019808::0::1::::<><>::res://scripts/table.gd<>uid://dwk1b0x82kwef::::res://addons/objects/table_vertical.png
 ::res://player/::1736447256
-player.gdshader::Shader::-1::1736633382::0::1::::<><>::
-player.tscn::PackedScene::1078721924391970753::1736633324::0::1::::<><>::res://scripts/player.gd<>uid://cxrb5fdf0l11j::::res://player/player_shader.tres<>uid://ck72qx6lvlmhc::::res://addons/player/player_shadow.png<>uid://5gnn8yyguy33::::res://addons/player/player_death.png<>uid://bldfhrh5mpvdy::::res://addons/player/player_flip_table.png<>uid://bbdlxty5q5hou::::res://addons/player/player_idle.png<>uid://d20rfkjex65nk::::res://addons/player/player_roll.png<>uid://cfrw4vlekjav8::::res://addons/player/player_table_slide.png<>uid://duqie6flyhuda::::res://addons/player/player_walk.png<>uid://wdrpal760xae::::res://UI/health_bar.tscn<>uid://0sbus5m66axk::::res://UI/change_scene.tscn<>uid://bv41mu5ato7ay::::res://UI/ammo_ui.tscn
-player_shader.tres::ShaderMaterial::6422393751202089261::1736633320::0::1::::<><>::res://player/player.gdshader
+player.gdshader::Shader::-1::1738090432::0::1::::<><>::
+player.tscn::PackedScene::1078721924391970753::1738090430::0::1::::<><>::res://scripts/player.gd<>uid://cxrb5fdf0l11j::::res://player/player_shader.tres<>uid://ck72qx6lvlmhc::::res://addons/player/player_shadow.png<>uid://5gnn8yyguy33::::res://addons/player/player_death.png<>uid://bldfhrh5mpvdy::::res://addons/player/player_flip_table.png<>uid://bbdlxty5q5hou::::res://addons/player/player_idle.png<>uid://d20rfkjex65nk::::res://addons/player/player_roll.png<>uid://cfrw4vlekjav8::::res://addons/player/player_table_slide.png<>uid://duqie6flyhuda::::res://addons/player/player_walk.png<>uid://wdrpal760xae::::res://UI/health_bar.tscn<>uid://0sbus5m66axk::::res://UI/change_scene.tscn<>uid://twkkl2qvx8o2::::res://addons/player/player_idle_hand.png<>uid://bv41mu5ato7ay::::res://UI/ammo_ui.tscn<>uid://cg8xrv4i5dai3::::res://addons/player/player_walk_hand.png
+player_shader.tres::ShaderMaterial::6422393751202089261::1738086610::0::1::::<><>::res://player/player.gdshader
 ::res://room/::1736447186
 exit.tscn::PackedScene::6259478563601508210::1735570977::0::1::::<><>::res://scripts/go_back.gd
 room.tscn::PackedScene::1631825930193327396::1736633324::0::1::::<><>::res://scripts/room.gd<>uid://dm2gvuged0e71::::res://tileset.tres<>res://scripts/enter_room.gd
 ::res://scripts/::1736443381
-ammo_ui.gd::GDScript::-1::1730748464::0::1::::<>CanvasLayer<>::
-bullet.gd::GDScript::-1::1735309945::0::1::::Shoot<>Area2D<>::
+ammo_ui.gd::GDScript::-1::1737985664::0::1::::<>CanvasLayer<>::
+bullet.gd::GDScript::-1::1737064340::0::1::::Shoot<>Area2D<>::
 change_scene.gd::GDScript::-1::1735568963::0::1::::<>CanvasLayer<>::
 chest.gd::GDScript::-1::1735570145::0::1::::<>StaticBody2D<>::
 control_ui.gd::GDScript::-1::1735848603::0::1::::<>CanvasLayer<>::
-enemy.gd::GDScript::-1::1735568446::0::1::::Enemy<>CharacterBody2D<>::
+enemy.gd::GDScript::-1::1738088792::0::1::::Enemy<>CharacterBody2D<>::
 enter_room.gd::GDScript::-1::1734976827::0::1::::<>Area2D<>::
-game_manager.gd::GDScript::-1::1736632662::0::1::::<>Node<>::
+fire.gd::GDScript::-1::1738088864::0::1::::<>GPUParticles2D<>::
+game_manager.gd::GDScript::-1::1738089562::0::1::::<>Node<>::
 go_back.gd::GDScript::-1::1735569738::0::1::::<>Area2D<>::
-go_to_scene.gd::GDScript::-1::1736631232::0::1::::<>Area2D<>::
-go_up_go_down_stairs.gd::GDScript::-1::1735843663::0::1::::<>Area2D<>::
+go_to_scene.gd::GDScript::-1::1737981718::0::1::::<>Area2D<>::
+go_up_go_down_stairs.gd::GDScript::-1::1737066298::0::1::::<>Area2D<>::
+grenade_object.gd::GDScript::-1::1737991570::0::1::::Grenade<>StaticBody2D<>::
+guns.gd::GDScript::-1::1737994614::0::1::::Gun<>Node2D<>::
 health_bar.gd::GDScript::-1::1730747296::0::1::::<>HBoxContainer<>::
 in_game_control_ui.gd::GDScript::-1::1735848102::0::1::::<>CanvasLayer<>::
 in_game_settings_ui.gd::GDScript::-1::1735847993::0::1::::<>CanvasLayer<>::
 item.gd::GDScript::-1::1735398387::0::1::::Item<>Sprite2D<>::
-life_ammo_drop.gd::GDScript::-1::1735311087::0::1::::<>Node2D<>::
+life_ammo_drop.gd::GDScript::-1::1737062966::0::1::::<>Node2D<>::
 map_generator.gd::GDScript::-1::1735566728::0::1::::<>Node2D<>::
 menu_ui.gd::GDScript::-1::1735848180::0::1::::<>CanvasLayer<>::
-player.gd::GDScript::-1::1736632810::0::1::::Player<>CharacterBody2D<>::
+player.gd::GDScript::-1::1737994486::0::1::::Player<>CharacterBody2D<>::
 player_customizer.gd::GDScript::-1::1736633322::0::1::::<>CanvasLayer<>::
 play_ui.gd::GDScript::-1::1736632040::0::1::::<>CanvasLayer<>::
 room.gd::GDScript::-1::1735570095::0::1::::<>Node2D<>::
 settings_ui.gd::GDScript::-1::1736632232::0::1::::<>CanvasLayer<>::
 table.gd::GDScript::-1::1735311476::0::1::::<>Node<>::
+::res://scripts/guns_scripts/::1736881429
+automatic.gd::GDScript::-1::1736882606::0::1::::<>Gun<>::
+flamethrower.gd::GDScript::-1::1738090430::0::1::::<>Gun<>::
+grenade.gd::GDScript::-1::1737994224::0::1::::<>Node2D<>::
+rocket_launcher.gd::GDScript::-1::1738091414::0::1::::<>Gun<>::
+semi_automatic.gd::GDScript::-1::1736883812::0::1::::<>Gun<>::
+shotgun.gd::GDScript::-1::1737994590::0::1::::<>Gun<>::
+sniper.gd::GDScript::-1::1736884282::0::1::::<>Gun<>::
+sword.gd::GDScript::-1::1737984342::0::1::::<>Gun<>::
 ::res://teste/::1735570977
-teste.tscn::PackedScene::8601253441466213551::1734987530::0::1::::<><>::uid://pmsnlyqrjkjp::::res://player/player.tscn<>uid://clgr7rfxnessy::::res://objects/table/vertical_table.tscn<>uid://iapf7gej3aqc::::res://objects/table/horizontal_table.tscn<>res://teste/teste_life.gd<>uid://tryuq4p768ab::::res://enemies/c.tscn
-teste_item.tscn::PackedScene::8931151590975430591::1735570977::0::1::::<><>::uid://pmsnlyqrjkjp::::res://player/player.tscn<>uid://bddjgwm0w0xck::::res://objects/itens/pendrive.tscn<>uid://iy3p7wsmn0o2::::res://objects/itens/hd.tscn<>uid://dy1032o3dyusa::::res://objects/chest/chest.tscn<>uid://bnkiuywd3mi6v::::res://objects/itens/ssd.tscn<>uid://bmsetn3spvcdm::::res://objects/itens/nvme.tscn
+teste.tscn::PackedScene::8601253441466213551::1737984226::0::1::::<><>::uid://pmsnlyqrjkjp::::res://player/player.tscn<>uid://clgr7rfxnessy::::res://objects/table/vertical_table.tscn<>uid://iapf7gej3aqc::::res://objects/table/horizontal_table.tscn<>res://teste/teste_life.gd<>uid://l68250x2rvm1::::res://enemies/and.tscn<>uid://c0t6tu025oq3q::::res://objects/life_ammo drop/life_ammo__drop.tscn
+teste_item.tscn::PackedScene::8931151590975430591::1738090432::0::1::::<><>::uid://pmsnlyqrjkjp::::res://player/player.tscn<>uid://bddjgwm0w0xck::::res://objects/itens/pendrive.tscn<>uid://iy3p7wsmn0o2::::res://objects/itens/hd.tscn<>uid://dy1032o3dyusa::::res://objects/chest/chest.tscn<>uid://bnkiuywd3mi6v::::res://objects/itens/ssd.tscn<>uid://bmsetn3spvcdm::::res://objects/itens/nvme.tscn<>uid://bvri2s7omd177::::res://objects/grenade/grenade_object.tscn
 teste_life.gd::GDScript::-1::1734976827::0::1::::<>Area2D<>::
 ::res://UI/::1736447187
-ammo_ui.tscn::PackedScene::3921854523135414456::1734729262::0::1::::<><>::res://scripts/ammo_ui.gd<>uid://3g5tjs2013f3::::res://addons/ui/gum_frame.png<>uid://8l76rk52gv43::::res://addons/ui/pistol_ammo.png<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
+ammo_ui.tscn::PackedScene::3921854523135414456::1738090430::0::1::::<><>::res://scripts/ammo_ui.gd<>uid://3g5tjs2013f3::::res://addons/ui/gum_frame.png<>uid://8l76rk52gv43::::res://addons/ui/pistol_ammo.png<>uid://blc7s1tyd0q6h::::res://addons/guns/empty_grenade_icon.png<>uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf
 change_scene.tscn::PackedScene::1791977315747055744::1735571244::0::1::::<><>::res://scripts/change_scene.gd<>uid://b4n2618inxka4::::res://addons/fonts/Perfect DOS VGA 437 Win.ttf
 control_ui.tscn::PackedScene::5173865788378028250::1736621998::0::1::::<><>::uid://wlpg7r5avxq4::::res://addons/fonts/Perfect DOS VGA 437.ttf<>res://scripts/control_ui.gd<>uid://d3s6h1iqds386::::res://addons/input_keys/Keyboard & Mouse/keyboard_w_outline.svg<>uid://cxrc33ytjj1gm::::res://addons/input_keys/Keyboard & Mouse/keyboard_a_outline.svg<>uid://daclqqa6tg8w1::::res://addons/input_keys/Keyboard & Mouse/keyboard_s_outline.svg<>uid://6osvipnn23vr::::res://addons/input_keys/Keyboard & Mouse/keyboard_d_outline.svg<>uid://dl0xxvmmoh0xc::::res://addons/input_keys/Keyboard & Mouse/keyboard_e_outline.svg<>uid://uujl4kiahkro::::res://addons/input_keys/Keyboard & Mouse/keyboard_r_outline.svg<>uid://ce3skx3huwd5i::::res://addons/input_keys/Keyboard & Mouse/mouse_left_outline.svg<>uid://bfgvfgu314it::::res://addons/input_keys/Keyboard & Mouse/mouse_right_outline.svg<>uid://dlpm6vvbm84vb::::res://addons/input_keys/Keyboard & Mouse/keyboard_escape_outline.svg
 health_bar.tscn::PackedScene::1551406687573712856::1735569754::0::1::::<><>::res://scripts/health_bar.gd

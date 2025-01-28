@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-var shoot_scene:PackedScene = load("res://objects/bullet/bullet.tscn")
+
 var menu_scene:PackedScene = load("res://UI/menu_ui.tscn")
 
 @export var SPEED:int = 3
@@ -18,17 +18,21 @@ var is_flipping:bool = false
 var flipping_cooldown:float = 0.8
 var death_cooldown:float = 0
 var can_shoot:bool = false
+var is_holding_grenade:bool = false
 
 @onready var anim:AnimatedSprite2D = $AnimatedSprite2D
+@onready var anim_hand:AnimatedSprite2D = $HandAnimation
+@onready var anim_comp:AnimationPlayer = $AnimationPlayer
 @onready var ammo_ui:CanvasLayer = $Camera2D/AmmoUi
 @onready var no_enemy:Area2D = $NoEnemy
 @onready var change_scene:CanvasLayer = $Camera2D/ChangeScene
+@onready var gun_spawner:Marker2D = $SpawGun
+
 @export var life:int = 6
 var max_life:int = 7
 
-var actual_ammo:int = 7
-var gum_pent:int = 7
-var bag_ammo:int = 60
+var max_grenades = 3
+var actual_grenades = 3
 
 @onready var health_bar = $Camera2D/HealthBar/Health
 
@@ -41,7 +45,13 @@ var items: Dictionary
 
 func _ready() -> void:
 	GameManager.is_in_game = true
-	ammo_ui.update_ui(actual_ammo,bag_ammo)
+	var gun:Gun = GameManager.player_actual_gun
+	print(gun,GameManager.player_actual_gun)
+	#gun = GameManager.player_actual_gun
+	gun_spawner.add_child(GameManager.player_actual_gun)
+	gun.ammo_ui.update_gun_ui(gun.actual_ammo,gun.bag_ammo,gun.gun_icon)
+	ammo_ui.update_grenade_ui(actual_grenades)
+
 	no_enemy.body_entered.connect(on_no_enemy_body_entered)
 	material.set("shader_parameter/hair_replace_color",GameManager.player_custom_hair)
 	material.set("shader_parameter/shirt_replace_color",GameManager.player_custom_shirt)
@@ -61,6 +71,17 @@ func _physics_process(delta: float) -> void:
 			get_tree().change_scene_to_file(GameManager.return_scene_path)
 		return
 	health_bar.update_health(life,max_life)
+	if Input.is_action_just_pressed("grenade"):
+		if is_holding_grenade:
+			is_holding_grenade = false
+			gun_spawner.get_child(1).queue_free()
+			gun_spawner.get_child(0).visible = true
+			gun_spawner.get_child(0).process_mode = Node.PROCESS_MODE_INHERIT
+		elif !is_holding_grenade:
+			gun_spawner.get_child(0).visible = false
+			gun_spawner.get_child(0).process_mode = Node.PROCESS_MODE_DISABLED
+			gun_spawner.get_child(0).add_sibling(load("res://guns/grenade.tscn").instantiate())
+			is_holding_grenade = true
 	if is_sliding:
 		process_table_slide(delta)
 		return
@@ -77,11 +98,8 @@ func _physics_process(delta: float) -> void:
 		rollin_cooldow=1.6
 		is_rolling = false
 	process_input()
-	if Input.is_action_just_pressed("reload") and actual_ammo<gum_pent:
-		bag_ammo-=(gum_pent-actual_ammo)
-		actual_ammo=gum_pent
-		ammo_ui.update_ui(actual_ammo,bag_ammo)
-	fire()
+	
+
 	ver_angle()
 	if input and !is_sliding:
 		is_moving = true
@@ -91,6 +109,7 @@ func _physics_process(delta: float) -> void:
 		is_moving = false
 		
 	move_and_slide()
+	
 	for i in get_slide_collision_count():
 		collision = get_slide_collision(i).get_collider()
 		if (collision.name == "VerticalTable" or collision.name == "HorizontalTable") and Input.is_action_just_pressed("mouse2"):
@@ -100,12 +119,6 @@ func _physics_process(delta: float) -> void:
 		elif (collision.name == "VerticalTable" or collision.name == "HorizontalTable") and Input.is_action_just_pressed("interact"):
 			flip_table()
 
-func fire():
-	if Input.is_action_just_pressed("mouse1") and actual_ammo>0 and !can_shoot:
-		actual_ammo-=1
-		shoot()
-		ammo_ui.update_ui(actual_ammo,bag_ammo)
-		
 
 func process_input():
 	input = Input.get_vector("left","right","up","down")
@@ -137,86 +150,77 @@ func play_animation():
 	if is_moving:
 		if Input.is_action_just_pressed("mouse2"):
 			if input == Vector2(1,0):
-				anim.flip_h = false
-				anim.play("roll_front2")
+				play_animationplayer("roll_front2",false)
 				is_rolling = true
 			if input == Vector2(1,1):
-				anim.flip_h = false
-				anim.play("roll_front2")
+				play_animationplayer("roll_front2",false)
 				is_rolling = true
 			if input == Vector2(0,1):
-				anim.flip_h = false
-				anim.play("roll_front1")
+				play_animationplayer("roll_front1",false)
 				is_rolling = true
 			if input == Vector2(-1,1):
-				anim.flip_h = true
-				anim.play("roll_front2")
+				play_animationplayer("roll_front2",true)
 				is_rolling = true
 			if input == Vector2(-1,0):
-				anim.flip_h = true
-				anim.play("roll_front2")
+				play_animationplayer("roll_front2",true)
 				is_rolling = true
 			if input == Vector2(-1,-1):
-				anim.flip_h = true
-				anim.play("roll_back2")
+				play_animationplayer("roll_back2",true)
 				is_rolling = true
 			if input == Vector2(0,-1):
-				anim.flip_h = false
-				anim.play("roll_back1")
+				play_animationplayer("roll_back1",false)
 				is_rolling = true
 			if input == Vector2(1,-1):
-				anim.flip_h = false
-				anim.play("roll_back2")
+				play_animationplayer("roll_back2",false)
 				is_rolling = true
 		if angle< 341 and angle>307 and !is_rolling:
-			anim.flip_h = false
-			anim.play("walk_back2")
+			play_animationplayer("walk_back2",false)
+			
 		if angle<307 and angle>270 and !is_rolling:
-			anim.flip_h = false
-			anim.play("walk_back1")
+			play_animationplayer("walk_back1",false)
+			
 		if angle<270 and angle>230 and !is_rolling:
-			anim.flip_h = true
-			anim.play("walk_back1")
+			play_animationplayer("walk_back1",true)
+			
 		if angle<230 and angle>198 and !is_rolling:
-			anim.flip_h = true
-			anim.play("walk_back2")
+			play_animationplayer("walk_back2",true)
+			
 		if angle<198 and angle>121 and !is_rolling:
-			anim.flip_h = true
-			anim.play("walk_front2")
+			play_animationplayer("walk_front2",true)
+			
 		if angle<121 and angle>90 and !is_rolling:
-			anim.flip_h = true
-			anim.play("walk_front1")
+			play_animationplayer("walk_front1",true)
+			
 		if angle<90 and angle>56 and !is_rolling:
-			anim.flip_h = false
-			anim.play("walk_front1")
+			play_animationplayer("walk_front1",false)
+			
 		if angle<56 and (angle>0 or angle>341) and !is_rolling:
-			anim.flip_h = false
-			anim.play("walk_front2")
+			play_animationplayer("walk_front2",false)
+			
 	else:
 		if angle< 341 and angle>307 and !is_rolling:
-			anim.flip_h = false
-			anim.play("idle_back2")
+			play_animationplayer("idle_back2",false)
+			
 		if angle<307 and angle>270 and !is_rolling:
-			anim.flip_h = false
-			anim.play("idle_back1")
+			play_animationplayer("idle_back1",false)
+			
 		if angle<270 and angle>230 and !is_rolling:
-			anim.flip_h = true
-			anim.play("idle_back1")
+			play_animationplayer("idle_back1",true)
+			
 		if angle<230 and angle>198 and !is_rolling:
-			anim.flip_h = true
-			anim.play("idle_back2")
+			play_animationplayer("idle_back2",true)
+			
 		if angle<198 and angle>121 and !is_rolling:
-			anim.flip_h = true
-			anim.play("idle_front2")
+			play_animationplayer("idle_front2",true)
+			
 		if angle<121 and angle>90 and !is_rolling:
-			anim.flip_h = true
-			anim.play("idle_front1")
+			play_animationplayer("idle_front1",true)
+			
 		if angle<90 and angle>56 and !is_rolling:
-			anim.flip_h = false
-			anim.play("idle_front1")
+			play_animationplayer("idle_front1",false)
+			
 		if angle<56 and (angle>0 or angle>341) and !is_rolling:
-			anim.flip_h = false
-			anim.play("idle_front2")
+			play_animationplayer("idle_front2",false)
 			
 func table_slide(object):
 	z_index=1
@@ -225,7 +229,7 @@ func table_slide(object):
 	elif (object == "HorizontalTable" and (input==LEFT or input==RIGHT)) or (object == "VerticalTable" and (input==UP or input==DOWN)) :
 		PARAM = 25
 	$CollisionShape2D.disabled = true
-	anim.play("table_slide")
+	play_animationplayer("table_slide")
 
 func process_table_slide(delta):
 	if table_slide_cooldow>0 and is_sliding:
@@ -240,31 +244,21 @@ func flip_table():
 	is_flipping = true
 	collision.flip.emit(input)
 	if input == DOWN:
-		anim.play("flip_front1")
+		play_animationplayer("flip_front1")
 	if input == RIGHT:
-		anim.flip_h = true
-		anim.play("flip_front2")
+		play_animationplayer("flip_front2",true)
 	if input == LEFT:
-		anim.play("flip_front2")
+		play_animationplayer("flip_front2")
 	if input == UP:
-		anim.play("flip_back")
+		play_animationplayer("flip_back")
 
 
-func shoot():
-	var shoot_node:Node = get_parent().get_child(0)
-	var shoot_bullet:Shoot = shoot_scene.instantiate() as Area2D
-	var sprite:Sprite2D = shoot_bullet.get_child(1)
-	shoot_bullet.position = position
-	shoot_bullet.direction = (get_global_mouse_position() - position).normalized()
-	shoot_bullet.shoot_owner="player"
-	sprite.texture = load("res://addons/objects/player_bullet.png")
-	shoot_node.add_child(shoot_bullet)
 
 func hit(damage:int):
 	life-=damage
 	
 	if life==0:
-		anim.play("death")
+		play_animationplayer("death")
 		death_cooldown = 3.6
 		return
 
@@ -276,9 +270,15 @@ func on_no_enemy_body_entered(body: Node2D) -> void:
 func update_player_info():
 	items = GameManager.player_items
 	life = GameManager.player_life
-	actual_ammo = GameManager.player_actual_ammo
-	bag_ammo = GameManager.player_bag_ammo
-	ammo_ui.update_ui(actual_ammo,bag_ammo)
 	health_bar.update_health(life,max_life)
 	position = GameManager.set_position
 	GameManager.is_scene_changed = false
+
+func play_animationplayer(animation_name:String,bool_anim:bool = false):
+	anim.flip_h = bool_anim
+	anim_hand.flip_h = bool_anim
+	if bool_anim:
+		gun_spawner.position=Vector2(-5,4)
+	else:
+		gun_spawner.position=Vector2(6,4)
+	anim_comp.play(animation_name)

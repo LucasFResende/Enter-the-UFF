@@ -16,9 +16,13 @@ func on_body_entered(body: Node2D) -> void:
 		GameManager.staris = position_stairs
 		save_player_infos(body)
 		body.change_scene.change_scene(path_to_scene,position_stairs)
+		
 
 func save_player_infos(body:Player):
+	if body.gun_spawner.get_child_count() >0:
+		print("A")
+		var gun:Gun = body.gun_spawner.get_child(0)
+		GameManager.player_actual_gun = gun
+		print(gun,GameManager.player_actual_gun)
 	GameManager.player_items = body.items
-	GameManager.player_actual_ammo = body.actual_ammo
-	GameManager.player_bag_ammo = body.bag_ammo
 	GameManager.player_life = body.life

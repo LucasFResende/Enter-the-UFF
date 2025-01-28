@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv41mu5ato7ay"]
+[gd_scene load_steps=9 format=3 uid="uid://bv41mu5ato7ay"]
 
 [ext_resource type="Script" path="res://scripts/ammo_ui.gd" id="1_34uts"]
 [ext_resource type="Texture2D" uid="uid://3g5tjs2013f3" path="res://addons/ui/gum_frame.png" id="1_sm1d3"]
 [ext_resource type="Texture2D" uid="uid://8l76rk52gv43" path="res://addons/ui/pistol_ammo.png" id="2_0uwsq"]
+[ext_resource type="Texture2D" uid="uid://blc7s1tyd0q6h" path="res://addons/guns/empty_grenade_icon.png" id="4_c7i6t"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="4_v1dvl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5u6f"]
+texture = ExtResource("2_0uwsq")
+
+[sub_resource type="LabelSettings" id="LabelSettings_qw7hx"]
+font = ExtResource("4_v1dvl")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rc7y3"]
 texture = ExtResource("1_sm1d3")
@@ -12,26 +19,8 @@ texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5u6f"]
-texture = ExtResource("2_0uwsq")
-
-[sub_resource type="LabelSettings" id="LabelSettings_qw7hx"]
-font = ExtResource("4_v1dvl")
-
 [node name="AmmoUi" type="CanvasLayer"]
 script = ExtResource("1_34uts")
-
-[node name="Panel" type="Panel" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -96.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_rc7y3")
 
 [node name="Panel2" type="Panel" parent="."]
 anchors_preset = 3
@@ -60,6 +49,82 @@ offset_bottom = -37.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.5, 1.5)
-text = "7/130"
+text = "0/0"
 label_settings = SubResource("LabelSettings_qw7hx")
 horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 14
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="GrenadeSlot1" type="Sprite2D" parent="VBoxContainer/HBoxContainer/CenterContainer/Panel"]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_c7i6t")
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer2"]
+layout_mode = 2
+
+[node name="GrenadeSlot2" type="Sprite2D" parent="VBoxContainer/HBoxContainer/CenterContainer2/Panel"]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_c7i6t")
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer3"]
+layout_mode = 2
+
+[node name="GrenadeSlot3" type="Sprite2D" parent="VBoxContainer/HBoxContainer/CenterContainer3/Panel"]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_c7i6t")
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rc7y3")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Panel/CenterContainer"]
+layout_mode = 2
+
+[node name="GunSlot" type="Sprite2D" parent="VBoxContainer/Panel/CenterContainer/Panel"]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
