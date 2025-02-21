@@ -42,6 +42,8 @@ const DOWN:Vector2 = Vector2(0,1)
 const LEFT:Vector2 = Vector2(1,0)
 const RIGHT:Vector2 = Vector2(-1,0)
 
+var is_dead:bool = false
+
 var items: Array
 
 var gun_actual:Gun
@@ -70,7 +72,7 @@ func _ready() -> void:
 	generate_items()
 
 func _physics_process(delta: float) -> void:
-	print(gun_1.name,gun_2.name)
+	print(life)
 	GameManager.player_position = global_position
 	if Input.is_action_just_pressed("esc"):
 		$Camera2D.add_child(menu_scene.instantiate())
@@ -81,7 +83,10 @@ func _physics_process(delta: float) -> void:
 	if death_cooldown>0:
 		death_cooldown-=delta
 		if death_cooldown<=0:
-			get_tree().change_scene_to_file(GameManager.return_scene_path)
+			change_scene.change_scene(GameManager.return_scene_path,GameManager.return_local)
+			await change_scene.anim.animation_finished
+			life = max_life
+			is_dead = false
 		return
 	health_bar.update_health(life,max_life)
 	if Input.is_action_just_pressed("gun1") or Input.is_action_just_pressed("gun2") or Input.is_action_just_pressed("scroll"):
@@ -273,6 +278,7 @@ func hit(damage:int):
 	life-=damage
 	
 	if life==0:
+		is_dead = true
 		play_animationplayer("death")
 		death_cooldown = 3.6
 		return

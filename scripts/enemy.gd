@@ -20,7 +20,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if shoot_cooldown>0.0:
 		shoot_cooldown-=delta
-	else:
+	elif !player.is_dead:
 		shoot()
 		shoot_cooldown=3.0
 	if is_moving:
