@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 			attack_second_part=true
 			return
 		if rotation == last_angle and attack_second_part:
+			attack(true)
 			is_attacking = false
 			attack_second_part = false
 			return

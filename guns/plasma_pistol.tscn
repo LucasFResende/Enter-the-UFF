@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cldgrod5iec12" path="res://addons/guns/plasma pistol.png" id="1_yft1k"]
 [ext_resource type="Texture2D" uid="uid://bhyuy618il2bh" path="res://addons/guns/plasma pistol_icon.png" id="2_6jwif"]
 
-[node name="PlasmaPistol" type="Node2D"]
+[node name="PlasmaPistol" type="Node2D" groups=["Gun"]]
 script = ExtResource("1_0uxjq")
-gun_icon = ExtResource("2_6jwif")
+icon = ExtResource("2_6jwif")
+gun_name = "PLASMA PISTOL"
+sell_price = 12
 offset_necessary = Vector2(4, 25)
 bullet_position = Vector2(-7.5, 5)
 offset_bullet_position = Vector2(-7.5, 20)

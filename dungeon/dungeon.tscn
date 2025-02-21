@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://brdhu32d0wk1h"]
+[gd_scene load_steps=4 format=3 uid="uid://brdhu32d0wk1h"]
 
 [ext_resource type="Script" path="res://scripts/map_generator.gd" id="1_xe4ph"]
 [ext_resource type="TileSet" uid="uid://dm2gvuged0e71" path="res://tileset.tres" id="2_xaa5e"]
-[ext_resource type="PackedScene" uid="uid://pmsnlyqrjkjp" path="res://player/player.tscn" id="3_idlus"]
 [ext_resource type="PackedScene" uid="uid://c0t6tu025oq3q" path="res://objects/life_ammo drop/life_ammo__drop.tscn" id="4_2wi0t"]
 
 [node name="DungeonGenerator" type="Node2D"]
@@ -10,8 +9,6 @@ script = ExtResource("1_xe4ph")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 tile_set = ExtResource("2_xaa5e")
-
-[node name="Player" parent="." instance=ExtResource("3_idlus")]
 
 [node name="Rooms" type="Node" parent="."]
 

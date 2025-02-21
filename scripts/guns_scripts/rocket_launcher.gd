@@ -1,7 +1,7 @@
 extends Gun
 
 func _ready() -> void:
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,gun_icon)
+	update_ui()
 	shoot_scene = load("res://objects/rocket bullet/rocket_bullet.tscn")
 
 func shoot():

@@ -6,9 +6,12 @@ var shoot_scene:PackedScene = load("res://objects/bullet/bullet.tscn")
 var angle:float
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var bullet_spawn_point:Marker2D = $Sprite2D/Marker2D
-@onready var ammo_ui:CanvasLayer = get_parent().get_parent().get_child(5).get_child(1)
+@onready var ammo_ui:CanvasLayer = get_parent().get_parent().get_child(5).get_child(2)
 
-@export var gun_icon:Texture2D
+@export_category("Gun info")
+@export var icon:Texture2D
+@export var gun_name:String
+@export var sell_price:int
 
 @export_category("Gun Rotation")
 @export var offset_necessary:Vector2
@@ -23,7 +26,7 @@ var angle:float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,gun_icon)
+	update_ui()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -60,7 +63,7 @@ func ver_angle():
 func fire():
 	shoot()
 	actual_ammo-=1
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,gun_icon)
+	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,icon)
 
 func shoot():
 	var shoot_bullet:Shoot = shoot_scene.instantiate() as Area2D
@@ -74,4 +77,7 @@ func shoot():
 func reload():
 	bag_ammo-=(gun_pent-actual_ammo)
 	actual_ammo=gun_pent
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,gun_icon)
+	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,icon)
+
+func update_ui():
+	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,icon)

@@ -31,10 +31,9 @@ func fire():
 	_shoot((get_global_mouse_position() - bullet_spawn_point.global_position).normalized()*t1)
 	_shoot((get_global_mouse_position() - bullet_spawn_point.global_position).normalized()*t2)
 	actual_ammo-=1
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,gun_icon)
+	update_ui()
 
 func _shoot(direction:Vector2):
-	print(direction)
 	var shoot_bullet:Shoot = shoot_scene.instantiate() as Area2D
 	var sprite:Sprite2D = shoot_bullet.get_child(1)
 	shoot_bullet.position = bullet_spawn_point.global_position

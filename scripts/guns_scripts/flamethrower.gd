@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		is_firing = false
 	if is_firing:
 		actual_ammo-=delta
-		ammo_ui.update_gun_ui(int(actual_ammo),bag_ammo,gun_icon)
+		ammo_ui.update_gun_ui(int(actual_ammo),bag_ammo,icon)
 	if Input.is_action_just_pressed("reload") and actual_ammo<gun_pent:
 		reload()
 	ver_angle()
@@ -53,4 +53,4 @@ func ver_angle():
 func reload():
 	bag_ammo-=roundi(gun_pent-actual_ammo)
 	actual_ammo=gun_pent
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,gun_icon)
+	update_ui()

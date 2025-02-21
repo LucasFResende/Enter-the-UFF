@@ -1,1 +1,2 @@
-
+# Enter the UFF
+Esse jogo se passa na UFF de Rio das Ostras, cada sala representa uma dungeon e um período do curso de Ciência da Computação, e seu objetivo é derrotar cada sala e "se formar". Dentro da dungeon você se deparará com inimigos que são representações de tópicos que são geralmente abordados no respectivo período do curso, assim como chefões que representaram as matérias dadas no período correspondente. 

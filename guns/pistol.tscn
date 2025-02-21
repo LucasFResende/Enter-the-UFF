@@ -4,9 +4,11 @@
 [ext_resource type="Script" path="res://scripts/guns.gd" id="1_vs5r8"]
 [ext_resource type="Texture2D" uid="uid://bh47gqpa4dal0" path="res://addons/guns/pistol_icon.png" id="2_p2v3o"]
 
-[node name="Pistol" type="Node2D"]
+[node name="Pistol" type="Node2D" groups=["Gun"]]
 script = ExtResource("1_vs5r8")
-gun_icon = ExtResource("2_p2v3o")
+icon = ExtResource("2_p2v3o")
+gun_name = "PSITOL"
+sell_price = 11
 offset_necessary = Vector2(0, 5)
 bullet_position = Vector2(5, -6)
 offset_bullet_position = Vector2(5, 12)

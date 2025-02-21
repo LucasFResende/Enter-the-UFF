@@ -4,9 +4,11 @@
 [ext_resource type="Script" path="res://scripts/guns_scripts/sniper.gd" id="1_dweyo"]
 [ext_resource type="Texture2D" uid="uid://bmgcpd4ota60t" path="res://addons/guns/barret_icon.png" id="2_e5wkt"]
 
-[node name="Barret" type="Node2D"]
+[node name="Barret" type="Node2D" groups=["Gun"]]
 script = ExtResource("1_dweyo")
-gun_icon = ExtResource("2_e5wkt")
+icon = ExtResource("2_e5wkt")
+gun_name = "BARRET"
+sell_price = 4
 offset_necessary = Vector2(0, 5)
 bullet_position = Vector2(24, 0.5)
 offset_bullet_position = Vector2(24, 3)

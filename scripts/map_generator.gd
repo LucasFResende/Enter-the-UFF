@@ -24,8 +24,7 @@ var spawn_max_y:int = 128
 var room_scene:PackedScene = load("res://room/room.tscn")
 var exit_scene:PackedScene = load("res://room/exit.tscn")
 
-#var num_rooms:int = randi_range(10,15)
-var num_rooms:int = 2
+var num_rooms:int = randi_range(10,15)
 var rooms_center: Array[Vector2] = [Vector2(0,32),Vector2(0,-32),Vector2(32,0),Vector2(-32,0),Vector2(32,32),Vector2(32,-32),Vector2(-32,32),Vector2(-32,-32),]
 
 var is_first:bool = true
@@ -62,7 +61,6 @@ func _process(delta: float) -> void:
 			is_first = false
 		else:
 			generate_map()
-
 		add_room()
 		num_rooms-=1
 		GameManager.can_spawn_map = false
@@ -142,13 +140,13 @@ func set_map(img:Image,start:Vector2):
 			elif color == Color("ff6300"): 
 				ground.set_cell(ground.local_to_map(coord+start),0,Vector2(4,2),0)
 			elif color == Color("ffffff"):
-				ground.set_cell(ground.local_to_map(coord+start),0,Vector2(2,4),0)
-			elif color == Color("fffbff"):
-				ground.set_cell(ground.local_to_map(coord+start),0,Vector2(2,5),0)
-			elif color == Color("fffcff"):
 				ground.set_cell(ground.local_to_map(coord+start),0,Vector2(3,4),0)
-			elif color == Color("fffdff"):
+			elif color == Color("fffbff"):
 				ground.set_cell(ground.local_to_map(coord+start),0,Vector2(3,5),0)
+			elif color == Color("fffcff"):
+				ground.set_cell(ground.local_to_map(coord+start),0,Vector2(4,4),0)
+			elif color == Color("fffdff"):
+				ground.set_cell(ground.local_to_map(coord+start),0,Vector2(4,5),0)
 			
 			
 	ground.update_internals()

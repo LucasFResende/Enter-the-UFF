@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bntnlcrxtxfd2" path="res://addons/guns/deagle.png" id="1_nn4dh"]
 [ext_resource type="Texture2D" uid="uid://c63mir27giy5n" path="res://addons/guns/deagle_icon.png" id="2_0iam3"]
 
-[node name="Deagle" type="Node2D"]
+[node name="Deagle" type="Node2D" groups=["Gun"]]
 script = ExtResource("1_hypx7")
-gun_icon = ExtResource("2_0iam3")
+icon = ExtResource("2_0iam3")
+gun_name = "DEAGLE"
+sell_price = 5
 offset_necessary = Vector2(5, 6)
 bullet_position = Vector2(10, -6.667)
 offset_bullet_position = Vector2(10, 12)

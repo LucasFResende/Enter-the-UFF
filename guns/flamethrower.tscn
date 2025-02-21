@@ -5,9 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bn44wu46fme32" path="res://addons/guns/flamethrower_icon.png" id="2_tooxj"]
 [ext_resource type="PackedScene" uid="uid://c2dci0v6qpta3" path="res://objects/flamethrower fire/fire.tscn" id="3_6jy4g"]
 
-[node name="Flamethrower" type="Node2D"]
+[node name="Flamethrower" type="Node2D" groups=["Gun"]]
 script = ExtResource("1_0buk1")
-gun_icon = ExtResource("2_tooxj")
+icon = ExtResource("2_tooxj")
+gun_name = "FLAMETHROWER"
+sell_price = 6
 bullet_position = Vector2(25, -5)
 offset_bullet_position = Vector2(20, 5)
 gun_pent = 100

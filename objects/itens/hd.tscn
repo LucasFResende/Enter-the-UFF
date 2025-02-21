@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://iy3p7wsmn0o2"]
+[gd_scene load_steps=10 format=3 uid="uid://iy3p7wsmn0o2"]
 
 [ext_resource type="Texture2D" uid="uid://cbdobu7nl4gwn" path="res://addons/objects/hd.png" id="1_r7mbd"]
 [ext_resource type="PackedScene" uid="uid://b3p1tukliho5n" path="res://UI/interect_ui.tscn" id="2_0c61i"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="2_qx28s"]
+[ext_resource type="Texture2D" uid="uid://go68btwq4vdd" path="res://addons/objects/hd_icon.png" id="3_0o1dp"]
 [ext_resource type="Texture2D" uid="uid://bs7m0nujq4iej" path="res://addons/particles/star_09.png" id="3_okf7k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a65tx"]
@@ -74,6 +75,7 @@ scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_r7mbd")
 script = ExtResource("2_qx28s")
 item_type = 1
+icon = ExtResource("3_0o1dp")
 
 [node name="Area2D" type="Area2D" parent="."]
 

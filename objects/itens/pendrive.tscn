@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bddjgwm0w0xck"]
+[gd_scene load_steps=10 format=3 uid="uid://bddjgwm0w0xck"]
 
 [ext_resource type="Texture2D" uid="uid://l4xhyggow5gd" path="res://addons/objects/pendrive.png" id="1_hyrl7"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="2_3kt7b"]
 [ext_resource type="PackedScene" uid="uid://b3p1tukliho5n" path="res://UI/interect_ui.tscn" id="3_u0sm5"]
+[ext_resource type="Texture2D" uid="uid://b5yj47ewahd2x" path="res://addons/objects/pendrive_icon.png" id="3_wd7gk"]
 [ext_resource type="Texture2D" uid="uid://bs7m0nujq4iej" path="res://addons/particles/star_09.png" id="4_crne8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2deb"]
@@ -73,6 +74,7 @@ z_index = 1
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("1_hyrl7")
 script = ExtResource("2_3kt7b")
+icon = ExtResource("3_wd7gk")
 
 [node name="Area2D" type="Area2D" parent="."]
 

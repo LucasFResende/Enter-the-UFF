@@ -4,9 +4,11 @@
 [ext_resource type="Script" path="res://scripts/guns_scripts/shotgun.gd" id="1_olrq3"]
 [ext_resource type="Texture2D" uid="uid://dpxr7u7eudjad" path="res://addons/guns/pump shotgun_icon.png" id="2_sh86i"]
 
-[node name="PumpShotgun" type="Node2D"]
+[node name="PumpShotgun" type="Node2D" groups=["Gun"]]
 script = ExtResource("1_olrq3")
-gun_icon = ExtResource("2_sh86i")
+icon = ExtResource("2_sh86i")
+gun_name = "PUMP SHOTGUN"
+sell_price = 13
 offset_necessary = Vector2(4, 0)
 bullet_position = Vector2(27.5, -5)
 offset_bullet_position = Vector2(27.5, 5)

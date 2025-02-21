@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://ib8xfugw40mc" path="res://addons/guns/lightsaber_red.png" id="1_qqo82"]
 [ext_resource type="Texture2D" uid="uid://c7rom6dadir7m" path="res://addons/guns/lightsaber_red_icon.png" id="2_p4c5n"]
 
-[node name="LightsaberRed" type="Node2D"]
+[node name="LightsaberRed" type="Node2D" groups=["Gun", "object"]]
 script = ExtResource("1_djgnp")
-gun_icon = ExtResource("2_p4c5n")
+icon = ExtResource("2_p4c5n")
+gun_name = "RED LIGHTSABER"
+sell_price = 8
 bag_ammo = 0
 
 [node name="LightsaberRed" type="Sprite2D" parent="."]

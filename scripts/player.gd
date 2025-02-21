@@ -1,7 +1,6 @@
 class_name Player
 extends CharacterBody2D
 
-
 var menu_scene:PackedScene = load("res://UI/menu_ui.tscn")
 
 @export var SPEED:int = 3
@@ -19,6 +18,8 @@ var flipping_cooldown:float = 0.8
 var death_cooldown:float = 0
 var can_shoot:bool = false
 var is_holding_grenade:bool = false
+
+var coins:int = 0
 
 @onready var anim:AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim_hand:AnimatedSprite2D = $HandAnimation
@@ -41,15 +42,23 @@ const DOWN:Vector2 = Vector2(0,1)
 const LEFT:Vector2 = Vector2(1,0)
 const RIGHT:Vector2 = Vector2(-1,0)
 
-var items: Dictionary
+var items: Array
+
+var gun_actual:Gun
+var gun_1:Gun
+var gun_2:Gun
+var num_gun_actual:int = 1
 
 func _ready() -> void:
 	GameManager.is_in_game = true
-	var gun:Gun = GameManager.player_actual_gun
-	print(gun,GameManager.player_actual_gun)
-	#gun = GameManager.player_actual_gun
-	gun_spawner.add_child(GameManager.player_actual_gun)
-	gun.ammo_ui.update_gun_ui(gun.actual_ammo,gun.bag_ammo,gun.gun_icon)
+	gun_actual = GameManager.player_actual_gun
+	gun_1 = GameManager.player_gun_1
+	gun_2 = GameManager.player_gun_2
+	gun_spawner.add_child(gun_1)
+	gun_spawner.add_child(gun_2)
+	gun_2.process_mode = Node.PROCESS_MODE_DISABLED
+	gun_2.visible = false
+	gun_actual.update_ui()
 	ammo_ui.update_grenade_ui(actual_grenades)
 
 	no_enemy.body_entered.connect(on_no_enemy_body_entered)
@@ -57,20 +66,26 @@ func _ready() -> void:
 	material.set("shader_parameter/shirt_replace_color",GameManager.player_custom_shirt)
 	material.set("shader_parameter/emblem_replace_color",GameManager.player_custom_emblem)
 	material.set("shader_parameter/shorts_replace_color",GameManager.player_custom_short)
+	
+	generate_items()
 
 func _physics_process(delta: float) -> void:
+	print(gun_1.name,gun_2.name)
 	GameManager.player_position = global_position
 	if Input.is_action_just_pressed("esc"):
 		$Camera2D.add_child(menu_scene.instantiate())
 	if GameManager.is_scene_changed:
 		GameManager.can_spawn_map = true
-		update_player_info()
+		GameManager.is_scene_changed = false
+
 	if death_cooldown>0:
 		death_cooldown-=delta
 		if death_cooldown<=0:
 			get_tree().change_scene_to_file(GameManager.return_scene_path)
 		return
 	health_bar.update_health(life,max_life)
+	if Input.is_action_just_pressed("gun1") or Input.is_action_just_pressed("gun2") or Input.is_action_just_pressed("scroll"):
+		change_gun()
 	if Input.is_action_just_pressed("grenade"):
 		if is_holding_grenade:
 			is_holding_grenade = false
@@ -267,13 +282,6 @@ func on_no_enemy_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		body.is_moving = false
 
-func update_player_info():
-	items = GameManager.player_items
-	life = GameManager.player_life
-	health_bar.update_health(life,max_life)
-	position = GameManager.set_position
-	GameManager.is_scene_changed = false
-
 func play_animationplayer(animation_name:String,bool_anim:bool = false):
 	anim.flip_h = bool_anim
 	anim_hand.flip_h = bool_anim
@@ -282,3 +290,36 @@ func play_animationplayer(animation_name:String,bool_anim:bool = false):
 	else:
 		gun_spawner.position=Vector2(6,4)
 	anim_comp.play(animation_name)
+
+func change_gun():
+	if (Input.is_action_just_pressed("gun1") and gun_actual!=gun_1) or (Input.is_action_just_pressed("scroll") and gun_actual==gun_2):
+		gun_actual = gun_1
+		num_gun_actual = 1
+		gun_2.process_mode = Node.PROCESS_MODE_DISABLED
+		gun_2.visible = false
+		gun_1.process_mode = Node.PROCESS_MODE_INHERIT
+		gun_1.visible = true
+		gun_actual.update_ui()
+	elif (Input.is_action_just_pressed("gun2") and gun_actual!=gun_2) or (Input.is_action_just_pressed("scroll") and gun_actual==gun_1):
+		gun_actual = gun_2
+		num_gun_actual = 2
+		gun_1.process_mode = Node.PROCESS_MODE_DISABLED
+		gun_1.visible = false
+		gun_2.process_mode = Node.PROCESS_MODE_INHERIT
+		gun_2.visible = true
+	gun_actual.update_ui()
+
+func active():
+	process_mode = PROCESS_MODE_INHERIT
+	visible = true
+	ammo_ui.visible = true
+	
+func generate_items():
+	items.append(gun_1)
+	items.append(gun_2)
+	for i in range(5):
+		items.append(GameManager.guns.pick_random().instantiate())
+	items.append(load("res://objects/itens/hd.tscn").instantiate())
+	items.append(load("res://objects/itens/pendrive.tscn").instantiate())
+	items.append(load("res://objects/itens/ssd.tscn").instantiate())
+	items.append(load("res://objects/itens/nvme.tscn").instantiate())

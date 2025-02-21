@@ -1,0 +1,538 @@
+[gd_scene load_steps=20 format=3 uid="uid://dqtl5b1tstwmp"]
+
+[ext_resource type="StyleBox" uid="uid://cevicx80p0r6f" path="res://UI/panel.tres" id="1_baq74"]
+[ext_resource type="Script" path="res://scripts/main_interface.gd" id="1_djgp8"]
+[ext_resource type="Texture2D" uid="uid://bbdlxty5q5hou" path="res://addons/player/player_idle.png" id="2_g6hxl"]
+[ext_resource type="Material" uid="uid://cxrb5fdf0l11j" path="res://player/player_shader.tres" id="3_lo8sj"]
+[ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="3_wh3a1"]
+[ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/panel_button.tres" id="4_25lnk"]
+[ext_resource type="Texture2D" uid="uid://dc45mti7p4i4y" path="res://addons/ui/coin.png" id="5_ij18e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a15e"]
+atlas = ExtResource("2_g6hxl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljh2v"]
+atlas = ExtResource("2_g6hxl")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spd17"]
+atlas = ExtResource("2_g6hxl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec7tn"]
+atlas = ExtResource("2_g6hxl")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8emqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a15e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljh2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spd17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec7tn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxkho"]
+texture = ExtResource("5_ij18e")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8813d"]
+font = ExtResource("3_wh3a1")
+font_size = 100
+font_color = Color(1, 0.87451, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_10jo5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ControlOptions:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ControlButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ControlOptions:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ControlButton:process_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ControlPlayer/Panel:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(592, 912)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ControlPlayer/Panel/PlayerIcon:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(296, 453)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ControlOptions/VBoxContainer:process_mode")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_p4ttw"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlPlayer/Panel/PlayerIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(296, 309), Vector2(296, 453)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ControlOptions:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ControlOptions:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ControlButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ControlButton:process_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ControlPlayer/Panel:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 592), Vector2(592, 912)]
+}
+
+[sub_resource type="Animation" id="Animation_a8gjv"]
+resource_name = "on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ControlOptions/VBoxContainer:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o8bvk"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlOptions:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ControlButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ControlOptions:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ControlButton:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ControlPlayer/Panel:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 912), Vector2(592, 592)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ControlPlayer/Panel/PlayerIcon:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(296, 453), Vector2(296, 309)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1wmmp"]
+_data = {
+"RESET": SubResource("Animation_10jo5"),
+"close": SubResource("Animation_p4ttw"),
+"on": SubResource("Animation_a8gjv"),
+"open": SubResource("Animation_o8bvk")
+}
+
+[node name="MainInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_djgp8")
+
+[node name="ControlPlayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -540.0
+offset_bottom = -540.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ControlPlayer"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Panel" type="Panel" parent="ControlPlayer"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = 84.0
+offset_right = 720.0
+offset_bottom = 996.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_baq74")
+
+[node name="PlayerIcon" type="AnimatedSprite2D" parent="ControlPlayer/Panel"]
+unique_name_in_owner = true
+material = ExtResource("3_lo8sj")
+position = Vector2(296, 453)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_8emqm")
+autoplay = "default"
+
+[node name="ControlOptions" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlOptions"]
+process_mode = 4
+layout_mode = 0
+offset_left = -722.0
+offset_top = -223.0
+offset_right = -166.0
+offset_bottom = 235.0
+
+[node name="InventoryButton" type="Button" parent="ControlOptions/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_wh3a1")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("4_25lnk")
+theme_override_styles/disabled_mirrored = ExtResource("4_25lnk")
+theme_override_styles/disabled = ExtResource("4_25lnk")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_25lnk")
+theme_override_styles/hover_pressed = ExtResource("4_25lnk")
+theme_override_styles/hover_mirrored = ExtResource("4_25lnk")
+theme_override_styles/hover = ExtResource("4_25lnk")
+theme_override_styles/pressed_mirrored = ExtResource("4_25lnk")
+theme_override_styles/pressed = ExtResource("4_25lnk")
+theme_override_styles/normal_mirrored = ExtResource("4_25lnk")
+theme_override_styles/normal = ExtResource("4_25lnk")
+text = "Inventory"
+
+[node name="OpenDiskButton" type="Button" parent="ControlOptions/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_wh3a1")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("4_25lnk")
+theme_override_styles/disabled_mirrored = ExtResource("4_25lnk")
+theme_override_styles/disabled = ExtResource("4_25lnk")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_25lnk")
+theme_override_styles/hover_pressed = ExtResource("4_25lnk")
+theme_override_styles/hover_mirrored = ExtResource("4_25lnk")
+theme_override_styles/hover = ExtResource("4_25lnk")
+theme_override_styles/pressed_mirrored = ExtResource("4_25lnk")
+theme_override_styles/pressed = ExtResource("4_25lnk")
+theme_override_styles/normal_mirrored = ExtResource("4_25lnk")
+theme_override_styles/normal = ExtResource("4_25lnk")
+text = "Open disk"
+
+[node name="ShopButton" type="Button" parent="ControlOptions/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_wh3a1")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("4_25lnk")
+theme_override_styles/disabled_mirrored = ExtResource("4_25lnk")
+theme_override_styles/disabled = ExtResource("4_25lnk")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_25lnk")
+theme_override_styles/hover_pressed = ExtResource("4_25lnk")
+theme_override_styles/hover_mirrored = ExtResource("4_25lnk")
+theme_override_styles/hover = ExtResource("4_25lnk")
+theme_override_styles/pressed_mirrored = ExtResource("4_25lnk")
+theme_override_styles/pressed = ExtResource("4_25lnk")
+theme_override_styles/normal_mirrored = ExtResource("4_25lnk")
+theme_override_styles/normal = ExtResource("4_25lnk")
+text = "Shop
+"
+
+[node name="ControlCoin" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="ControlCoin"]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxTexture_yxkho")
+
+[node name="CoinLabel" type="Label" parent="ControlCoin"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1189.0
+offset_right = -71.0
+offset_bottom = 100.0
+text = "100"
+label_settings = SubResource("LabelSettings_8813d")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ControlButton" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="QuitButton" type="Button" parent="ControlButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -73.0
+offset_right = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_wh3a1")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("4_25lnk")
+theme_override_styles/disabled_mirrored = ExtResource("4_25lnk")
+theme_override_styles/disabled = ExtResource("4_25lnk")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_25lnk")
+theme_override_styles/hover_pressed = ExtResource("4_25lnk")
+theme_override_styles/hover_mirrored = ExtResource("4_25lnk")
+theme_override_styles/hover = ExtResource("4_25lnk")
+theme_override_styles/pressed_mirrored = ExtResource("4_25lnk")
+theme_override_styles/pressed = ExtResource("4_25lnk")
+theme_override_styles/normal_mirrored = ExtResource("4_25lnk")
+theme_override_styles/normal = ExtResource("4_25lnk")
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_1wmmp")
+}
+autoplay = "on"
+
+[connection signal="pressed" from="ControlOptions/VBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="ControlOptions/VBoxContainer/OpenDiskButton" to="." method="_on_open_disk_button_pressed"]
+[connection signal="pressed" from="ControlOptions/VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="ControlButton/QuitButton" to="." method="_on_quit_button_pressed"]

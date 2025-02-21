@@ -4,9 +4,11 @@
 [ext_resource type="Script" path="res://scripts/guns_scripts/rocket_launcher.gd" id="1_n6iq4"]
 [ext_resource type="Texture2D" uid="uid://b07qaufaae618" path="res://addons/guns/rocket launcher_icon.png" id="2_m7h8e"]
 
-[node name="RocketLauncher" type="Node2D"]
+[node name="RocketLauncher" type="Node2D" groups=["Gun"]]
 script = ExtResource("1_n6iq4")
-gun_icon = ExtResource("2_m7h8e")
+icon = ExtResource("2_m7h8e")
+gun_name = "ROCKET LAUNCHER"
+sell_price = 14
 offset_necessary = Vector2(2, 20)
 bullet_position = Vector2(30, 1)
 offset_bullet_position = Vector2(30, 18)

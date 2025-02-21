@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c4xm8t8iqfwy7"]
+[gd_scene load_steps=26 format=3 uid="uid://c4xm8t8iqfwy7"]
 
 [ext_resource type="Script" path="res://scripts/in_game_control_ui.gd" id="1_mmjc0"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="2_kdhyf"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://ce3skx3huwd5i" path="res://addons/input_keys/Keyboard & Mouse/mouse_left_outline.svg" id="9_8jf6b"]
 [ext_resource type="Texture2D" uid="uid://bfgvfgu314it" path="res://addons/input_keys/Keyboard & Mouse/mouse_right_outline.svg" id="10_hc7ma"]
 [ext_resource type="Texture2D" uid="uid://dlpm6vvbm84vb" path="res://addons/input_keys/Keyboard & Mouse/keyboard_escape_outline.svg" id="11_3u1wu"]
+[ext_resource type="Texture2D" uid="uid://xpwydx2xcb6h" path="res://addons/input_keys/Keyboard & Mouse/keyboard_1_outline.svg" id="12_adcsl"]
+[ext_resource type="Texture2D" uid="uid://cp6ujqm1j3y7d" path="res://addons/input_keys/Keyboard & Mouse/keyboard_2_outline.svg" id="13_djwbm"]
+[ext_resource type="Texture2D" uid="uid://dek6dq4na3lvr" path="res://addons/input_keys/Keyboard & Mouse/mouse_scroll_vertical.svg" id="14_yqfph"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_us6hl"]
 font = ExtResource("2_kdhyf")
@@ -52,13 +55,18 @@ font_size = 15
 font = ExtResource("2_kdhyf")
 font_size = 15
 
+[sub_resource type="LabelSettings" id="LabelSettings_6j23b"]
+font = ExtResource("2_kdhyf")
+font_size = 15
+
 [node name="ControlUi" type="CanvasLayer"]
 process_mode = 3
+layer = 10
 script = ExtResource("1_mmjc0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1168.0
-offset_bottom = 656.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
 [node name="Label" type="Label" parent="."]
@@ -234,5 +242,50 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Menu"]
 layout_mode = 2
 icon = ExtResource("11_3u1wu")
+
+[node name="GunSlot1" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GunSlot1"]
+layout_mode = 2
+text = "Gun Slot 1:"
+label_settings = SubResource("LabelSettings_6j23b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/GunSlot1"]
+layout_mode = 2
+icon = ExtResource("12_adcsl")
+
+[node name="GunSlot2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GunSlot2"]
+layout_mode = 2
+text = "Gun Slot 2:"
+label_settings = SubResource("LabelSettings_6j23b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/GunSlot2"]
+layout_mode = 2
+icon = ExtResource("13_djwbm")
+
+[node name="ChangeGun" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/ChangeGun"]
+layout_mode = 2
+text = "Change Gun:"
+label_settings = SubResource("LabelSettings_6j23b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/ChangeGun"]
+layout_mode = 2
+icon = ExtResource("14_yqfph")
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

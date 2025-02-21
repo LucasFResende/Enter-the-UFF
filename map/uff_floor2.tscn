@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://bkklead51f8pc"]
+[gd_scene load_steps=8 format=4 uid="uid://bkklead51f8pc"]
 
 [ext_resource type="TileSet" uid="uid://dm2gvuged0e71" path="res://tileset.tres" id="1_k0ug7"]
-[ext_resource type="PackedScene" uid="uid://pmsnlyqrjkjp" path="res://player/player.tscn" id="2_c3v1v"]
 [ext_resource type="Script" path="res://scripts/go_to_scene.gd" id="3_3die1"]
 [ext_resource type="Script" path="res://scripts/go_up_go_down_stairs.gd" id="4_5jwkp"]
 [ext_resource type="PackedScene" uid="uid://daj1qogqssu0k" path="res://enemies/wifi.tscn" id="6_6jd4g"]
@@ -20,15 +19,12 @@ tile_map_data = PackedByteArray("AAD///7/AAACAAMAAAD/////AAACAAMAAAD+//7/AAACAAM
 tile_set = ExtResource("1_k0ug7")
 
 [node name="Objects" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD9////AQAFAAQAAAD+////AQAGAAQAAAD/////AQAHAAQAAAD2/wEAAQAAAAIAAAD2/wIAAQAAAAMAAAD2/wMAAQAAAAQAAAD3/wEAAQABAAIAAAD3/wIAAQABAAMAAAD3/wMAAQABAAQAAAD2//7/AQAAAAIAAAD2////AQAAAAMAAAD2/wAAAQAAAAQAAAD3//7/AQABAAIAAAD3////AQABAAMAAAD3/wAAAQABAAQAAAALAP3/AQAKAAAAAAALAP7/AQAKAAEAAAALAP//AQAKAAIAAAALAAAAAQAKAAAAAAALAAEAAQAKAAEAAAALAAIAAQAKAAIAAAAKAP3/AQAJAAAAAAAKAP7/AQAJAAEAAAAKAP//AQAJAAIAAAAKAAAAAQAJAAAAAAAKAAEAAQAJAAEAAAAKAAIAAQAJAAIAAAA=")
+tile_map_data = PackedByteArray("AAD2/wEAAQAAAAIAAAD2/wIAAQAAAAMAAAD2/wMAAQAAAAQAAAD3/wEAAQABAAIAAAD3/wIAAQABAAMAAAD3/wMAAQABAAQAAAD2//7/AQAAAAIAAAD2////AQAAAAMAAAD2/wAAAQAAAAQAAAD3//7/AQABAAIAAAD3////AQABAAMAAAD3/wAAAQABAAQAAAALAP3/AQAKAAAAAAALAP7/AQAKAAEAAAALAP//AQAKAAIAAAALAAAAAQAKAAAAAAALAAEAAQAKAAEAAAALAAIAAQAKAAIAAAAKAP3/AQAJAAAAAAAKAP7/AQAJAAEAAAAKAP//AQAJAAIAAAAKAAAAAQAJAAAAAAAKAAEAAQAJAAEAAAAKAAIAAQAJAAIAAAA=")
 tile_set = ExtResource("1_k0ug7")
 
 [node name="Objects2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD3/wIAAQACAAIAAAD3/wMAAQACAAMAAAD3////AQACAAIAAAD3/wAAAQACAAMAAAACAP3/AQAGAAAAAAACAP7/AQAGAAEAAAACAP//AQAGAAIAAAADAP3/AQAHAAAAAAADAP7/AQAHAAEAAAADAP//AQAHAAIAAAAEAP3/AQAIAAAAAAAEAP7/AQAIAAEAAAAEAP//AQAIAAIAAAAFAP//AQACAAEAAAD9////AQAGAAQAAAD+////AQAHAAQAAAD/////AQAIAAQAAAAKAAEAAQACAAIAAAAKAAIAAQACAAMAAAAKAP7/AQACAAIAAAAKAP//AQACAAMAAAA=")
 tile_set = ExtResource("1_k0ug7")
-
-[node name="Player" parent="." instance=ExtResource("2_c3v1v")]
-position = Vector2(166, -201)
 
 [node name="Change_Scene" type="Area2D" parent="."]
 script = ExtResource("4_5jwkp")
@@ -77,11 +73,14 @@ position = Vector2(184, -200)
 scale = Vector2(0.9, 0.9)
 shape = SubResource("RectangleShape2D_ybfqx")
 
-[node name="CANTENTER" type="StaticBody2D" parent="."]
+[node name="Lab" type="Area2D" parent="."]
+script = ExtResource("4_5jwkp")
+path_to_scene = "res://map/laboratorio.tscn"
+position_stairs = Vector2(7, -15)
+local_to_go = "Laboratório"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CANTENTER"]
-position = Vector2(184, 88)
-shape = SubResource("RectangleShape2D_6bbtl")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lab"]
+polygon = PackedVector2Array(177, 81, 177, 95, 191, 95, 191, 81)
 
 [node name="CANTENTER2" type="StaticBody2D" parent="."]
 

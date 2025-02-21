@@ -2,7 +2,7 @@ extends Sprite2D
 class_name Item
 
 var player_in:bool = false
-var player:Player
+
 
 @onready var ui:Control = $InterectUi
 @onready var anim:AnimationPlayer = $AnimationPlayer
@@ -10,7 +10,8 @@ var player:Player
 enum item_types {pendrive, hd, ssd, nvme}
 
 @export var item_type:item_types
-@onready var name_type:String = def_type_name()
+
+@export var icon:Texture2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,16 +23,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in and Input.is_action_just_pressed("interact"):
 		get_parent().item_collected = true
-		if name_type not in player.items.keys():
-			player.items[name_type] = 0
-		player.items[name_type] +=1
+		player.items.append(get_type())
 		call_deferred("queue_free")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		ui.visible = true
-		player = body
 		player_in = true
 
 
@@ -40,13 +38,13 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		ui.visible = false
 		player_in = false
 
-func def_type_name() -> String:
+	
+func get_type():
 	if item_type == item_types.pendrive:
-		return "pendrive"
+		return load("res://objects/itens/pendrive.tscn")
 	elif item_type == item_types.hd:
-		return "hd"
+		return load("res://objects/itens/hd.tscn")
 	elif item_type == item_types.ssd:
-		return "ssd"
+		return load("res://objects/itens/ssd.tscn")
 	elif item_type == item_types.nvme:
-		return "nvme"
-	return ""
+		return load("res://objects/itens/nvme.tscn")

@@ -1,0 +1,1148 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwlfl8tfknf68"]
+
+[ext_resource type="Script" path="res://scripts/open_disk_interface.gd" id="1_lcp6o"]
+[ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/panel_button.tres" id="2_wwo6p"]
+[ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="3_4s60r"]
+
+[sub_resource type="Animation" id="Animation_5dan8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_5uwap"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_jsi7b"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbsrr"]
+_data = {
+"RESET": SubResource("Animation_5dan8"),
+"close": SubResource("Animation_5uwap"),
+"open": SubResource("Animation_jsi7b")
+}
+
+[node name="OpenDiskInterface" type="Control"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lcp6o")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -456.0
+offset_right = 875.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_wwo6p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_4s60r")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+text = "BACK"
+
+[node name="OpenButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 281.0
+offset_top = 174.0
+offset_right = 556.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_4s60r")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+text = "OPEN"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_pbsrr")
+}
+autoplay = "open"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

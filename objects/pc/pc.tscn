@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=3 uid="uid://ih4jbnpg0xnt"]
+
+[ext_resource type="Script" path="res://scripts/pc.gd" id="1_xnpbi"]
+
+[node name="Pc" type="Area2D"]
+script = ExtResource("1_xnpbi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(32, 0)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+position = Vector2(64, 0)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
+position = Vector2(96, 0)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
+position = Vector2(128, 0)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="."]
+position = Vector2(160, 0)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -48)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="."]
+position = Vector2(32, -48)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="."]
+position = Vector2(64, -48)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="."]
+position = Vector2(96, -48)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="."]
+position = Vector2(128, -48)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="."]
+position = Vector2(160, -48)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -96)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="."]
+position = Vector2(32, -96)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="."]
+position = Vector2(64, -96)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="."]
+position = Vector2(96, -96)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="."]
+position = Vector2(128, -96)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="."]
+position = Vector2(160, -96)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -144)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="."]
+position = Vector2(32, -144)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="."]
+position = Vector2(64, -144)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="."]
+position = Vector2(96, -144)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="."]
+position = Vector2(128, -144)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="."]
+position = Vector2(160, -144)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -192)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="."]
+position = Vector2(32, -192)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="."]
+position = Vector2(64, -192)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="."]
+position = Vector2(96, -192)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="."]
+position = Vector2(128, -192)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="."]
+position = Vector2(160, -192)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

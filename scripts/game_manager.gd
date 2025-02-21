@@ -31,6 +31,8 @@ load("res://guns/lightsaber_blue.tscn"),load("res://guns/flamethrower.tscn")]
 
 var player_gun:PackedScene
 var player_actual_gun:Gun
+var player_gun_1:Gun
+var player_gun_2:Gun
 
 var gun_actual_ammo:int
 var gun_bag_ammo:int
@@ -38,12 +40,16 @@ var gun_bag_ammo:int
 func _ready() -> void:
 	player_gun = guns.pick_random()
 	player_actual_gun = player_gun.instantiate()
+	player_gun_1 = player_actual_gun
+	player_gun_2 = guns.pick_random().instantiate()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and is_in_game:
 		get_tree().paused = true
+		is_in_menu = true
+		change_mouse()
 
 func change_mouse():
 	if is_in_menu:

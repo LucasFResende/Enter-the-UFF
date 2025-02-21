@@ -9,11 +9,12 @@ font_size = 100
 
 [node name="MenuUi" type="CanvasLayer"]
 process_mode = 3
+layer = 10
 script = ExtResource("1_5t817")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.0989583, 0.0989583, 0.0989583, 1)
 
 [node name="Label" type="Label" parent="."]
