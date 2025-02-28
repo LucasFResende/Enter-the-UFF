@@ -3,6 +3,15 @@ extends Node2D
 
 var shoot_scene:PackedScene = load("res://objects/bullet/bullet.tscn")
 
+enum rarity {COMMON,UNCOMMON,RARE,EPIC,LEGENDARY}
+
+var gun_rarity:rarity
+
+var equiped_panel:Texture
+var inv_panel:Texture
+var panel:Texture
+var rarity_color:Color
+
 var angle:float
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var bullet_spawn_point:Marker2D = $Sprite2D/Marker2D
@@ -63,7 +72,7 @@ func ver_angle():
 func fire():
 	shoot()
 	actual_ammo-=1
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,icon)
+	update_ui()
 
 func shoot():
 	var shoot_bullet:Shoot = shoot_scene.instantiate() as Area2D
@@ -77,7 +86,35 @@ func shoot():
 func reload():
 	bag_ammo-=(gun_pent-actual_ammo)
 	actual_ammo=gun_pent
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,icon)
+	update_ui()
 
 func update_ui():
-	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,icon)
+	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,icon,rarity_color)
+
+func pick_rarity():
+	gun_rarity = rarity.values().pick_random()
+	if gun_rarity == rarity.UNCOMMON:
+		equiped_panel = load("res://addons/ui/uncommon_panel_inv_eq.png")
+		inv_panel = load("res://addons/ui/uncommon_panel_inv.png")
+		panel = load("res://addons/ui/uncommon_panel.png")
+		rarity_color = Color("a9a9a9")
+	elif gun_rarity == rarity.COMMON:
+		equiped_panel = load("res://addons/ui/common_panel_inv_eq.png")
+		inv_panel = load("res://addons/ui/common_panel_inv.png")
+		panel = load("res://addons/ui/common_panel.png")
+		rarity_color = Color("32cd32") 
+	elif gun_rarity == rarity.RARE:
+		equiped_panel = load("res://addons/ui/rare_panel_inv_eq.png")
+		inv_panel = load("res://addons/ui/rare_panel_inv.png")
+		panel = load("res://addons/ui/rare_panel.png")
+		rarity_color = Color("2e8df4") 
+	elif gun_rarity == rarity.EPIC:
+		equiped_panel = load("res://addons/ui/epic_panel_inv_eq.png")
+		inv_panel = load("res://addons/ui/epic_panel_inv.png")
+		panel = load("res://addons/ui/epic_panel.png")
+		rarity_color = Color("8645b2") 
+	elif gun_rarity == rarity.LEGENDARY:
+		equiped_panel = load("res://addons/ui/legendary_panel_inv_eq.png")
+		inv_panel = load("res://addons/ui/legendary_panel_inv.png")
+		panel = load("res://addons/ui/legendary_panel.png")
+		rarity_color = Color("d50000") 

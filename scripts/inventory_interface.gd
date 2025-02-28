@@ -30,10 +30,6 @@ var gun2_button_id:int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if GameManager.player_gun_1 != null:
-		gun1_esquiped_sprite.texture = player.gun_1.icon
-	if GameManager.player_gun_2!= null:
-		gun2_esquiped_sprite.texture = player.gun_2.icon
 	update_items_menu()
 
 
@@ -51,7 +47,7 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_equip_button_pressed() -> void:
-	if button_pressed_id!=0 and player.items[button_pressed_id].is_in_group("Gun"):
+	if button_pressed_id!=-1 and player.items[button_pressed_id].is_in_group("Gun"):
 		button_to_equip_pressed_id = button_pressed_id
 		is_to_equip = true
 		buttons[button_pressed_id].get_child(1).visible = true
@@ -68,19 +64,12 @@ func _on_gun_1_button_pressed() -> void:
 			gun.visible = false
 			if player.num_gun_actual==1:
 				player.gun_actual = gun
-			var button:Button = buttons[button_to_equip_pressed_id]
-			button.get_child(1).visible=false
-			button.get_child(2).visible=true
-			button.disabled = true
-			button = buttons[gun1_button_id]
-			button.get_child(2).visible=false
-			button.disabled = false
 			gun1_button_id = button_to_equip_pressed_id
-			gun1_esquiped_sprite.texture = player.gun_1.icon
 			var spaw = player.gun_spawner
 			spaw.remove_child(spaw.get_child(0))
 			spaw.add_child(gun)
 			spaw.move_child(spaw.get_child(1),0)
+			update_items_menu()
 
 
 
@@ -92,18 +81,11 @@ func _on_gun_2_button_pressed() -> void:
 			gun.visible = false
 			if player.num_gun_actual==2:
 				player.gun_actual = gun
-			var button:Button = buttons[button_to_equip_pressed_id]
-			button.get_child(1).visible=false
-			button.get_child(2).visible=true
-			button.disabled = true
-			button = buttons[gun2_button_id]
-			button.get_child(2).visible=false
-			button.disabled = false
 			gun2_button_id = button_to_equip_pressed_id
-			gun2_esquiped_sprite.texture = player.gun_2.icon
 			var spaw = player.gun_spawner
 			spaw.remove_child(spaw.get_child(1))
 			spaw.add_child(gun)
+			update_items_menu()
 
 
 func _on_sell_button_pressed() -> void:
@@ -117,16 +99,32 @@ func _on_sell_button_pressed() -> void:
 
 func update_items_menu():
 	get_parent().get_child(1).coin_label.text = str(player.coins)
+	if GameManager.player_gun_1 != null:
+		gun1_esquiped_sprite.texture = player.gun_1.icon
+		gun1_button.get_child(1).texture = player.gun_1.inv_panel
+	if GameManager.player_gun_2!= null:
+		gun2_esquiped_sprite.texture = player.gun_2.icon
+		gun2_button.get_child(1).texture = player.gun_2.inv_panel
 	for x in range(player.items.size()):
-		if player.items[x] == player.gun_1:
+		buttons[x].disabled = false
+		buttons[x].get_child(0).texture = player.items[x].icon
+		if player.items[x].is_in_group("Item"):
+			buttons[x].get_child(2).visible = false
+			buttons[x].disabled = true
+		if player.items[x].is_in_group("Gun") and player.items[x] != player.gun_1 and player.items[x] != player.gun_2:
+			print(player.items[x].inv_panel)
+			buttons[x].get_child(2).texture = player.items[x].inv_panel
+			buttons[x].get_child(2).visible = true
+		elif player.items[x] == player.gun_1:
 			gun1_button_id = x
 			buttons[x].get_child(2).visible = true
 			buttons[x].disabled = true
+			buttons[x].get_child(2).texture = player.items[x].equiped_panel
 		elif player.items[x] == player.gun_2:
 			gun2_button_id = x
 			buttons[x].get_child(2).visible = true
 			buttons[x].disabled = true
-		buttons[x].get_child(0).texture = player.items[x].icon
+			buttons[x].get_child(2).texture = player.items[x].equiped_panel
 	for x in range(player.items.size(),60):
 		buttons[x].disabled = true
 		buttons[x].get_child(0).texture = null

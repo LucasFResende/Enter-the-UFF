@@ -7,7 +7,7 @@ var player_in:bool = false
 @onready var ui:Control = $InterectUi
 @onready var anim:AnimationPlayer = $AnimationPlayer
 
-enum item_types {pendrive, hd, ssd, nvme}
+enum item_types {PENDRIVE, HD, SSD, NVME}
 
 @export var item_type:item_types
 
@@ -40,11 +40,34 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 	
 func get_type():
-	if item_type == item_types.pendrive:
+	if item_type == item_types.PENDRIVE:
 		return load("res://objects/itens/pendrive.tscn")
-	elif item_type == item_types.hd:
+	elif item_type == item_types.HD:
 		return load("res://objects/itens/hd.tscn")
-	elif item_type == item_types.ssd:
+	elif item_type == item_types.SSD:
 		return load("res://objects/itens/ssd.tscn")
-	elif item_type == item_types.nvme:
+	elif item_type == item_types.NVME:
 		return load("res://objects/itens/nvme.tscn")
+
+
+func open():
+	if item_type == item_types.PENDRIVE:
+		return [get_coin(1,10),get_gun(0.5)]
+	elif item_type == item_types.HD:
+		return [get_coin(11,25),get_gun(0.4)]
+	elif item_type == item_types.SSD:
+		return [get_coin(26,40),get_gun(0.4)]
+	elif item_type == item_types.NVME:
+		return [get_coin(41,99),get_gun(0.5)]
+	
+func get_coin(min,max):
+	return randi_range(min,max)
+	
+func get_gun(drop_chance:float):
+	var chance:float = randf()
+	if chance<drop_chance:
+		var gun:Gun = GameManager.guns.pick_random().instantiate()
+		gun.pick_rarity()
+		return gun
+	else:
+		return null

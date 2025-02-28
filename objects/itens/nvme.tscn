@@ -69,11 +69,12 @@ _data = {
 "open": SubResource("Animation_fddl4")
 }
 
-[node name="Nvme" type="Sprite2D"]
+[node name="Nvme" type="Sprite2D" groups=["Item"]]
 z_index = 1
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_7whj0")
 script = ExtResource("2_lyqp5")
+item_type = 3
 icon = ExtResource("3_748dx")
 
 [node name="Area2D" type="Area2D" parent="."]

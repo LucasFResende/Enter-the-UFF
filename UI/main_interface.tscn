@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://dqtl5b1tstwmp"]
 
-[ext_resource type="StyleBox" uid="uid://cevicx80p0r6f" path="res://UI/panel.tres" id="1_baq74"]
+[ext_resource type="StyleBox" uid="uid://cevicx80p0r6f" path="res://UI/PANEL/panel.tres" id="1_baq74"]
 [ext_resource type="Script" path="res://scripts/main_interface.gd" id="1_djgp8"]
 [ext_resource type="Texture2D" uid="uid://bbdlxty5q5hou" path="res://addons/player/player_idle.png" id="2_g6hxl"]
 [ext_resource type="Material" uid="uid://cxrb5fdf0l11j" path="res://player/player_shader.tres" id="3_lo8sj"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="3_wh3a1"]
-[ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/panel_button.tres" id="4_25lnk"]
+[ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/PANEL/panel_button.tres" id="4_25lnk"]
 [ext_resource type="Texture2D" uid="uid://dc45mti7p4i4y" path="res://addons/ui/coin.png" id="5_ij18e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6a15e"]

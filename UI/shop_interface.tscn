@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/shop_interface.gd" id="1_rr0xp"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="2_fsa2h"]
-[ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/panel_button.tres" id="3_xfvfl"]
+[ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/PANEL/panel_button.tres" id="3_xfvfl"]
 
 [sub_resource type="Animation" id="Animation_r6rmt"]
 length = 0.001

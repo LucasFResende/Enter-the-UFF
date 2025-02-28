@@ -18,6 +18,7 @@ var flipping_cooldown:float = 0.8
 var death_cooldown:float = 0
 var can_shoot:bool = false
 var is_holding_grenade:bool = false
+var is_in_pc:bool = false
 
 var coins:int = 0
 
@@ -28,6 +29,7 @@ var coins:int = 0
 @onready var no_enemy:Area2D = $NoEnemy
 @onready var change_scene:CanvasLayer = $Camera2D/ChangeScene
 @onready var gun_spawner:Marker2D = $SpawGun
+@onready var camera:Camera2D = $Camera2D
 
 @export var life:int = 6
 var max_life:int = 7
@@ -56,6 +58,8 @@ func _ready() -> void:
 	gun_actual = GameManager.player_actual_gun
 	gun_1 = GameManager.player_gun_1
 	gun_2 = GameManager.player_gun_2
+	gun_1.pick_rarity()
+	gun_2.pick_rarity()
 	gun_spawner.add_child(gun_1)
 	gun_spawner.add_child(gun_2)
 	gun_2.process_mode = Node.PROCESS_MODE_DISABLED
@@ -72,72 +76,70 @@ func _ready() -> void:
 	generate_items()
 
 func _physics_process(delta: float) -> void:
-	print(life)
-	GameManager.player_position = global_position
-	if Input.is_action_just_pressed("esc"):
-		$Camera2D.add_child(menu_scene.instantiate())
-	if GameManager.is_scene_changed:
-		GameManager.can_spawn_map = true
-		GameManager.is_scene_changed = false
+	if !is_in_pc:
+		GameManager.player_position = global_position
+		if GameManager.is_scene_changed:
+			GameManager.can_spawn_map = true
+			GameManager.is_scene_changed = false
 
-	if death_cooldown>0:
-		death_cooldown-=delta
-		if death_cooldown<=0:
-			change_scene.change_scene(GameManager.return_scene_path,GameManager.return_local)
-			await change_scene.anim.animation_finished
-			life = max_life
-			is_dead = false
-		return
-	health_bar.update_health(life,max_life)
-	if Input.is_action_just_pressed("gun1") or Input.is_action_just_pressed("gun2") or Input.is_action_just_pressed("scroll"):
-		change_gun()
-	if Input.is_action_just_pressed("grenade"):
-		if is_holding_grenade:
-			is_holding_grenade = false
-			gun_spawner.get_child(1).queue_free()
-			gun_spawner.get_child(0).visible = true
-			gun_spawner.get_child(0).process_mode = Node.PROCESS_MODE_INHERIT
-		elif !is_holding_grenade:
-			gun_spawner.get_child(0).visible = false
-			gun_spawner.get_child(0).process_mode = Node.PROCESS_MODE_DISABLED
-			gun_spawner.get_child(0).add_sibling(load("res://guns/grenade.tscn").instantiate())
-			is_holding_grenade = true
-	if is_sliding:
-		process_table_slide(delta)
-		return
-	if flipping_cooldown>0 and is_flipping:
-		flipping_cooldown-=delta
-		return
-	else:
-		flipping_cooldown = 0.8
-		is_flipping = false 
-		
-	if rollin_cooldow > 0 and is_rolling:
-		rollin_cooldow-=delta
-	else:
-		rollin_cooldow=1.6
-		is_rolling = false
-	process_input()
-	
-
-	ver_angle()
-	if input and !is_sliding:
-		is_moving = true
-		var target_position:Vector2 = position+input*SPEED*delta*50
-		position = lerp(position,target_position,1)
-	else:
-		is_moving = false
-		
-	move_and_slide()
-	
-	for i in get_slide_collision_count():
-		collision = get_slide_collision(i).get_collider()
-		if (collision.name == "VerticalTable" or collision.name == "HorizontalTable") and Input.is_action_just_pressed("mouse2"):
-			is_sliding = true
+		if death_cooldown>0:
+			death_cooldown-=delta
+			if death_cooldown<=0:
+				change_scene.change_scene(GameManager.return_scene_path,GameManager.return_local)
+				await change_scene.anim.animation_finished
+				life = max_life
+				is_dead = false
+			return
+		health_bar.update_health(life,max_life)
+		if Input.is_action_just_pressed("gun1") or Input.is_action_just_pressed("gun2") or Input.is_action_just_pressed("scroll"):
+			change_gun()
+		if Input.is_action_just_pressed("grenade"):
+			if is_holding_grenade:
+				is_holding_grenade = false
+				gun_spawner.get_child(1).queue_free()
+				gun_spawner.get_child(0).visible = true
+				gun_spawner.get_child(0).process_mode = Node.PROCESS_MODE_INHERIT
+			elif !is_holding_grenade:
+				gun_spawner.get_child(0).visible = false
+				gun_spawner.get_child(0).process_mode = Node.PROCESS_MODE_DISABLED
+				gun_spawner.get_child(0).add_sibling(load("res://guns/grenade.tscn").instantiate())
+				is_holding_grenade = true
+		if is_sliding:
+			process_table_slide(delta)
+			return
+		if flipping_cooldown>0 and is_flipping:
+			flipping_cooldown-=delta
+			return
+		else:
+			flipping_cooldown = 0.8
+			is_flipping = false 
+			
+		if rollin_cooldow > 0 and is_rolling:
+			rollin_cooldow-=delta
+		else:
+			rollin_cooldow=1.6
 			is_rolling = false
-			table_slide(collision.name)
-		elif (collision.name == "VerticalTable" or collision.name == "HorizontalTable") and Input.is_action_just_pressed("interact"):
-			flip_table()
+		process_input()
+		
+
+		ver_angle()
+		if input and !is_sliding:
+			is_moving = true
+			var target_position:Vector2 = position+input*SPEED*delta*50
+			position = lerp(position,target_position,1)
+		else:
+			is_moving = false
+			
+		move_and_slide()
+		
+		for i in get_slide_collision_count():
+			collision = get_slide_collision(i).get_collider()
+			if (collision.name == "VerticalTable" or collision.name == "HorizontalTable") and Input.is_action_just_pressed("mouse2"):
+				is_sliding = true
+				is_rolling = false
+				table_slide(collision.name)
+			elif (collision.name == "VerticalTable" or collision.name == "HorizontalTable") and Input.is_action_just_pressed("interact"):
+				flip_table()
 
 
 func process_input():
@@ -324,7 +326,9 @@ func generate_items():
 	items.append(gun_1)
 	items.append(gun_2)
 	for i in range(5):
-		items.append(GameManager.guns.pick_random().instantiate())
+		var gun:Gun = GameManager.guns.pick_random().instantiate()
+		gun.pick_rarity()
+		items.append(gun)
 	items.append(load("res://objects/itens/hd.tscn").instantiate())
 	items.append(load("res://objects/itens/pendrive.tscn").instantiate())
 	items.append(load("res://objects/itens/ssd.tscn").instantiate())

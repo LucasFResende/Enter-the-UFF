@@ -1,8 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwlfl8tfknf68"]
+[gd_scene load_steps=15 format=3 uid="uid://dwlfl8tfknf68"]
 
 [ext_resource type="Script" path="res://scripts/open_disk_interface.gd" id="1_lcp6o"]
-[ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/panel_button.tres" id="2_wwo6p"]
+[ext_resource type="Texture2D" uid="uid://bs7m0nujq4iej" path="res://addons/particles/star_09.png" id="2_2v6r1"]
+[ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/PANEL/panel_button.tres" id="2_wwo6p"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="3_4s60r"]
+[ext_resource type="Script" path="res://scripts/inventory_button.gd" id="3_axdie"]
+[ext_resource type="Texture2D" uid="uid://dncrvb4wpboaj" path="res://addons/ui/panel3.png" id="4_j5cpn"]
+[ext_resource type="Texture2D" uid="uid://bhrwk0waijqqn" path="res://addons/ui/common_panel_inv.png" id="5_i0sxg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lxsyn"]
+font = ExtResource("3_4s60r")
+font_size = 100
+font_color = Color(1, 0.87451, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_5dan8"]
 length = 0.001
@@ -85,11 +96,95 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_ijdy1"]
+resource_name = "open_item"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"update_items_menu"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Star:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_y21jj"]
+resource_name = "open_item_without_gun"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"update_items_menu"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbsrr"]
 _data = {
 "RESET": SubResource("Animation_5dan8"),
 "close": SubResource("Animation_5uwap"),
-"open": SubResource("Animation_jsi7b")
+"open": SubResource("Animation_jsi7b"),
+"open_item": SubResource("Animation_ijdy1"),
+"open_item_without_gun": SubResource("Animation_y21jj")
 }
 
 [node name="OpenDiskInterface" type="Control"]
@@ -108,6 +203,46 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lcp6o")
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Star" type="Sprite2D" parent="Control"]
+unique_name_in_owner = true
+position = Vector2(962, 548)
+scale = Vector2(3, 3)
+texture = ExtResource("2_2v6r1")
+
+[node name="RarityPanel" type="TextureRect" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="GunIcon" type="Sprite2D" parent="Control/RarityPanel"]
+unique_name_in_owner = true
+position = Vector2(200, 200)
+scale = Vector2(5.23437, 5.59375)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_direction = 1
@@ -136,6 +271,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -149,8 +285,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("5_i0sxg")
+expand_mode = 1
 
 [node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -164,8 +315,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button2"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button2"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -179,8 +345,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button3"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button3"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -194,8 +375,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button4"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button4"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -209,8 +405,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button5"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button5"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -224,13 +435,28 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button6"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button6"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -244,38 +470,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 7
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button7"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button7"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -289,23 +500,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 8
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button8"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button8"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -319,13 +530,118 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button9"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button9"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button10"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button10"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button11" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button11"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button11"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button12" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button12"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button12"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button13" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -339,38 +655,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 13
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button13"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button13"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button14" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -384,23 +685,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 14
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button14"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button14"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button15" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -414,13 +715,118 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button15"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button15"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button16" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button16"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button16"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button17" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button17"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button17"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button18" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 18
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button18"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button18"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+[node name="Button19" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -434,38 +840,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 19
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button19"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button19"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+[node name="Button20" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -479,23 +870,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 20
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button20"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button20"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button21" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -509,13 +900,118 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 21
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button21"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button21"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button22" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 22
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button22"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button22"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button23" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 23
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button23"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button23"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button24" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 24
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button24"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button24"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+[node name="Button25" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -529,38 +1025,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 25
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button25"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button25"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+[node name="Button26" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -574,23 +1055,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 26
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button26"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button26"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button27" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -604,13 +1085,118 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 27
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button27"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button27"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button28" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 28
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button28"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button28"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button29" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 29
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button29"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button29"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button30" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button30"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button30"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+[node name="Button31" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -624,38 +1210,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 31
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button31"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button31"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+[node name="Button32" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -669,23 +1240,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 32
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button32"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button32"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button33" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -699,13 +1270,118 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 33
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button33"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button33"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button34" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 34
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button34"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button34"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button35" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 35
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button35"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button35"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button36" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 36
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button36"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button36"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+[node name="Button37" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -719,38 +1395,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 37
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button37"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button37"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+[node name="Button38" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -764,23 +1425,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 38
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button38"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button38"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button39" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -794,13 +1455,118 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 39
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button39"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button39"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button40" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 40
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button40"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button40"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button41" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 41
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button41"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button41"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button42" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 42
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button42"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button42"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+[node name="Button43" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -814,38 +1580,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 43
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button43"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button43"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+[node name="Button44" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -859,23 +1610,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 44
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button44"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button44"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button45" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -889,13 +1640,118 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 45
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button45"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button45"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button46" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 46
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button46"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button46"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button47" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 47
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button47"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button47"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button48" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 48
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button48"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button48"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+[node name="Button49" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -909,38 +1765,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 49
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button49"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button49"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+[node name="Button50" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -954,23 +1795,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 50
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button50"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button50"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button51" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -984,13 +1825,118 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 51
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button51"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button51"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button52" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 52
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button52"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button52"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button53" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 53
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button53"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button53"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button54" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 54
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button54"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button54"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="HBoxContainer10" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+[node name="Button55" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -1004,38 +1950,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 55
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button55"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button55"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+[node name="Button56" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -1049,23 +1980,23 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 56
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
-custom_minimum_size = Vector2(140, 100)
-layout_mode = 2
-theme_override_styles/focus = ExtResource("2_wwo6p")
-theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/disabled = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
-theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/hover = ExtResource("2_wwo6p")
-theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/pressed = ExtResource("2_wwo6p")
-theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
-theme_override_styles/normal = ExtResource("2_wwo6p")
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button56"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button56"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button57" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 theme_override_styles/focus = ExtResource("2_wwo6p")
@@ -1079,6 +2010,110 @@ theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/pressed = ExtResource("2_wwo6p")
 theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 57
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button57"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button57"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button58" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 58
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button58"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button58"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button59" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 59
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button59"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button59"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
+
+[node name="Button60" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_wwo6p")
+theme_override_styles/disabled_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/disabled = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover_pressed = ExtResource("2_wwo6p")
+theme_override_styles/hover_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/hover = ExtResource("2_wwo6p")
+theme_override_styles/pressed_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/pressed = ExtResource("2_wwo6p")
+theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
+theme_override_styles/normal = ExtResource("2_wwo6p")
+script = ExtResource("3_axdie")
+id = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button60"]
+position = Vector2(70, 50)
+scale = Vector2(2, 2)
+
+[node name="Selected" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button60"]
+visible = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 100.0
+texture = ExtResource("4_j5cpn")
+expand_mode = 1
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
@@ -1137,6 +2172,25 @@ theme_override_styles/normal_mirrored = ExtResource("2_wwo6p")
 theme_override_styles/normal = ExtResource("2_wwo6p")
 text = "OPEN"
 
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 80.0
+offset_right = -70.0
+offset_bottom = 180.0
+grow_horizontal = 0
+text = "+99"
+label_settings = SubResource("LabelSettings_lxsyn")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
@@ -1145,4 +2199,65 @@ libraries = {
 }
 autoplay = "open"
 
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer/Button" to="ScrollContainer/VBoxContainer/HBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer/Button2" to="ScrollContainer/VBoxContainer/HBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer/Button3" to="ScrollContainer/VBoxContainer/HBoxContainer/Button3" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer/Button4" to="ScrollContainer/VBoxContainer/HBoxContainer/Button4" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer/Button5" to="ScrollContainer/VBoxContainer/HBoxContainer/Button5" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer/Button6" to="ScrollContainer/VBoxContainer/HBoxContainer/Button6" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer2/Button7" to="ScrollContainer/VBoxContainer/HBoxContainer2/Button7" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer2/Button8" to="ScrollContainer/VBoxContainer/HBoxContainer2/Button8" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer2/Button9" to="ScrollContainer/VBoxContainer/HBoxContainer2/Button9" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer2/Button10" to="ScrollContainer/VBoxContainer/HBoxContainer2/Button10" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer2/Button11" to="ScrollContainer/VBoxContainer/HBoxContainer2/Button11" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer2/Button12" to="ScrollContainer/VBoxContainer/HBoxContainer2/Button12" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button13" to="ScrollContainer/VBoxContainer/HBoxContainer3/Button13" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button14" to="ScrollContainer/VBoxContainer/HBoxContainer3/Button14" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button15" to="ScrollContainer/VBoxContainer/HBoxContainer3/Button15" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button16" to="ScrollContainer/VBoxContainer/HBoxContainer3/Button16" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button17" to="ScrollContainer/VBoxContainer/HBoxContainer3/Button17" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button18" to="ScrollContainer/VBoxContainer/HBoxContainer3/Button18" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button19" to="ScrollContainer/VBoxContainer/HBoxContainer4/Button19" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button20" to="ScrollContainer/VBoxContainer/HBoxContainer4/Button20" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button21" to="ScrollContainer/VBoxContainer/HBoxContainer4/Button21" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button22" to="ScrollContainer/VBoxContainer/HBoxContainer4/Button22" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button23" to="ScrollContainer/VBoxContainer/HBoxContainer4/Button23" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button24" to="ScrollContainer/VBoxContainer/HBoxContainer4/Button24" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer5/Button25" to="ScrollContainer/VBoxContainer/HBoxContainer5/Button25" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer5/Button26" to="ScrollContainer/VBoxContainer/HBoxContainer5/Button26" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer5/Button27" to="ScrollContainer/VBoxContainer/HBoxContainer5/Button27" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer5/Button28" to="ScrollContainer/VBoxContainer/HBoxContainer5/Button28" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer5/Button29" to="ScrollContainer/VBoxContainer/HBoxContainer5/Button29" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer5/Button30" to="ScrollContainer/VBoxContainer/HBoxContainer5/Button30" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer6/Button31" to="ScrollContainer/VBoxContainer/HBoxContainer6/Button31" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer6/Button32" to="ScrollContainer/VBoxContainer/HBoxContainer6/Button32" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer6/Button33" to="ScrollContainer/VBoxContainer/HBoxContainer6/Button33" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer6/Button34" to="ScrollContainer/VBoxContainer/HBoxContainer6/Button34" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer6/Button35" to="ScrollContainer/VBoxContainer/HBoxContainer6/Button35" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer6/Button36" to="ScrollContainer/VBoxContainer/HBoxContainer6/Button36" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer7/Button37" to="ScrollContainer/VBoxContainer/HBoxContainer7/Button37" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer7/Button38" to="ScrollContainer/VBoxContainer/HBoxContainer7/Button38" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer7/Button39" to="ScrollContainer/VBoxContainer/HBoxContainer7/Button39" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer7/Button40" to="ScrollContainer/VBoxContainer/HBoxContainer7/Button40" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer7/Button41" to="ScrollContainer/VBoxContainer/HBoxContainer7/Button41" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer7/Button42" to="ScrollContainer/VBoxContainer/HBoxContainer7/Button42" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer8/Button43" to="ScrollContainer/VBoxContainer/HBoxContainer8/Button43" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer8/Button44" to="ScrollContainer/VBoxContainer/HBoxContainer8/Button44" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer8/Button45" to="ScrollContainer/VBoxContainer/HBoxContainer8/Button45" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer8/Button46" to="ScrollContainer/VBoxContainer/HBoxContainer8/Button46" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer8/Button47" to="ScrollContainer/VBoxContainer/HBoxContainer8/Button47" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer8/Button48" to="ScrollContainer/VBoxContainer/HBoxContainer8/Button48" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer9/Button49" to="ScrollContainer/VBoxContainer/HBoxContainer9/Button49" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer9/Button50" to="ScrollContainer/VBoxContainer/HBoxContainer9/Button50" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer9/Button51" to="ScrollContainer/VBoxContainer/HBoxContainer9/Button51" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer9/Button52" to="ScrollContainer/VBoxContainer/HBoxContainer9/Button52" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer9/Button53" to="ScrollContainer/VBoxContainer/HBoxContainer9/Button53" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer9/Button54" to="ScrollContainer/VBoxContainer/HBoxContainer9/Button54" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button55" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button55" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button56" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button56" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button57" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button57" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button58" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button58" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button59" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button59" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button60" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button60" method="_on_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="OpenButton" to="." method="_on_open_button_pressed"]

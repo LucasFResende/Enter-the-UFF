@@ -47,6 +47,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and is_in_game:
+		player.camera.add_child(load("res://UI/menu_ui.tscn").instantiate())
 		get_tree().paused = true
 		is_in_menu = true
 		change_mouse()

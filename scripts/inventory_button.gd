@@ -14,12 +14,12 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	var inventoryInterface = get_parent().get_parent().get_parent().get_parent()
+	var Interface = get_parent().get_parent().get_parent().get_parent()
 	var panel:TextureRect = get_child(1)
-	if inventoryInterface.last_button_pressed_id!=-1 and inventoryInterface.last_button_pressed_id!=id-1:
-		inventoryInterface.buttons[inventoryInterface.last_button_pressed_id].get_child(1).visible = false
-		inventoryInterface.buttons[inventoryInterface.last_button_pressed_id].get_child(1).texture = load("res://addons/ui/panel3.png")
+	if Interface.last_button_pressed_id!=-1 and Interface.last_button_pressed_id!=id-1:
+		Interface.buttons[Interface.last_button_pressed_id].get_child(1).visible = false
+		Interface.buttons[Interface.last_button_pressed_id].get_child(1).texture = load("res://addons/ui/panel3.png")
 	panel.texture = load("res://addons/ui/panel5.png")
 	panel.visible = true
-	inventoryInterface.button_pressed_id = id-1
-	inventoryInterface.last_button_pressed_id = id-1
+	Interface.button_pressed_id = id-1
+	Interface.last_button_pressed_id = id-1

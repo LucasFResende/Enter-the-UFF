@@ -47,6 +47,7 @@ func _on_quit_button_pressed() -> void:
 		player.gun_spawner.get_child(1).visible = true
 		player.gun_2.update_ui()
 	get_parent().get_parent().get_child(0).get_child(1).play("pc_off")
+	player.is_in_pc = false
 	GameManager.is_in_menu = false
 	GameManager.change_mouse()
 	get_parent().call_deferred("queue_free")

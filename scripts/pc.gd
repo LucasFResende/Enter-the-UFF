@@ -9,6 +9,7 @@ var player:Player
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and is_in_area:
+		player.is_in_pc = true
 		player.gun_spawner.process_mode = Node.PROCESS_MODE_DISABLED
 		player.gun_spawner.get_child(0).visible = false
 		player.gun_spawner.get_child(1).visible = false
