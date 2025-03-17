@@ -1,5 +1,5 @@
-extends Sprite2D
 class_name Item
+extends Sprite2D
 
 var player_in:bool = false
 

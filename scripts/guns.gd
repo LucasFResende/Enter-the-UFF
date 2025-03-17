@@ -11,6 +11,7 @@ var equiped_panel:Texture
 var inv_panel:Texture
 var panel:Texture
 var rarity_color:Color
+var rarity_percent:int
 
 var angle:float
 @onready var sprite:Sprite2D = $Sprite2D
@@ -36,6 +37,7 @@ var angle:float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_ui()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -70,9 +72,10 @@ func ver_angle():
 		angle=270.0
 
 func fire():
-	shoot()
-	actual_ammo-=1
-	update_ui()
+	if actual_ammo>0:
+		shoot()
+		actual_ammo-=1
+		update_ui()
 
 func shoot():
 	var shoot_bullet:Shoot = shoot_scene.instantiate() as Area2D
@@ -98,23 +101,28 @@ func pick_rarity():
 		inv_panel = load("res://addons/ui/uncommon_panel_inv.png")
 		panel = load("res://addons/ui/uncommon_panel.png")
 		rarity_color = Color("a9a9a9")
+		sell_price = sell_price * 1
 	elif gun_rarity == rarity.COMMON:
 		equiped_panel = load("res://addons/ui/common_panel_inv_eq.png")
 		inv_panel = load("res://addons/ui/common_panel_inv.png")
 		panel = load("res://addons/ui/common_panel.png")
 		rarity_color = Color("32cd32") 
+		sell_price = sell_price * 2
 	elif gun_rarity == rarity.RARE:
 		equiped_panel = load("res://addons/ui/rare_panel_inv_eq.png")
 		inv_panel = load("res://addons/ui/rare_panel_inv.png")
 		panel = load("res://addons/ui/rare_panel.png")
-		rarity_color = Color("2e8df4") 
+		rarity_color = Color("2e8df4")
+		sell_price = sell_price * 3
 	elif gun_rarity == rarity.EPIC:
 		equiped_panel = load("res://addons/ui/epic_panel_inv_eq.png")
 		inv_panel = load("res://addons/ui/epic_panel_inv.png")
 		panel = load("res://addons/ui/epic_panel.png")
 		rarity_color = Color("8645b2") 
+		sell_price = sell_price * 4
 	elif gun_rarity == rarity.LEGENDARY:
 		equiped_panel = load("res://addons/ui/legendary_panel_inv_eq.png")
 		inv_panel = load("res://addons/ui/legendary_panel_inv.png")
 		panel = load("res://addons/ui/legendary_panel.png")
-		rarity_color = Color("d50000") 
+		rarity_color = Color("d50000")
+		sell_price = sell_price * 5

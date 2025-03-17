@@ -1,12 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dwlfl8tfknf68"]
+[gd_scene load_steps=13 format=3 uid="uid://dwlfl8tfknf68"]
 
 [ext_resource type="Script" path="res://scripts/open_disk_interface.gd" id="1_lcp6o"]
 [ext_resource type="Texture2D" uid="uid://bs7m0nujq4iej" path="res://addons/particles/star_09.png" id="2_2v6r1"]
 [ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/PANEL/panel_button.tres" id="2_wwo6p"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="3_4s60r"]
 [ext_resource type="Script" path="res://scripts/inventory_button.gd" id="3_axdie"]
-[ext_resource type="Texture2D" uid="uid://dncrvb4wpboaj" path="res://addons/ui/panel3.png" id="4_j5cpn"]
-[ext_resource type="Texture2D" uid="uid://bhrwk0waijqqn" path="res://addons/ui/common_panel_inv.png" id="5_i0sxg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxsyn"]
 font = ExtResource("3_4s60r")
@@ -297,7 +295,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_i0sxg")
 expand_mode = 1
 
 [node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -327,7 +324,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -357,7 +353,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -387,7 +382,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -417,7 +411,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -447,7 +440,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -482,7 +474,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -512,7 +503,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -542,7 +532,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -572,7 +561,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button11" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -602,7 +590,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button12" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -632,7 +619,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -667,7 +653,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button14" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -697,7 +682,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button15" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -727,7 +711,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button16" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -757,7 +740,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button17" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -787,7 +769,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button18" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -817,7 +798,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -852,7 +832,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button20" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -882,7 +861,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button21" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -912,7 +890,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button22" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -942,7 +919,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button23" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -972,7 +948,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button24" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -1002,7 +977,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1037,7 +1011,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button26" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1067,7 +1040,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button27" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1097,7 +1069,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button28" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1127,7 +1098,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button29" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1157,7 +1127,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button30" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1187,7 +1156,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1222,7 +1190,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button32" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1252,7 +1219,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button33" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1282,7 +1248,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button34" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1312,7 +1277,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button35" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1342,7 +1306,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button36" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1372,7 +1335,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1407,7 +1369,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button38" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1437,7 +1398,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button39" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1467,7 +1427,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button40" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1497,7 +1456,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button41" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1527,7 +1485,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button42" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1557,7 +1514,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1592,7 +1548,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button44" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -1622,7 +1577,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button45" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -1652,7 +1606,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button46" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -1682,7 +1635,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button47" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -1712,7 +1664,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button48" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -1742,7 +1693,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1777,7 +1727,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button50" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -1807,7 +1756,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button51" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -1837,7 +1785,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button52" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -1867,7 +1814,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button53" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -1897,7 +1843,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button54" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -1927,7 +1872,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="HBoxContainer10" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1962,7 +1906,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button56" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -1992,7 +1935,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button57" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2022,7 +1964,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button58" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2052,7 +1993,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button59" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2082,7 +2022,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="Button60" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2112,7 +2051,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("4_j5cpn")
 expand_mode = 1
 
 [node name="BackButton" type="Button" parent="."]

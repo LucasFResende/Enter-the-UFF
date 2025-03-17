@@ -1,12 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://bg8ptdcirir4l"]
+[gd_scene load_steps=13 format=3 uid="uid://bg8ptdcirir4l"]
 
 [ext_resource type="Script" path="res://scripts/inventory_interface.gd" id="1_wu6va"]
 [ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/PANEL/panel_button.tres" id="2_6pn5a"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="3_xs2n4"]
 [ext_resource type="Script" path="res://scripts/inventory_button.gd" id="4_84g82"]
-[ext_resource type="Texture2D" uid="uid://dag2hktjre3dq" path="res://addons/ui/panel4.png" id="5_e4o3u"]
-[ext_resource type="Texture2D" uid="uid://dncrvb4wpboaj" path="res://addons/ui/panel3.png" id="5_ea5ae"]
+[ext_resource type="Texture2D" uid="uid://dc45mti7p4i4y" path="res://addons/ui/coin.png" id="6_3q0i1"]
 [ext_resource type="Texture2D" uid="uid://bhrwk0waijqqn" path="res://addons/ui/common_panel_inv.png" id="7_xe052"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6kse"]
+font = ExtResource("3_xs2n4")
+font_size = 100
+font_color = Color(1, 0.87451, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mf6u2"]
+texture = ExtResource("6_3q0i1")
 
 [sub_resource type="Animation" id="Animation_olncs"]
 length = 0.001
@@ -113,68 +122,42 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wu6va")
 
-[node name="Gun1Button" type="Button" parent="."]
+[node name="Gun1" type="Control" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
+anchors_preset = 0
 offset_left = 128.0
 offset_top = 720.0
 offset_right = 398.0
 offset_bottom = 840.0
-theme_override_styles/focus = ExtResource("2_6pn5a")
-theme_override_styles/disabled_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/disabled = ExtResource("2_6pn5a")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/hover_pressed = ExtResource("2_6pn5a")
-theme_override_styles/hover_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/hover = ExtResource("2_6pn5a")
-theme_override_styles/pressed_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/pressed = ExtResource("2_6pn5a")
-theme_override_styles/normal_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/normal = ExtResource("2_6pn5a")
-disabled = true
 
-[node name="GunEquiped1" type="Sprite2D" parent="Gun1Button"]
+[node name="GunEquiped1" type="Sprite2D" parent="Gun1"]
 unique_name_in_owner = true
 position = Vector2(129, 57)
 scale = Vector2(3, 3)
 
-[node name="Equiped" type="TextureRect" parent="Gun1Button"]
+[node name="Equiped" type="TextureRect" parent="Gun1"]
 layout_mode = 0
 offset_right = 270.0
 offset_bottom = 120.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
-[node name="Gun2Button" type="Button" parent="."]
+[node name="Gun2" type="Control" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
+anchors_preset = 0
 offset_left = 452.0
 offset_top = 720.0
 offset_right = 722.0
 offset_bottom = 840.0
-theme_override_styles/focus = ExtResource("2_6pn5a")
-theme_override_styles/disabled_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/disabled = ExtResource("2_6pn5a")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/hover_pressed = ExtResource("2_6pn5a")
-theme_override_styles/hover_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/hover = ExtResource("2_6pn5a")
-theme_override_styles/pressed_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/pressed = ExtResource("2_6pn5a")
-theme_override_styles/normal_mirrored = ExtResource("2_6pn5a")
-theme_override_styles/normal = ExtResource("2_6pn5a")
-disabled = true
 
-[node name="GunEquiped2" type="Sprite2D" parent="Gun2Button"]
+[node name="GunEquiped2" type="Sprite2D" parent="Gun2"]
 unique_name_in_owner = true
 position = Vector2(129, 57)
 scale = Vector2(3, 3)
 
-[node name="Equiped" type="TextureRect" parent="Gun2Button"]
+[node name="Equiped" type="TextureRect" parent="Gun2"]
 layout_mode = 0
 offset_right = 270.0
 offset_bottom = 120.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="BackButton" type="Button" parent="."]
@@ -208,16 +191,16 @@ text = "BACK"
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_direction = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -43.0
-offset_top = -456.0
-offset_right = 875.0
-offset_bottom = 140.0
-grow_horizontal = 2
+offset_left = -989.0
+offset_top = -455.0
+offset_right = -71.0
+offset_bottom = 141.0
+grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_6pn5a")
 
@@ -258,7 +241,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button"]
@@ -266,7 +248,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -296,7 +277,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button2"]
@@ -304,7 +284,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -334,7 +313,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button3"]
@@ -372,7 +350,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button4"]
@@ -380,7 +357,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -410,7 +386,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button5"]
@@ -418,7 +393,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -448,7 +422,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/Button6"]
@@ -456,7 +429,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -491,7 +463,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button7"]
@@ -499,7 +470,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -529,7 +499,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button8"]
@@ -537,7 +506,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -567,7 +535,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button9"]
@@ -575,7 +542,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -605,7 +571,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button10"]
@@ -613,7 +578,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button11" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -643,7 +607,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button11"]
@@ -651,7 +614,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button12" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -681,7 +643,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Button12"]
@@ -689,7 +650,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -724,7 +684,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button13"]
@@ -732,7 +691,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button14" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -762,7 +720,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button14"]
@@ -770,7 +727,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button15" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -800,7 +756,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button15"]
@@ -808,7 +763,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button16" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -838,7 +792,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button16"]
@@ -846,7 +799,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button17" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -876,7 +828,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button17"]
@@ -884,7 +835,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button18" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -914,7 +864,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/Button18"]
@@ -922,7 +871,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -957,7 +905,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button19"]
@@ -965,7 +912,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button20" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -995,7 +941,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button20"]
@@ -1003,7 +948,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button21" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -1033,7 +977,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button21"]
@@ -1041,7 +984,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button22" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -1071,7 +1013,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button22"]
@@ -1079,7 +1020,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button23" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -1109,7 +1049,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button23"]
@@ -1117,7 +1056,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button24" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
@@ -1147,7 +1085,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4/Button24"]
@@ -1155,7 +1092,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1190,7 +1126,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button25"]
@@ -1198,7 +1133,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button26" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1228,7 +1162,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button26"]
@@ -1236,7 +1169,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button27" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1266,7 +1198,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button27"]
@@ -1274,7 +1205,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button28" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1304,7 +1234,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button28"]
@@ -1312,7 +1241,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button29" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1342,7 +1270,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button29"]
@@ -1350,7 +1277,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button30" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
@@ -1380,7 +1306,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer5/Button30"]
@@ -1388,7 +1313,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1423,7 +1347,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button31"]
@@ -1431,7 +1354,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button32" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1461,7 +1383,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button32"]
@@ -1469,7 +1390,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button33" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1499,7 +1419,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button33"]
@@ -1507,7 +1426,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button34" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1537,7 +1455,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button34"]
@@ -1545,7 +1462,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button35" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1575,7 +1491,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button35"]
@@ -1583,7 +1498,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button36" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -1613,7 +1527,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer6/Button36"]
@@ -1621,7 +1534,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1656,7 +1568,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button37"]
@@ -1664,7 +1575,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button38" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1694,7 +1604,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button38"]
@@ -1702,7 +1611,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button39" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1732,7 +1640,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button39"]
@@ -1740,7 +1647,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button40" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1770,7 +1676,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button40"]
@@ -1778,7 +1683,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button41" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1808,7 +1712,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button41"]
@@ -1816,7 +1719,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button42" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -1846,7 +1748,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer7/Button42"]
@@ -1854,7 +1755,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -1889,7 +1789,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button43"]
@@ -1897,7 +1796,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button44" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -1927,7 +1825,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button44"]
@@ -1935,7 +1832,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button45" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -1965,7 +1861,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button45"]
@@ -1973,7 +1868,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button46" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -2003,7 +1897,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button46"]
@@ -2011,7 +1904,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button47" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -2041,7 +1933,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button47"]
@@ -2049,7 +1940,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button48" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -2079,7 +1969,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer8/Button48"]
@@ -2087,7 +1976,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -2122,7 +2010,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button49"]
@@ -2130,7 +2017,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button50" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -2160,7 +2046,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button50"]
@@ -2168,7 +2053,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button51" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -2198,7 +2082,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button51"]
@@ -2206,7 +2089,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button52" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -2236,7 +2118,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button52"]
@@ -2244,7 +2125,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button53" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -2274,7 +2154,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button53"]
@@ -2282,7 +2161,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button54" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -2312,7 +2190,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer9/Button54"]
@@ -2320,7 +2197,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="HBoxContainer10" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
@@ -2355,7 +2231,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button55"]
@@ -2363,7 +2238,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button56" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2393,7 +2267,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button56"]
@@ -2401,7 +2274,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button57" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2431,7 +2303,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button57"]
@@ -2439,7 +2310,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button58" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2469,7 +2339,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button58"]
@@ -2477,7 +2346,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button59" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2507,7 +2375,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button59"]
@@ -2515,7 +2382,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
 [node name="Button60" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer10"]
@@ -2545,7 +2411,6 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_ea5ae")
 expand_mode = 1
 
 [node name="Equiped" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer10/Button60"]
@@ -2553,25 +2418,28 @@ visible = false
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 100.0
-texture = ExtResource("5_e4o3u")
 expand_mode = 1
 
-[node name="EquipButton" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 18.0
-offset_top = 177.0
-offset_right = 349.0
-offset_bottom = 327.0
-grow_horizontal = 2
+offset_left = -952.0
+offset_top = 180.0
+offset_right = -119.0
+offset_bottom = 332.0
+grow_horizontal = 0
 grow_vertical = 2
+
+[node name="EquipButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("3_xs2n4")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = ExtResource("2_6pn5a")
 theme_override_styles/disabled_mirrored = ExtResource("2_6pn5a")
 theme_override_styles/disabled = ExtResource("2_6pn5a")
@@ -2583,24 +2451,35 @@ theme_override_styles/pressed_mirrored = ExtResource("2_6pn5a")
 theme_override_styles/pressed = ExtResource("2_6pn5a")
 theme_override_styles/normal_mirrored = ExtResource("2_6pn5a")
 theme_override_styles/normal = ExtResource("2_6pn5a")
-text = "EQUIP"
+text = "EQUIP
+SLOT 1"
 
-[node name="SellButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 404.0
-offset_top = 177.0
-offset_right = 735.0
-offset_bottom = 327.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="EquipButton2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("3_xs2n4")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_6pn5a")
+theme_override_styles/disabled_mirrored = ExtResource("2_6pn5a")
+theme_override_styles/disabled = ExtResource("2_6pn5a")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_6pn5a")
+theme_override_styles/hover_pressed = ExtResource("2_6pn5a")
+theme_override_styles/hover_mirrored = ExtResource("2_6pn5a")
+theme_override_styles/hover = ExtResource("2_6pn5a")
+theme_override_styles/pressed_mirrored = ExtResource("2_6pn5a")
+theme_override_styles/pressed = ExtResource("2_6pn5a")
+theme_override_styles/normal_mirrored = ExtResource("2_6pn5a")
+theme_override_styles/normal = ExtResource("2_6pn5a")
+text = "EQUIP
+SLOT 2"
+
+[node name="SellButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(275, 155)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_xs2n4")
+theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("2_6pn5a")
 theme_override_styles/disabled_mirrored = ExtResource("2_6pn5a")
 theme_override_styles/disabled = ExtResource("2_6pn5a")
@@ -2614,6 +2493,43 @@ theme_override_styles/normal_mirrored = ExtResource("2_6pn5a")
 theme_override_styles/normal = ExtResource("2_6pn5a")
 text = "SELL"
 
+[node name="CoinLabel" type="Label" parent="HBoxContainer/SellButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = 26.5
+offset_right = 145.5
+offset_bottom = 126.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+text = "999"
+label_settings = SubResource("LabelSettings_c6kse")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="CoinIcon" type="Panel" parent="HBoxContainer/SellButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = 28.0
+offset_right = 49.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mf6u2")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
@@ -2622,8 +2538,6 @@ libraries = {
 }
 autoplay = "open"
 
-[connection signal="pressed" from="Gun1Button" to="." method="_on_gun_1_button_pressed"]
-[connection signal="pressed" from="Gun2Button" to="." method="_on_gun_2_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer/Button" to="ScrollContainer/VBoxContainer/HBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer/Button2" to="ScrollContainer/VBoxContainer/HBoxContainer/Button2" method="_on_pressed"]
@@ -2685,5 +2599,6 @@ autoplay = "open"
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button58" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button58" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button59" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button59" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer10/Button60" to="ScrollContainer/VBoxContainer/HBoxContainer10/Button60" method="_on_pressed"]
-[connection signal="pressed" from="EquipButton" to="." method="_on_equip_button_pressed"]
-[connection signal="pressed" from="SellButton" to="." method="_on_sell_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/EquipButton" to="." method="_on_equip_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/EquipButton2" to="." method="_on_equip_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]

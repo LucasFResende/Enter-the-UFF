@@ -7,6 +7,7 @@
 [node name="Health" type="HBoxContainer" parent="."]
 offset_right = 167.0
 offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_g3xb1")
 
 [node name="1" type="TextureRect" parent="Health"]

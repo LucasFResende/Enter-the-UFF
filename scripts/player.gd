@@ -19,6 +19,7 @@ var death_cooldown:float = 0
 var can_shoot:bool = false
 var is_holding_grenade:bool = false
 var is_in_pc:bool = false
+var is_scene_changing:bool = false
 
 var coins:int = 0
 
@@ -46,6 +47,11 @@ const RIGHT:Vector2 = Vector2(-1,0)
 
 var is_dead:bool = false
 
+var hair_color:Color = Color("000000")
+var shirt_color:Color = Color("111113")
+var emblem_color:Color = Color("6abe30")
+var short_color:Color = Color("394f78")
+
 var items: Array
 
 var gun_actual:Gun
@@ -68,15 +74,11 @@ func _ready() -> void:
 	ammo_ui.update_grenade_ui(actual_grenades)
 
 	no_enemy.body_entered.connect(on_no_enemy_body_entered)
-	material.set("shader_parameter/hair_replace_color",GameManager.player_custom_hair)
-	material.set("shader_parameter/shirt_replace_color",GameManager.player_custom_shirt)
-	material.set("shader_parameter/emblem_replace_color",GameManager.player_custom_emblem)
-	material.set("shader_parameter/shorts_replace_color",GameManager.player_custom_short)
 	
 	generate_items()
 
 func _physics_process(delta: float) -> void:
-	if !is_in_pc:
+	if !is_in_pc and !is_scene_changing:
 		GameManager.player_position = global_position
 		if GameManager.is_scene_changed:
 			GameManager.can_spawn_map = true
@@ -321,6 +323,7 @@ func active():
 	process_mode = PROCESS_MODE_INHERIT
 	visible = true
 	ammo_ui.visible = true
+	health_bar.visible = true
 	
 func generate_items():
 	items.append(gun_1)

@@ -11,7 +11,7 @@ var grenade_icon:Texture = load("res://addons/guns/grenade_icon.png")
 var empty_grenade_icon:Texture = load("res://addons/guns/empty_grenade_icon.png")
 
 func update_gun_ui(actual_ammo:int, bag_ammo:int,gun_sprite:Texture2D,color:Color)->void:
-	$Label.text = str(actual_ammo)+"/"+str(bag_ammo)
+	$Control/Label.text = str(actual_ammo)+"/"+str(bag_ammo)
 	gun_sprite_label.texture = gun_sprite
 	panel.self_modulate = color
 

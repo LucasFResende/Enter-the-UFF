@@ -79,26 +79,26 @@ theme_override_constants/separation = 5
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_4ita6")
 theme_override_font_sizes/font_size = 50
-text = "Hair
+text = "HAIR
 "
 
 [node name="ShirtButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_4ita6")
 theme_override_font_sizes/font_size = 50
-text = "Shirt"
+text = "SHIRT"
 
 [node name="EmblemButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_4ita6")
 theme_override_font_sizes/font_size = 50
-text = "Emblem"
+text = "EMBLEM"
 
 [node name="ShortButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_4ita6")
 theme_override_font_sizes/font_size = 50
-text = "Short"
+text = "SHORT"
 
 [node name="ResetButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

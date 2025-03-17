@@ -4,16 +4,18 @@ extends Control
 var inv_interface:PackedScene = load("res://UI/inventory_interface.tscn")
 var disk_interface:PackedScene = load("res://UI/open_disk_interface.tscn")
 var shop_interface:PackedScene = load("res://UI/shop_interface.tscn")
+var customize_interface:PackedScene = load("res://UI/customize_interface.tscn")
 @onready var coin_label:Label = %CoinLabel
+@onready var coin_icon:Panel = %CoinIcon
 @onready var player_icon:AnimatedSprite2D = %PlayerIcon
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	coin_label.text = str(player.coins)
-	player_icon.material.set("shader_parameter/hair_replace_color",GameManager.player_custom_hair)
-	player_icon.material.set("shader_parameter/shirt_replace_color",GameManager.player_custom_shirt)
-	player_icon.material.set("shader_parameter/emblem_replace_color",GameManager.player_custom_emblem)
-	player_icon.material.set("shader_parameter/shorts_replace_color",GameManager.player_custom_short)
+	player_icon.material.set("shader_parameter/hair_replace_color",player.material.get("shader_parameter/hair_replace_color"))
+	player_icon.material.set("shader_parameter/shirt_replace_color",player.material.get("shader_parameter/shirt_replace_color"))
+	player_icon.material.set("shader_parameter/emblem_replace_color",player.material.get("shader_parameter/emblem_replace_color"))
+	player_icon.material.set("shader_parameter/shorts_replace_color",player.material.get("shader_parameter/shorts_replace_color"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,6 +33,9 @@ func _on_open_disk_button_pressed() -> void:
 
 func _on_shop_button_pressed() -> void:
 	open(shop_interface)
+
+func _on_customize_button_pressed() -> void:
+	open(customize_interface)
 
 func open(scene:PackedScene):
 	anim.play("open")
