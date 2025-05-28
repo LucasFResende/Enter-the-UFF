@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ih4jbnpg0xnt"]
 
-[ext_resource type="Script" path="res://scripts/pc.gd" id="1_xnpbi"]
+[ext_resource type="Script" uid="uid://qgjst1t26lte" path="res://scripts/pc.gd" id="1_xnpbi"]
 
 [node name="Pc" type="Area2D"]
 script = ExtResource("1_xnpbi")

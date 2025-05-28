@@ -1,8 +1,8 @@
 [gd_scene load_steps=25 format=4 uid="uid://cgconk0rwt30x"]
 
 [ext_resource type="TileSet" uid="uid://dm2gvuged0e71" path="res://tileset.tres" id="1_6w7b4"]
-[ext_resource type="Script" path="res://scripts/go_to_scene.gd" id="3_51gii"]
-[ext_resource type="Script" path="res://scripts/go_up_go_down_stairs.gd" id="4_c6o41"]
+[ext_resource type="Script" uid="uid://bpbrddmr8yhx" path="res://scripts/go_to_scene.gd" id="3_51gii"]
+[ext_resource type="Script" uid="uid://bpvh3k2vqb4jb" path="res://scripts/go_up_go_down_stairs.gd" id="4_c6o41"]
 [ext_resource type="PackedScene" uid="uid://tryuq4p768ab" path="res://enemies/c.tscn" id="5_lbi5l"]
 [ext_resource type="PackedScene" uid="uid://ilf0ts5imkai" path="res://enemies/derivada.tscn" id="6_ecj4v"]
 [ext_resource type="PackedScene" uid="uid://dq2fubc3uhbks" path="res://enemies/ponto_virgula.tscn" id="7_x1wvf"]

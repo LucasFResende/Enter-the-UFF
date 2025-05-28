@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://c4xm8t8iqfwy7"]
 
-[ext_resource type="Script" path="res://scripts/in_game_control_ui.gd" id="1_mmjc0"]
+[ext_resource type="Script" uid="uid://7wqxvaylpo0j" path="res://scripts/in_game_control_ui.gd" id="1_mmjc0"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="2_kdhyf"]
 [ext_resource type="Texture2D" uid="uid://d3s6h1iqds386" path="res://addons/input_keys/Keyboard & Mouse/keyboard_w_outline.svg" id="3_lbgfp"]
 [ext_resource type="Texture2D" uid="uid://cxrc33ytjj1gm" path="res://addons/input_keys/Keyboard & Mouse/keyboard_a_outline.svg" id="4_603xw"]

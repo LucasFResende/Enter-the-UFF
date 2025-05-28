@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://bvwd6g1nuv6rt"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_7mymx"]
+[ext_resource type="Script" uid="uid://2umlc0wwnpmc" path="res://scripts/enemy.gd" id="1_7mymx"]
 [ext_resource type="Texture2D" uid="uid://bfmkwlupup1uk" path="res://addons/enemies/automato.png" id="2_oenfm"]
 [ext_resource type="Texture2D" uid="uid://c5o54ksxwdy6b" path="res://addons/enemies/automato_hit.png" id="3_v8k6e"]
 [ext_resource type="Texture2D" uid="uid://v2d8kr2m0rkf" path="res://addons/enemies/automato_walk.png" id="4_vv20b"]
@@ -239,10 +239,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5mg6a"]
 _data = {
-"RESET": SubResource("Animation_y2kpq"),
-"low_life": SubResource("Animation_leri7"),
-"low_life_hit": SubResource("Animation_11xvi"),
-"walk_low_life": SubResource("Animation_tqrgc")
+&"RESET": SubResource("Animation_y2kpq"),
+&"low_life": SubResource("Animation_leri7"),
+&"low_life_hit": SubResource("Animation_11xvi"),
+&"walk_low_life": SubResource("Animation_tqrgc")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8a0sx"]

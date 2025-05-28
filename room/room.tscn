@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://xip61p1ri3c7"]
 
-[ext_resource type="Script" path="res://scripts/room.gd" id="1_qehhe"]
+[ext_resource type="Script" uid="uid://dmylfgf11gcjo" path="res://scripts/room.gd" id="1_qehhe"]
 [ext_resource type="TileSet" uid="uid://dm2gvuged0e71" path="res://tileset.tres" id="3_qrln5"]
-[ext_resource type="Script" path="res://scripts/enter_room.gd" id="4_jxdrt"]
+[ext_resource type="Script" uid="uid://c3jceig4mcnod" path="res://scripts/enter_room.gd" id="4_jxdrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7f805"]
 size = Vector2(64, 16)
@@ -19,7 +19,7 @@ size = Vector2(16, 64)
 [node name="Room" type="Node2D"]
 script = ExtResource("1_qehhe")
 
-[node name="Block" type="TileMapLayer" parent="."]
+[node name="Block" type="TileMapLayer" parent="." groups=["object"]]
 unique_name_in_owner = true
 visible = false
 tile_map_data = PackedByteArray("AAD+//b/AAABAAAAAAD///b/AAABAAAAAAAAAPb/AAABAAAAAAABAPb/AAABAAAAAAAOAP//AAABAAIAAAAOAAAAAAABAAIAAAAOAP7/AAABAAIAAAAOAAEAAAABAAIAAAAOAP3/AAABAAIAAAAOAAIAAAABAAIAAAD9//b/AAABAAAAAAACAPb/AAABAAAAAADx//3/AAAAAAIAAADx//7/AAAAAAIAAADx////AAAAAAIAAADx/wAAAAAAAAIAAADx/wEAAAAAAAIAAADx/wIAAAAAAAIAAAD//wkAAAAAAAAAAAAAAAkAAAAAAAAAAAD+/wkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAD9/wkAAAAAAAAAAAA=")

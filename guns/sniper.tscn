@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtto1qxjvilmg"]
 
-[ext_resource type="Script" path="res://scripts/guns_scripts/sniper.gd" id="1_a2ui0"]
+[ext_resource type="Script" uid="uid://ctouw3kmvich1" path="res://scripts/guns_scripts/sniper.gd" id="1_a2ui0"]
 [ext_resource type="Texture2D" uid="uid://bdx1arg36x07p" path="res://addons/guns/sniper.png" id="1_v3rpi"]
 [ext_resource type="Texture2D" uid="uid://c2yoid5fxahox" path="res://addons/guns/sniper_icon.png" id="2_y674n"]
 

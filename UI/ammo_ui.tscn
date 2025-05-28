@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bv41mu5ato7ay"]
 
-[ext_resource type="Script" path="res://scripts/ammo_ui.gd" id="1_34uts"]
+[ext_resource type="Script" uid="uid://1tds77kwy3ie" path="res://scripts/ammo_ui.gd" id="1_34uts"]
 [ext_resource type="Texture2D" uid="uid://3g5tjs2013f3" path="res://addons/ui/gum_frame.png" id="1_sm1d3"]
 [ext_resource type="Texture2D" uid="uid://8l76rk52gv43" path="res://addons/ui/pistol_ammo.png" id="2_0uwsq"]
 [ext_resource type="Texture2D" uid="uid://blc7s1tyd0q6h" path="res://addons/guns/empty_grenade_icon.png" id="4_c7i6t"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cfyi2wswffwcg"]
 
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="1_44ewk"]
-[ext_resource type="Script" path="res://scripts/control_ui.gd" id="1_benke"]
+[ext_resource type="Script" uid="uid://b5gvasg55jtap" path="res://scripts/control_ui.gd" id="1_benke"]
 [ext_resource type="Texture2D" uid="uid://d3s6h1iqds386" path="res://addons/input_keys/Keyboard & Mouse/keyboard_w_outline.svg" id="2_nj3ed"]
 [ext_resource type="Texture2D" uid="uid://cxrc33ytjj1gm" path="res://addons/input_keys/Keyboard & Mouse/keyboard_a_outline.svg" id="4_lprx8"]
 [ext_resource type="Texture2D" uid="uid://daclqqa6tg8w1" path="res://addons/input_keys/Keyboard & Mouse/keyboard_s_outline.svg" id="5_lorky"]

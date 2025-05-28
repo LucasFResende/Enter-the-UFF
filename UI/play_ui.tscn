@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bh6fjq58daf2s"]
 
-[ext_resource type="Script" path="res://scripts/play_ui.gd" id="1_hckys"]
+[ext_resource type="Script" uid="uid://cufp87ptuit7" path="res://scripts/play_ui.gd" id="1_hckys"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="1_ncwp8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8r80f"]

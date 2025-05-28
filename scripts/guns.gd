@@ -13,6 +13,9 @@ var panel:Texture
 var rarity_color:Color
 var rarity_percent:int
 
+var reload_cooldown:float = 3
+var is_reloading:bool = false
+
 var angle:float
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var bullet_spawn_point:Marker2D = $Sprite2D/Marker2D
@@ -41,11 +44,14 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("mouse1") and actual_ammo>0:
-		fire()
-	if Input.is_action_just_pressed("reload") and actual_ammo<gun_pent:
-		reload()
+func _process(delta: float) -> void:
+	if !is_reloading:
+		if Input.is_action_just_pressed("mouse1") and actual_ammo>0:
+			fire()
+		if Input.is_action_just_pressed("reload") and actual_ammo<gun_pent and reload_cooldown<=0:
+			reload()
+	else:
+		reload_cooldown-=delta
 	ver_angle()
 	if angle>90 and angle <270:
 		sprite.offset=offset_necessary
@@ -87,9 +93,16 @@ func shoot():
 	get_parent().get_parent().add_sibling(shoot_bullet)
 
 func reload():
-	bag_ammo-=(gun_pent-actual_ammo)
-	actual_ammo=gun_pent
+	var diff = gun_pent - actual_ammo
+	if diff>=bag_ammo:
+		actual_ammo+=bag_ammo
+		bag_ammo=0
+	elif diff < bag_ammo:
+		bag_ammo-=(gun_pent-actual_ammo)
+		actual_ammo=gun_pent
 	update_ui()
+	reload_cooldown= 3 - player.flags["reload_speed"]*1
+	is_reloading = true
 
 func update_ui():
 	ammo_ui.update_gun_ui(actual_ammo,bag_ammo,icon,rarity_color)

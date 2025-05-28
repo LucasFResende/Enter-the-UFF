@@ -8,6 +8,10 @@ func _on_back_button_pressed() -> void:
 	var ui:CanvasLayer = get_parent().get_child(0)
 	ui.visible = true
 	ui.process_mode = Node.PROCESS_MODE_INHERIT
+	player.hair_color = Color("000000")
+	player.shirt_color = Color("111113")
+	player.emblem_color = Color("6abe30")
+	player.short_color = Color("394f78")
 	call_deferred("queue_free")
 
 

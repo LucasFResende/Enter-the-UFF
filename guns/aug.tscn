@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://g7i2xwqmhyv2"]
 
-[ext_resource type="Script" path="res://scripts/guns_scripts/semi_automatic.gd" id="1_sd04u"]
+[ext_resource type="Script" uid="uid://b4b2dfeubns8y" path="res://scripts/guns_scripts/semi_automatic.gd" id="1_sd04u"]
 [ext_resource type="Texture2D" uid="uid://bymbsas61l7pp" path="res://addons/guns/aug.png" id="1_vaurp"]
 [ext_resource type="Texture2D" uid="uid://cahxb1cafgdsl" path="res://addons/guns/aug_icon.png" id="2_bimcv"]
 

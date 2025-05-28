@@ -1,8 +1,11 @@
-D:/GODOT
+res://addons/fonts
+res://addons/ui
+res://
+res://teste
 res://scripts
 res://UI
-C:/Users/lucas/Desktop/Enter the UFF/Linux
-C:/Users/lucas/Desktop/Enter the UFF/Windows
+/media/Lucas/376A5AF16B1B76DA/GODOT/Enter the uff/shop itens/
+res://UI/PANEL
 res://player
 res://addons/player
 res://objects/pc
@@ -14,10 +17,5 @@ res://objects/flamethrower fire
 res://addons/cursor
 res://objects/grenade
 res://game
-res://
 res://objects/itens
-res://teste
 res://objects/chest
-res://addons/objects
-res://addons/procedural map generator
-res://addons/Procedural map generator

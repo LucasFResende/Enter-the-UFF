@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://daj1qogqssu0k"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_ok7af"]
+[ext_resource type="Script" uid="uid://2umlc0wwnpmc" path="res://scripts/enemy.gd" id="1_ok7af"]
 [ext_resource type="Texture2D" uid="uid://b5nhgn6smrex6" path="res://addons/enemies/wifi.png" id="2_eru54"]
 [ext_resource type="Texture2D" uid="uid://dlfgmmalx1aof" path="res://addons/enemies/wifi_hit.png" id="3_mjnk1"]
 [ext_resource type="Texture2D" uid="uid://drwkvdxwtuxtv" path="res://addons/enemies/wifi_walk.png" id="4_xiv6v"]
@@ -239,10 +239,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5mg6a"]
 _data = {
-"RESET": SubResource("Animation_y2kpq"),
-"low_life": SubResource("Animation_leri7"),
-"low_life_hit": SubResource("Animation_11xvi"),
-"walk_low_life": SubResource("Animation_qky75")
+&"RESET": SubResource("Animation_y2kpq"),
+&"low_life": SubResource("Animation_leri7"),
+&"low_life_hit": SubResource("Animation_11xvi"),
+&"walk_low_life": SubResource("Animation_qky75")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8vlx"]

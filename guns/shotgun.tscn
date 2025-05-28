@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cd56djaa828re"]
 
 [ext_resource type="Texture2D" uid="uid://b3tkwe2gcku1m" path="res://addons/guns/shotgun.png" id="1_547hh"]
-[ext_resource type="Script" path="res://scripts/guns_scripts/shotgun.gd" id="1_wj7q3"]
+[ext_resource type="Script" uid="uid://cdc84shmclkey" path="res://scripts/guns_scripts/shotgun.gd" id="1_wj7q3"]
 [ext_resource type="Texture2D" uid="uid://cxjs1j1utd5rn" path="res://addons/guns/shotgun_icon.png" id="2_2egdm"]
 
 [node name="Shotgun" type="Node2D" groups=["Gun"]]

@@ -19,14 +19,14 @@ uniform vec4 shorts_replace_color : source_color;
 bool ver(vec4 tex_color,vec4 new_color){
 	return (tex_color.r >= new_color.r - 0.001 && tex_color.r <= new_color.r + 0.001 &&
     tex_color.g >= new_color.g - 0.001 && tex_color.g <= new_color.g + 0.001 &&
-    tex_color.b >= new_color.b - 0.001 && tex_color.b <= new_color.b + 0.001 && 
+    tex_color.b >= new_color.b - 0.001 && tex_color.b <= new_color.b + 0.001 &&
     tex_color.a >= new_color.a - 0.001 && tex_color.a <= new_color.a + 0.001);
 }
 
 void fragment() {
 	// Called for every pixel the material is visible on.
 	vec4 tex_color = texture(TEXTURE, UV);
-	
+
 	if(ver(tex_color,hair_color)){
 		tex_color = hair_replace_color;
 	}else if(ver(tex_color,shirt_color)){
@@ -36,6 +36,6 @@ void fragment() {
 	}else if(ver(tex_color,shorts_color)){
 		tex_color = shorts_replace_color;
 	}
-	
+
 	COLOR = tex_color;
 }

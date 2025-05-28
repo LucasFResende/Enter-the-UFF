@@ -67,7 +67,7 @@ func on_find_player_body_entered(body: Node2D) -> void:
 		is_moving = true
 
 func drop():
-	if randf()<=0.6:
+	if randf()<=(0.6+player.flags["drop_luck"]*0.2):
 		var instance:Node2D = drop_item.instantiate()
 		instance.position = global_position
 		get_parent().get_parent().add_child(instance)

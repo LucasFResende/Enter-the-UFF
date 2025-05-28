@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbdobu7nl4gwn" path="res://addons/objects/hd.png" id="1_r7mbd"]
 [ext_resource type="PackedScene" uid="uid://b3p1tukliho5n" path="res://UI/interect_ui.tscn" id="2_0c61i"]
-[ext_resource type="Script" path="res://scripts/item.gd" id="2_qx28s"]
+[ext_resource type="Script" uid="uid://dlirouehbpcov" path="res://scripts/item.gd" id="2_qx28s"]
 [ext_resource type="Texture2D" uid="uid://go68btwq4vdd" path="res://addons/objects/hd_icon.png" id="3_0o1dp"]
 [ext_resource type="Texture2D" uid="uid://bs7m0nujq4iej" path="res://addons/particles/star_09.png" id="3_okf7k"]
 
@@ -65,8 +65,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_umu5q"]
 _data = {
-"RESET": SubResource("Animation_xu6qb"),
-"open": SubResource("Animation_fddl4")
+&"RESET": SubResource("Animation_xu6qb"),
+&"open": SubResource("Animation_fddl4")
 }
 
 [node name="Hd" type="Sprite2D" groups=["Item"]]

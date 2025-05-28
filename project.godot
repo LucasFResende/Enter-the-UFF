@@ -16,7 +16,7 @@ version="0.7"
 
 config/name="Enter the uff"
 run/main_scene="res://game/game.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://addons/icon/enter_the_uff_icon.png"
 
 [autoload]
@@ -30,6 +30,7 @@ UpPath="*res://addons/procedural map generator/up_path.tscn"
 Room="*res://addons/procedural map generator/room.tscn"
 Exit="*res://addons/procedural map generator/exit_room.tscn"
 player="*res://player/player.tscn"
+ShopItemsList="*res://scripts/shop_items_list.gd"
 
 [display]
 
@@ -42,12 +43,6 @@ mouse_cursor/custom_image="res://addons/cursor/pointer.svg"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
-
-[file_customization]
-
-folder_colors={
-"res://MULTIPLAYER/": "green"
-}
 
 [global_group]
 
@@ -123,6 +118,16 @@ scroll={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":4,"canceled":false,"pressed":false,"double_click":false,"script":null)
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":5,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+scroll_up={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":4,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+scroll_down={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":5,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
 

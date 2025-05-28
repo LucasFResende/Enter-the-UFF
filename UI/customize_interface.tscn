@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://5826o7efrvta"]
+[gd_scene load_steps=8 format=3 uid="uid://5826o7efrvta"]
 
-[ext_resource type="Script" path="res://scripts/customize_interface.gd" id="1_akdeh"]
+[ext_resource type="Script" uid="uid://gidjrf3kbg74" path="res://scripts/customize_interface.gd" id="1_akdeh"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="1_m4tbe"]
 [ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/PANEL/panel_button.tres" id="2_j62bh"]
+[ext_resource type="StyleBox" uid="uid://brdr86uikixcj" path="res://UI/PANEL/panel_hover.tres" id="4_1lktw"]
 
 [sub_resource type="Animation" id="Animation_n3t05"]
 resource_name = "close"
@@ -60,8 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3kggm"]
 _data = {
-"close": SubResource("Animation_n3t05"),
-"open": SubResource("Animation_kvxqj")
+&"close": SubResource("Animation_n3t05"),
+&"open": SubResource("Animation_kvxqj")
 }
 
 [node name="CustomizeInterface" type="Control"]
@@ -114,10 +115,10 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("2_j62bh")
 theme_override_styles/disabled_mirrored = ExtResource("2_j62bh")
 theme_override_styles/disabled = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed = ExtResource("2_j62bh")
-theme_override_styles/hover_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover = ExtResource("2_j62bh")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover_pressed = ExtResource("4_1lktw")
+theme_override_styles/hover_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover = ExtResource("4_1lktw")
 theme_override_styles/pressed_mirrored = ExtResource("2_j62bh")
 theme_override_styles/pressed = ExtResource("2_j62bh")
 theme_override_styles/normal_mirrored = ExtResource("2_j62bh")
@@ -132,10 +133,10 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("2_j62bh")
 theme_override_styles/disabled_mirrored = ExtResource("2_j62bh")
 theme_override_styles/disabled = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed = ExtResource("2_j62bh")
-theme_override_styles/hover_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover = ExtResource("2_j62bh")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover_pressed = ExtResource("4_1lktw")
+theme_override_styles/hover_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover = ExtResource("4_1lktw")
 theme_override_styles/pressed_mirrored = ExtResource("2_j62bh")
 theme_override_styles/pressed = ExtResource("2_j62bh")
 theme_override_styles/normal_mirrored = ExtResource("2_j62bh")
@@ -150,10 +151,10 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("2_j62bh")
 theme_override_styles/disabled_mirrored = ExtResource("2_j62bh")
 theme_override_styles/disabled = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed = ExtResource("2_j62bh")
-theme_override_styles/hover_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover = ExtResource("2_j62bh")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover_pressed = ExtResource("4_1lktw")
+theme_override_styles/hover_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover = ExtResource("4_1lktw")
 theme_override_styles/pressed_mirrored = ExtResource("2_j62bh")
 theme_override_styles/pressed = ExtResource("2_j62bh")
 theme_override_styles/normal_mirrored = ExtResource("2_j62bh")
@@ -168,10 +169,10 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("2_j62bh")
 theme_override_styles/disabled_mirrored = ExtResource("2_j62bh")
 theme_override_styles/disabled = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed = ExtResource("2_j62bh")
-theme_override_styles/hover_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover = ExtResource("2_j62bh")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover_pressed = ExtResource("4_1lktw")
+theme_override_styles/hover_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover = ExtResource("4_1lktw")
 theme_override_styles/pressed_mirrored = ExtResource("2_j62bh")
 theme_override_styles/pressed = ExtResource("2_j62bh")
 theme_override_styles/normal_mirrored = ExtResource("2_j62bh")
@@ -196,10 +197,10 @@ theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = ExtResource("2_j62bh")
 theme_override_styles/disabled_mirrored = ExtResource("2_j62bh")
 theme_override_styles/disabled = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed = ExtResource("2_j62bh")
-theme_override_styles/hover_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover = ExtResource("2_j62bh")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover_pressed = ExtResource("4_1lktw")
+theme_override_styles/hover_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover = ExtResource("4_1lktw")
 theme_override_styles/pressed_mirrored = ExtResource("2_j62bh")
 theme_override_styles/pressed = ExtResource("2_j62bh")
 theme_override_styles/normal_mirrored = ExtResource("2_j62bh")
@@ -225,10 +226,10 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("2_j62bh")
 theme_override_styles/disabled_mirrored = ExtResource("2_j62bh")
 theme_override_styles/disabled = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed = ExtResource("2_j62bh")
-theme_override_styles/hover_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover = ExtResource("2_j62bh")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover_pressed = ExtResource("4_1lktw")
+theme_override_styles/hover_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover = ExtResource("4_1lktw")
 theme_override_styles/pressed_mirrored = ExtResource("2_j62bh")
 theme_override_styles/pressed = ExtResource("2_j62bh")
 theme_override_styles/normal_mirrored = ExtResource("2_j62bh")
@@ -243,10 +244,10 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("2_j62bh")
 theme_override_styles/disabled_mirrored = ExtResource("2_j62bh")
 theme_override_styles/disabled = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover_pressed = ExtResource("2_j62bh")
-theme_override_styles/hover_mirrored = ExtResource("2_j62bh")
-theme_override_styles/hover = ExtResource("2_j62bh")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover_pressed = ExtResource("4_1lktw")
+theme_override_styles/hover_mirrored = ExtResource("4_1lktw")
+theme_override_styles/hover = ExtResource("4_1lktw")
 theme_override_styles/pressed_mirrored = ExtResource("2_j62bh")
 theme_override_styles/pressed = ExtResource("2_j62bh")
 theme_override_styles/normal_mirrored = ExtResource("2_j62bh")
@@ -255,7 +256,7 @@ text = "SAVE"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3kggm")
+&"": SubResource("AnimationLibrary_3kggm")
 }
 autoplay = "open"
 

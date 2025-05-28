@@ -42,12 +42,12 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func open():
 	dropped = true
 	var chance = randf()
-	if chance<=0.5:
+	if chance<=(0.5-player.flags["luck"]*0.3): 
 		drop = drops[0].instantiate()
-	elif chance>0.5 and chance<=0.7:
+	elif chance>(0.5-player.flags["luck"]*0.3) and chance<=(0.7-player.flags["luck"]*0.3): 
 		drop = drops[1].instantiate()
-	elif chance>0.7 and chance<=0.9:
+	elif chance>(0.7-player.flags["luck"]*0.3) and chance<=(0.9-player.flags["luck"]*0.2): 
 		drop = drops[2].instantiate()
-	elif chance>0.9:
+	elif chance>(0.9-player.flags["luck"]*0.2):
 		drop = drops[3].instantiate()
 	add_child(drop)

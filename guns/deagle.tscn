@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ty5c1t2g3vq1"]
 
-[ext_resource type="Script" path="res://scripts/guns.gd" id="1_hypx7"]
+[ext_resource type="Script" uid="uid://babpgopxnuwlk" path="res://scripts/guns.gd" id="1_hypx7"]
 [ext_resource type="Texture2D" uid="uid://bntnlcrxtxfd2" path="res://addons/guns/deagle.png" id="1_nn4dh"]
 [ext_resource type="Texture2D" uid="uid://c63mir27giy5n" path="res://addons/guns/deagle_icon.png" id="2_0iam3"]
 

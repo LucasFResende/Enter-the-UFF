@@ -34,7 +34,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if button_pressed_id!= -1:
+		coin_icon.visible = true
+		coin_label.visible = true
+		coin_label.text = str(player.items[button_pressed_id].sell_price)
 
 func _on_back_button_pressed() -> void:
 	anim.play("close")
@@ -78,6 +81,7 @@ func _on_sell_button_pressed() -> void:
 		var gun:Gun = player.items[button_pressed_id]
 		player.items.remove_at(button_pressed_id)
 		player.coins+=gun.sell_price
+		button_pressed_id=-1
 		gun.queue_free()
 		update_items_menu()
 
@@ -113,3 +117,5 @@ func update_items_menu():
 	for x in range(player.items.size(),60):
 		buttons[x].disabled = true
 		buttons[x].get_child(0).texture = null
+		buttons[x].get_child(1).texture = null
+		buttons[x].get_child(2).texture = null

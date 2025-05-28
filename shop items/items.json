@@ -1,0 +1,110 @@
+[
+	{
+		"nome": "Vida Extra",
+		"descrição": "O player ganha +1 de vida",
+		"custo": "20",
+		"icone": "res://addons/ui/full_heart_upgrade2.png",
+		"quantidade": 3,
+		"tipo":0,
+		"flag": "health_flag"
+	},
+	{
+		"nome": "Meia Vida Extra",
+		"descrição": "O player ganha +1/2 de vida",
+		"custo": "12",
+		"icone": "res://addons/ui/half_heart_upgrade2.png",
+		"quantidade": 3,
+		"tipo":0,
+		"flag": "half_health_flag"
+	},
+	{
+		"nome": "Pen Drive",
+		"descrição": "Lootbox pendrive",
+		"custo": "20",
+		"icone": "res://addons/ui/pendrive_shop.png",
+		"quantidade": 20,
+		"tipo":1,
+		"item_path": "res://objects/itens/pendrive.tscn"
+	},
+	{
+		"nome": "HD",
+		"descrição": "Lootbox hd",
+		"custo": "35",
+		"icone": "res://addons/ui/hd_shop.png",
+		"quantidade": 20,
+		"tipo":1,
+		"item_path": "res://objects/itens/hd.tscn"
+	},
+	{
+		"nome": "SSD",
+		"descrição": "Lootbox ssd",
+		"custo": "50",
+		"icone": "res://addons/ui/ssd_shop.png",
+		"quantidade": 20,
+		"tipo":1,
+		"item_path": "res://objects/itens/ssd.tscn"
+	},
+	{
+		"nome": "NVME",
+		"descrição": "Lootbox nvme",
+		"custo": "70",
+		"icone": "res://addons/ui/nvme_shop.png",
+		"quantidade": 20,
+		"tipo":1,
+		"item_path": "res://objects/itens/nvme.tscn"
+	},
+	{
+		"nome": "Windows Defenser",
+		"descrição": "O player ganha +1/2 de escudo",
+		"custo": "20",
+		"icone": "res://addons/ui/windows_defender_shop.png",
+		"quantidade": 4,
+		"tipo":0,
+		"flag": "half_shield_flag"
+	},
+	{
+		"nome": "Avast Antivirus",
+		"descrição": "O player ganha +1 de escudo",
+		"custo": "25",
+		"icone": "res://addons/ui/avast_antivirus_shop.png",
+		"quantidade": 3,
+		"tipo":0,
+		"flag": "shield_flag"
+	},
+	{
+		"nome": "Memoria RAM",
+		"descrição": "Aumenta a velocidade de movimento do player",
+		"custo": "60",
+		"icone": "res://addons/ui/memoria_ram_shop.png",
+		"quantidade": 1,
+		"tipo":0,
+		"flag": "speed_flag"
+	},
+	{
+		"nome": "Processador",
+		"descrição": "Aumenta a velocidade de recarga da arma do player",
+		"custo": "80",
+		"icone": "res://addons/ui/processador_shop.png",
+		"quantidade": 1,
+		"tipo":0,
+		"flag": "reload_speed"
+	},
+	{
+		"nome": "Mais drop",
+		"descrição": "Aumenta a chance de drop de municao e vida dos inimigos",
+		"custo": "55",
+		"icone": "res://addons/ui/drop_sorte.png",
+		"quantidade": 1,
+		"tipo":0,
+		"flag": "drop_luck"
+	},
+	{
+		"nome": "Sorte",
+		"descrição": "Aumenta a chance de conseguir drop melhor do bau",
+		"custo": "65",
+		"icone": "res://addons/ui/sorte.png",
+		"quantidade": 1,
+		"tipo":0,
+		"flag": "luck"
+	}
+]

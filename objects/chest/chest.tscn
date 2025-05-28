@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dy1032o3dyusa"]
 
-[ext_resource type="Script" path="res://scripts/chest.gd" id="1_binio"]
+[ext_resource type="Script" uid="uid://dh1hf48w2a02t" path="res://scripts/chest.gd" id="1_binio"]
 [ext_resource type="Texture2D" uid="uid://bg4nkk5nuqmx4" path="res://addons/objects/chest.png" id="1_q10cc"]
 [ext_resource type="PackedScene" uid="uid://bnkiuywd3mi6v" path="res://objects/itens/ssd.tscn" id="2_36p8l"]
 [ext_resource type="PackedScene" uid="uid://bddjgwm0w0xck" path="res://objects/itens/pendrive.tscn" id="2_bitpd"]
@@ -67,7 +67,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_58pnd"]
 _data = {
-"open_chest": SubResource("Animation_esi2b")
+&"open_chest": SubResource("Animation_esi2b")
 }
 
 [node name="Chest" type="StaticBody2D"]
@@ -95,7 +95,7 @@ shape = SubResource("RectangleShape2D_6nl28")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 4
 libraries = {
-"": SubResource("AnimationLibrary_58pnd")
+&"": SubResource("AnimationLibrary_58pnd")
 }
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

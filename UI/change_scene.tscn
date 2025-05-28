@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://0sbus5m66axk"]
 
-[ext_resource type="Script" path="res://scripts/change_scene.gd" id="1_csumk"]
+[ext_resource type="Script" uid="uid://gamn53riliar" path="res://scripts/change_scene.gd" id="1_csumk"]
 [ext_resource type="FontFile" uid="uid://b4n2618inxka4" path="res://addons/fonts/Perfect DOS VGA 437 Win.ttf" id="2_7cexw"]
 
 [sub_resource type="Animation" id="Animation_hj7fy"]
@@ -276,9 +276,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jfxig"]
 _data = {
-"RESET": SubResource("Animation_hj7fy"),
-"fade_away": SubResource("Animation_10eeo"),
-"fade_to_black": SubResource("Animation_rnvf0")
+&"RESET": SubResource("Animation_hj7fy"),
+&"fade_away": SubResource("Animation_10eeo"),
+&"fade_to_black": SubResource("Animation_rnvf0")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_5udol"]
@@ -291,7 +291,7 @@ script = ExtResource("1_csumk")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_jfxig")
+&"": SubResource("AnimationLibrary_jfxig")
 }
 speed_scale = 0.5
 

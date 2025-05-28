@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://qu8rdchnra3s"]
 
-[ext_resource type="Script" path="res://scripts/rocket_bullet.gd" id="1_bwfcx"]
+[ext_resource type="Script" uid="uid://bdd27hjhygbkl" path="res://scripts/rocket_bullet.gd" id="1_bwfcx"]
 [ext_resource type="Texture2D" uid="uid://ckqa1cnt7cl2i" path="res://addons/objects/player_bullet.png" id="2_g2tl0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s6xkn"]
@@ -8,6 +8,9 @@ radius = 4.12311
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_odow8"]
 radius = 50.0
+
+[sub_resource type="Animation" id="Animation_a1rru"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_v77ox"]
 resource_name = "explosion"
@@ -48,13 +51,10 @@ tracks/2/keys = {
 "values": [0.0, 6.28319]
 }
 
-[sub_resource type="Animation" id="Animation_a1rru"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wa6wo"]
 _data = {
-"RESET": SubResource("Animation_a1rru"),
-"explosion": SubResource("Animation_v77ox")
+&"RESET": SubResource("Animation_a1rru"),
+&"explosion": SubResource("Animation_v77ox")
 }
 
 [node name="RocketBullet" type="StaticBody2D"]

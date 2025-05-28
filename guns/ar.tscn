@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bns8tvd8f13wm"]
 
 [ext_resource type="Texture2D" uid="uid://65syvp2rvjwc" path="res://addons/guns/ar.png" id="1_dro5w"]
-[ext_resource type="Script" path="res://scripts/guns_scripts/automatic.gd" id="1_p6ydp"]
+[ext_resource type="Script" uid="uid://dtt2jfmydrdyf" path="res://scripts/guns_scripts/automatic.gd" id="1_p6ydp"]
 [ext_resource type="Texture2D" uid="uid://chcuve8ofb576" path="res://addons/guns/ar_icon.png" id="2_kjsg1"]
 
 [node name="Ar" type="Node2D" groups=["Gun"]]

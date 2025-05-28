@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvri2s7omd177"]
 
-[ext_resource type="Script" path="res://scripts/grenade_object.gd" id="1_enapi"]
+[ext_resource type="Script" uid="uid://dclddf5kyf6lh" path="res://scripts/grenade_object.gd" id="1_enapi"]
 [ext_resource type="Texture2D" uid="uid://uwm0khfgsj6e" path="res://addons/guns/grenade.png" id="1_xaxly"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s6xkn"]

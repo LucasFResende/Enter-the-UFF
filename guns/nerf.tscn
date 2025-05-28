@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjrmebi7ca2ti"]
 
 [ext_resource type="Texture2D" uid="uid://byvr0kixbduwf" path="res://addons/guns/nerf.png" id="1_481hq"]
-[ext_resource type="Script" path="res://scripts/guns.gd" id="1_j2xm6"]
+[ext_resource type="Script" uid="uid://babpgopxnuwlk" path="res://scripts/guns.gd" id="1_j2xm6"]
 [ext_resource type="Texture2D" uid="uid://i2ry1clb2063" path="res://addons/guns/nerf_icon.png" id="2_srpvx"]
 
 [node name="Nerf" type="Node2D" groups=["Gun"]]

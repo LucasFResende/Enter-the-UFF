@@ -55,5 +55,6 @@ func _on_quit_button_pressed() -> void:
 	player.is_in_pc = false
 	GameManager.is_in_menu = false
 	GameManager.change_mouse()
+	player.check_flags()
 	get_parent().call_deferred("queue_free")
 	

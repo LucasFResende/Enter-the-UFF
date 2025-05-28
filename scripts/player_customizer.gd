@@ -20,15 +20,19 @@ func _process(delta: float) -> void:
 	if change_item == "hair":
 		player_visual.material.set("shader_parameter/hair_replace_color",color_picker.color)
 		player.material.set("shader_parameter/hair_replace_color",color_picker.color)
+		player.hair_color = color_picker.color
 	if change_item == "shirt":
 		player_visual.material.set("shader_parameter/shirt_replace_color",color_picker.color)
 		player.material.set("shader_parameter/shirt_replace_color",color_picker.color)
+		player.shirt_color = color_picker.color
 	if change_item == "emblem":
 		player_visual.material.set("shader_parameter/emblem_replace_color",color_picker.color)
 		player.material.set("shader_parameter/emblem_replace_color",color_picker.color)
+		player.emblem_color = color_picker.color
 	if change_item == "short":
 		player_visual.material.set("shader_parameter/shorts_replace_color",color_picker.color)
 		player.material.set("shader_parameter/shorts_replace_color",color_picker.color)
+		player.short_color = color_picker.color
 
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bf8j6wxgf37jt"]
 
-[ext_resource type="Script" path="res://scripts/guns_scripts/sword.gd" id="1_djgnp"]
+[ext_resource type="Script" uid="uid://4pgrq5lb7ity" path="res://scripts/guns_scripts/sword.gd" id="1_djgnp"]
 [ext_resource type="Texture2D" uid="uid://ib8xfugw40mc" path="res://addons/guns/lightsaber_red.png" id="1_qqo82"]
 [ext_resource type="Texture2D" uid="uid://c7rom6dadir7m" path="res://addons/guns/lightsaber_red_icon.png" id="2_p4c5n"]
 

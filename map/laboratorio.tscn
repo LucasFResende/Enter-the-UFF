@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dm2gvuged0e71" path="res://tileset.tres" id="1_1k13m"]
 [ext_resource type="PackedScene" uid="uid://ih4jbnpg0xnt" path="res://objects/pc/pc.tscn" id="3_c7g5h"]
-[ext_resource type="Script" path="res://scripts/go_up_go_down_stairs.gd" id="4_766f0"]
+[ext_resource type="Script" uid="uid://bpvh3k2vqb4jb" path="res://scripts/go_up_go_down_stairs.gd" id="4_766f0"]
 
 [node name="Laboratorio" type="Node2D"]
 

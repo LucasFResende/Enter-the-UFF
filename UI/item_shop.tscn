@@ -1,0 +1,132 @@
+[gd_scene load_steps=14 format=3 uid="uid://d0x34x8ck1luu"]
+
+[ext_resource type="Texture2D" uid="uid://c7s74tjj3enlr" path="res://addons/ui/panel_hover2.png" id="1_3yfa3"]
+[ext_resource type="Texture2D" uid="uid://bljo033rnnnua" path="res://addons/ui/panel3.png" id="1_kxk4x"]
+[ext_resource type="Script" uid="uid://mcio5gyt1h5j" path="res://scripts/item_shop_control.gd" id="1_osbpc"]
+[ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="3_c5rp2"]
+[ext_resource type="Texture2D" uid="uid://dc45mti7p4i4y" path="res://addons/ui/coin.png" id="5_jqj55"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqj55"]
+texture = ExtResource("1_3yfa3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osbpc"]
+texture = ExtResource("1_kxk4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ueayt"]
+texture = ExtResource("1_kxk4x")
+
+[sub_resource type="LabelSettings" id="LabelSettings_duek4"]
+font = ExtResource("3_c5rp2")
+font_size = 19
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3yfa3"]
+font = ExtResource("3_c5rp2")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jqj55"]
+font = ExtResource("3_c5rp2")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_osbpc"]
+font = ExtResource("3_c5rp2")
+font_size = 40
+font_color = Color(1, 0.87451, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1e3el"]
+texture = ExtResource("5_jqj55")
+
+[node name="ItemShop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1620.0
+offset_bottom = -780.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_osbpc")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_jqj55")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jqj55")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_jqj55")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jqj55")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_osbpc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_osbpc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_osbpc")
+
+[node name="Icon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(150, 102)
+scale = Vector2(6, 6)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 199.0
+offset_right = 300.0
+offset_bottom = 299.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ueayt")
+
+[node name="NameLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 4.0
+offset_right = 296.0
+offset_bottom = 100.0
+text = "L¢rem ipsum dolor sit amet."
+label_settings = SubResource("LabelSettings_duek4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -28.0
+offset_right = 77.0
+offset_bottom = -5.0
+grow_vertical = 0
+text = "AMOUNT:"
+label_settings = SubResource("LabelSettings_3yfa3")
+
+[node name="AmountLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -28.0
+offset_right = 117.0
+offset_bottom = -5.0
+grow_vertical = 0
+text = "10"
+label_settings = SubResource("LabelSettings_jqj55")
+
+[node name="PriceLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 39.0
+offset_top = 8.0
+offset_right = 107.0
+offset_bottom = 48.0
+text = "999"
+label_settings = SubResource("LabelSettings_osbpc")
+autowrap_mode = 1
+
+[node name="CoinIcon" type="Panel" parent="PriceLabel"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -2.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1e3el")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

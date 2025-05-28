@@ -30,7 +30,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var player:Player = body
 		if type == types.life:
 			player.life+=1
-			player.health_bar.update_health(player.life,player.max_life)
+			player.health_bar.update_health(player.life,player.max_life,player.shield,player.max_shield)
 			call_deferred("queue_free")
 		elif type == types.ammo:
 			var gun:Gun = player.gun_actual

@@ -1,6 +1,6 @@
 [gd_scene load_steps=200 format=3 uid="uid://pmsnlyqrjkjp"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_1nae4"]
+[ext_resource type="Script" uid="uid://c8prwh7dc6emb" path="res://scripts/player.gd" id="1_1nae4"]
 [ext_resource type="Material" uid="uid://cxrb5fdf0l11j" path="res://player/player_shader.tres" id="1_hlsra"]
 [ext_resource type="Texture2D" uid="uid://ck72qx6lvlmhc" path="res://addons/player/player_shadow.png" id="2_ycnuw"]
 [ext_resource type="Texture2D" uid="uid://5gnn8yyguy33" path="res://addons/player/player_death.png" id="3_t6f3x"]
@@ -1901,24 +1901,24 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w7bur"]
 _data = {
-"RESET": SubResource("Animation_7sjyj"),
-"death": SubResource("Animation_ckqnd"),
-"flip_back": SubResource("Animation_8pkau"),
-"flip_front1": SubResource("Animation_abhru"),
-"flip_front2": SubResource("Animation_3kvtr"),
-"idle_back1": SubResource("Animation_3wx1d"),
-"idle_back2": SubResource("Animation_6n7je"),
-"idle_front1": SubResource("Animation_ammp0"),
-"idle_front2": SubResource("Animation_rlhjv"),
-"roll_back1": SubResource("Animation_omssi"),
-"roll_back2": SubResource("Animation_5kwrr"),
-"roll_front1": SubResource("Animation_f4k6r"),
-"roll_front2": SubResource("Animation_wpoiw"),
-"table_slide": SubResource("Animation_1r3ex"),
-"walk_back1": SubResource("Animation_82s4l"),
-"walk_back2": SubResource("Animation_p10lw"),
-"walk_front1": SubResource("Animation_a8xiv"),
-"walk_front2": SubResource("Animation_waha0")
+&"RESET": SubResource("Animation_7sjyj"),
+&"death": SubResource("Animation_ckqnd"),
+&"flip_back": SubResource("Animation_8pkau"),
+&"flip_front1": SubResource("Animation_abhru"),
+&"flip_front2": SubResource("Animation_3kvtr"),
+&"idle_back1": SubResource("Animation_3wx1d"),
+&"idle_back2": SubResource("Animation_6n7je"),
+&"idle_front1": SubResource("Animation_ammp0"),
+&"idle_front2": SubResource("Animation_rlhjv"),
+&"roll_back1": SubResource("Animation_omssi"),
+&"roll_back2": SubResource("Animation_5kwrr"),
+&"roll_front1": SubResource("Animation_f4k6r"),
+&"roll_front2": SubResource("Animation_wpoiw"),
+&"table_slide": SubResource("Animation_1r3ex"),
+&"walk_back1": SubResource("Animation_82s4l"),
+&"walk_back2": SubResource("Animation_p10lw"),
+&"walk_front1": SubResource("Animation_a8xiv"),
+&"walk_front2": SubResource("Animation_waha0")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
@@ -1968,7 +1968,7 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_w7bur")
+&"": SubResource("AnimationLibrary_w7bur")
 }
 
 [node name="SpawGun" type="Marker2D" parent="."]

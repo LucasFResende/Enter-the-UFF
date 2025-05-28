@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhd0wypad7u70"]
 
 [ext_resource type="Texture2D" uid="uid://bbg73ecurftaw" path="res://addons/guns/rocket launcher.png" id="1_lnne2"]
-[ext_resource type="Script" path="res://scripts/guns_scripts/rocket_launcher.gd" id="1_n6iq4"]
+[ext_resource type="Script" uid="uid://bdhmipisbqdfn" path="res://scripts/guns_scripts/rocket_launcher.gd" id="1_n6iq4"]
 [ext_resource type="Texture2D" uid="uid://b07qaufaae618" path="res://addons/guns/rocket launcher_icon.png" id="2_m7h8e"]
 
 [node name="RocketLauncher" type="Node2D" groups=["Gun"]]

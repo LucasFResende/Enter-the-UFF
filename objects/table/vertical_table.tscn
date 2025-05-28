@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://clgr7rfxnessy"]
 
-[ext_resource type="Script" path="res://scripts/table.gd" id="1_vec8q"]
+[ext_resource type="Script" uid="uid://ck1en861lxegt" path="res://scripts/table.gd" id="1_vec8q"]
 [ext_resource type="Texture2D" uid="uid://dwk1b0x82kwef" path="res://addons/objects/table_vertical.png" id="2_p2pjv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87b5f"]

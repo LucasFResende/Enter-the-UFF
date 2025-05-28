@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 var menu_scene:PackedScene = load("res://UI/menu_ui.tscn")
 
-@export var SPEED:int = 3
+@export var SPEED:float = 3
+var SPEED_default:float = 3
 var angle: float
 var is_moving:bool = false
 var input: Vector2
@@ -20,6 +21,8 @@ var can_shoot:bool = false
 var is_holding_grenade:bool = false
 var is_in_pc:bool = false
 var is_scene_changing:bool = false
+var shield_recover_cooldow:float
+var is_shield_recovering:bool = false
 
 var coins:int = 0
 
@@ -34,6 +37,22 @@ var coins:int = 0
 
 @export var life:int = 6
 var max_life:int = 7
+var max_life_default:int = 7
+
+@export var max_shield:int = 0
+var shield: int =0
+var max_shield_default:int = 0
+
+var flags:Dictionary = {
+	"health_flag":0,
+	"half_health_flag":0,
+	"shield_flag":0,
+	"half_shield_flag":0,
+	"speed_flag":0,
+	"reload_speed": 0,
+	"drop_luck":0,
+	"luck":0
+}
 
 var max_grenades = 3
 var actual_grenades = 3
@@ -83,7 +102,13 @@ func _physics_process(delta: float) -> void:
 		if GameManager.is_scene_changed:
 			GameManager.can_spawn_map = true
 			GameManager.is_scene_changed = false
-
+		
+		if is_shield_recovering or shield_recover_cooldow==-1:
+			shield_recover_cooldow-=delta
+			if shield_recover_cooldow<=0:
+				shield=max_shield
+				is_shield_recovering = false
+		
 		if death_cooldown>0:
 			death_cooldown-=delta
 			if death_cooldown<=0:
@@ -92,7 +117,7 @@ func _physics_process(delta: float) -> void:
 				life = max_life
 				is_dead = false
 			return
-		health_bar.update_health(life,max_life)
+		health_bar.update_health(life,max_life,shield,max_shield)
 		if Input.is_action_just_pressed("gun1") or Input.is_action_just_pressed("gun2") or Input.is_action_just_pressed("scroll"):
 			change_gun()
 		if Input.is_action_just_pressed("grenade"):
@@ -279,6 +304,11 @@ func flip_table():
 
 
 func hit(damage:int):
+	if shield>0:
+		shield-=1
+		shield_recover_cooldow = 3
+		is_shield_recovering = true
+		return
 	life-=damage
 	
 	if life==0:
@@ -336,3 +366,10 @@ func generate_items():
 	items.append(load("res://objects/itens/pendrive.tscn").instantiate())
 	items.append(load("res://objects/itens/ssd.tscn").instantiate())
 	items.append(load("res://objects/itens/nvme.tscn").instantiate())
+
+func check_flags():
+	max_life = max_life_default + flags["half_health_flag"] + flags["health_flag"]*2
+	max_shield = max_shield_default + flags["half_shield_flag"] + flags["shield_flag"]*2
+	is_shield_recovering = true
+	SPEED = SPEED_default + flags["speed_flag"]*0.7
+	health_bar.update_health(life,max_life,shield,max_shield)

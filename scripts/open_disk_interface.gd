@@ -80,3 +80,4 @@ func update_items_menu():
 	for x in range(player.items.size(),60):
 		buttons[x].disabled = true
 		buttons[x].get_child(0).texture = null
+		buttons[x].get_child(1).texture = null

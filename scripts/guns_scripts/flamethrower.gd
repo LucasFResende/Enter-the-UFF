@@ -12,19 +12,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("mouse1") and actual_ammo>0:
-		fire_particle.emitting = true
-		fire_particle_area.process_mode = Node.PROCESS_MODE_INHERIT
-		is_firing = true
-	if Input.is_action_just_released("mouse1") or !actual_ammo>0:
-		fire_particle.emitting = false
-		fire_particle_area.process_mode = Node.PROCESS_MODE_DISABLED
-		is_firing = false
-	if is_firing:
-		actual_ammo-=delta
-		ammo_ui.update_gun_ui(int(actual_ammo),bag_ammo,icon)
-	if Input.is_action_just_pressed("reload") and actual_ammo<gun_pent:
-		reload()
+	if !is_reloading:
+		if Input.is_action_just_pressed("mouse1") and actual_ammo>0:
+			fire_particle.emitting = true
+			fire_particle_area.process_mode = Node.PROCESS_MODE_INHERIT
+			is_firing = true
+		if Input.is_action_just_released("mouse1") or !actual_ammo>0:
+			fire_particle.emitting = false
+			fire_particle_area.process_mode = Node.PROCESS_MODE_DISABLED
+			is_firing = false
+		if is_firing:
+			actual_ammo-=delta
+			ammo_ui.update_gun_ui(int(actual_ammo),bag_ammo,icon)
+		if Input.is_action_just_pressed("reload") and actual_ammo<gun_pent and reload_cooldown<=0:
+			reload()
+	else:
+		reload_cooldown-=delta
 	ver_angle()
 	if angle>90 and angle <270:
 		sprite.offset=offset_necessary
@@ -54,3 +57,5 @@ func reload():
 	bag_ammo-=roundi(gun_pent-actual_ammo)
 	actual_ammo=gun_pent
 	update_ui()
+	reload_cooldown= 3 - player.flags["reload_speed"]*1
+	is_reloading = true

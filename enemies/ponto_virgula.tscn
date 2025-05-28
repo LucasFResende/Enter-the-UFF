@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://dq2fubc3uhbks"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_2ymkp"]
+[ext_resource type="Script" uid="uid://2umlc0wwnpmc" path="res://scripts/enemy.gd" id="1_2ymkp"]
 [ext_resource type="Texture2D" uid="uid://1h8px1a7a1y3" path="res://addons/enemies/ponto-virgula.png" id="2_afu2e"]
 [ext_resource type="Texture2D" uid="uid://dhty5btrwjn1w" path="res://addons/enemies/ponto-virgula_hit.png" id="3_5gwtu"]
 [ext_resource type="Texture2D" uid="uid://1ko3l6lk62iy" path="res://addons/enemies/ponto-virgula_walk.png" id="4_1n87e"]
@@ -239,10 +239,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5mg6a"]
 _data = {
-"RESET": SubResource("Animation_y2kpq"),
-"low_life": SubResource("Animation_leri7"),
-"low_life_hit": SubResource("Animation_11xvi"),
-"walk_low_life": SubResource("Animation_vr3bb")
+&"RESET": SubResource("Animation_y2kpq"),
+&"low_life": SubResource("Animation_leri7"),
+&"low_life_hit": SubResource("Animation_11xvi"),
+&"walk_low_life": SubResource("Animation_vr3bb")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5oob"]

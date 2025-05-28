@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://bgnh17d8m37j8"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_41q6g"]
+[ext_resource type="Script" uid="uid://2umlc0wwnpmc" path="res://scripts/enemy.gd" id="1_41q6g"]
 [ext_resource type="Texture2D" uid="uid://b7857m8vmmdow" path="res://addons/enemies/ucp.png" id="2_ascj3"]
 [ext_resource type="Texture2D" uid="uid://ib2bmt1c77gu" path="res://addons/enemies/ucp_hit.png" id="3_gmf8j"]
 [ext_resource type="Texture2D" uid="uid://dr8v0ormj5u0h" path="res://addons/enemies/ucp_walk.png" id="4_31nwq"]
@@ -239,10 +239,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5mg6a"]
 _data = {
-"RESET": SubResource("Animation_y2kpq"),
-"low_life": SubResource("Animation_leri7"),
-"low_life_hit": SubResource("Animation_11xvi"),
-"walk_low_life": SubResource("Animation_q7xbx")
+&"RESET": SubResource("Animation_y2kpq"),
+&"low_life": SubResource("Animation_leri7"),
+&"low_life_hit": SubResource("Animation_11xvi"),
+&"walk_low_life": SubResource("Animation_q7xbx")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhjxt"]

@@ -4,18 +4,21 @@ var bullet_cooldown:float = 300
 @onready var timer:Timer = $Timer
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("mouse1") and actual_ammo>0:
-		fire()
-		timer.start(0.05)
-		await timer.timeout
-		fire()
-		timer.start(0.05)
-		await timer.timeout
-		fire()
-		timer.start(0.05)
-		await timer.timeout
-	if Input.is_action_just_pressed("reload") and actual_ammo<gun_pent:
-		reload()
+	if !is_reloading:
+		if Input.is_action_just_pressed("mouse1") and actual_ammo>0:
+			fire()
+			timer.start(0.05)
+			await timer.timeout
+			fire()
+			timer.start(0.05)
+			await timer.timeout
+			fire()
+			timer.start(0.05)
+			await timer.timeout
+		if Input.is_action_just_pressed("reload") and actual_ammo<gun_pent and reload_cooldown<=0:
+			reload()
+	else:
+		reload_cooldown-=delta
 	ver_angle()
 	if angle>90 and angle <270:
 		sprite.offset=offset_necessary

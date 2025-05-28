@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://brdhu32d0wk1h"]
 
-[ext_resource type="Script" path="res://scripts/map_generator.gd" id="1_xe4ph"]
+[ext_resource type="Script" uid="uid://88t82y36ga" path="res://scripts/map_generator.gd" id="1_xe4ph"]
 [ext_resource type="TileSet" uid="uid://dm2gvuged0e71" path="res://tileset.tres" id="2_xaa5e"]
 [ext_resource type="PackedScene" uid="uid://c0t6tu025oq3q" path="res://objects/life_ammo drop/life_ammo__drop.tscn" id="4_2wi0t"]
 

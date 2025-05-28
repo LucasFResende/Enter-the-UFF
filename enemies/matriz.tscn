@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://dpcbesietak7y"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_yfxgu"]
+[ext_resource type="Script" uid="uid://2umlc0wwnpmc" path="res://scripts/enemy.gd" id="1_yfxgu"]
 [ext_resource type="Texture2D" uid="uid://loffs813abt0" path="res://addons/enemies/matriz.png" id="2_r8yt4"]
 [ext_resource type="Texture2D" uid="uid://chgeo68m0cfmw" path="res://addons/enemies/matriz_hit.png" id="3_ufyf4"]
 [ext_resource type="Texture2D" uid="uid://7uwqlifry42t" path="res://addons/enemies/matriz_walk.png" id="4_o741p"]
@@ -239,10 +239,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5mg6a"]
 _data = {
-"RESET": SubResource("Animation_y2kpq"),
-"low_life": SubResource("Animation_leri7"),
-"low_life_hit": SubResource("Animation_11xvi"),
-"walk_low_life": SubResource("Animation_o0gmq")
+&"RESET": SubResource("Animation_y2kpq"),
+&"low_life": SubResource("Animation_leri7"),
+&"low_life_hit": SubResource("Animation_11xvi"),
+&"walk_low_life": SubResource("Animation_o0gmq")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7w7o"]

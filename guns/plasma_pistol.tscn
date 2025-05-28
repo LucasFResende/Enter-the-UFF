@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5g27aaf1dmym"]
 
-[ext_resource type="Script" path="res://scripts/guns.gd" id="1_0uxjq"]
+[ext_resource type="Script" uid="uid://babpgopxnuwlk" path="res://scripts/guns.gd" id="1_0uxjq"]
 [ext_resource type="Texture2D" uid="uid://cldgrod5iec12" path="res://addons/guns/plasma pistol.png" id="1_yft1k"]
 [ext_resource type="Texture2D" uid="uid://bhyuy618il2bh" path="res://addons/guns/plasma pistol_icon.png" id="2_6jwif"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0t6tu025oq3q"]
 
 [ext_resource type="Texture2D" uid="uid://mjmpjl30tuu" path="res://addons/particles/circle_05.png" id="1_30ke1"]
-[ext_resource type="Script" path="res://scripts/life_ammo_drop.gd" id="1_clyv1"]
+[ext_resource type="Script" uid="uid://b48m6fp78ikli" path="res://scripts/life_ammo_drop.gd" id="1_clyv1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xplrj"]
 radius = 60.0

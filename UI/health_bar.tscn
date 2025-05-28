@@ -1,10 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://wdrpal760xae"]
 
-[ext_resource type="Script" path="res://scripts/health_bar.gd" id="1_g3xb1"]
+[ext_resource type="Script" uid="uid://cesphgp36l3nj" path="res://scripts/health_bar.gd" id="1_g3xb1"]
 
 [node name="HealthBar" type="CanvasLayer"]
 
 [node name="Health" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 offset_right = 167.0
 offset_bottom = 40.0
 scale = Vector2(1.5, 1.5)
@@ -27,5 +28,45 @@ layout_mode = 2
 expand_mode = 2
 
 [node name="5" type="TextureRect" parent="Health"]
+layout_mode = 2
+expand_mode = 2
+
+[node name="6" type="TextureRect" parent="Health"]
+layout_mode = 2
+expand_mode = 2
+
+[node name="7" type="TextureRect" parent="Health"]
+layout_mode = 2
+expand_mode = 2
+
+[node name="8" type="TextureRect" parent="Health"]
+layout_mode = 2
+expand_mode = 2
+
+[node name="Shield" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_top = 60.0
+offset_right = 167.0
+offset_bottom = 100.0
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_g3xb1")
+
+[node name="1" type="TextureRect" parent="Shield"]
+layout_mode = 2
+expand_mode = 2
+
+[node name="2" type="TextureRect" parent="Shield"]
+layout_mode = 2
+expand_mode = 2
+
+[node name="3" type="TextureRect" parent="Shield"]
+layout_mode = 2
+expand_mode = 2
+
+[node name="4" type="TextureRect" parent="Shield"]
+layout_mode = 2
+expand_mode = 2
+
+[node name="5" type="TextureRect" parent="Shield"]
 layout_mode = 2
 expand_mode = 2

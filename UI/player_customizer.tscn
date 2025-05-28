@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cuukulrj5n7ge"]
 
-[ext_resource type="Script" path="res://scripts/player_customizer.gd" id="1_k1m62"]
+[ext_resource type="Script" uid="uid://db553dq2rw5e" path="res://scripts/player_customizer.gd" id="1_k1m62"]
 [ext_resource type="Material" uid="uid://cxrb5fdf0l11j" path="res://player/player_shader.tres" id="2_ldf7a"]
 [ext_resource type="Texture2D" uid="uid://bbdlxty5q5hou" path="res://addons/player/player_idle.png" id="3_doxsi"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="4_4ita6"]
