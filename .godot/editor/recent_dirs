@@ -1,8 +1,9 @@
+res://UI/SCRIPT
+res://scripts
 res://addons/fonts
 res://addons/ui
 res://
 res://teste
-res://scripts
 res://UI
 /media/Lucas/376A5AF16B1B76DA/GODOT/Enter the uff/shop itens/
 res://UI/PANEL
@@ -11,11 +12,7 @@ res://addons/player
 res://objects/pc
 res://map
 res://addons/icon
-res://objects/rocket bullet
-res://scripts/guns_scripts
-res://objects/flamethrower fire
 res://addons/cursor
-res://objects/grenade
 res://game
 res://objects/itens
 res://objects/chest

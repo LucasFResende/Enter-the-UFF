@@ -10,9 +10,6 @@ var player:Player
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and is_in_area:
 		player.is_in_pc = true
-		player.gun_spawner.process_mode = Node.PROCESS_MODE_DISABLED
-		player.gun_spawner.get_child(0).visible = false
-		player.gun_spawner.get_child(1).visible = false
 		GameManager.is_in_menu = true
 		GameManager.change_mouse()
 		anim.play("pc_on")

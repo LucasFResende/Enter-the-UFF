@@ -23,17 +23,17 @@ var is_in_pc:bool = false
 var is_scene_changing:bool = false
 var shield_recover_cooldow:float
 var is_shield_recovering:bool = false
+var is_in_dungeon:bool = false
 
 var coins:int = 0
 
 @onready var anim:AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim_hand:AnimatedSprite2D = $HandAnimation
 @onready var anim_comp:AnimationPlayer = $AnimationPlayer
-@onready var ammo_ui:CanvasLayer = $Camera2D/AmmoUi
 @onready var no_enemy:Area2D = $NoEnemy
 @onready var change_scene:CanvasLayer = $Camera2D/ChangeScene
-@onready var gun_spawner:Marker2D = $SpawGun
 @onready var camera:Camera2D = $Camera2D
+@onready var health_bar = $Camera2D/HealthBar/Health
 
 @export var life:int = 6
 var max_life:int = 7
@@ -57,7 +57,6 @@ var flags:Dictionary = {
 var max_grenades = 3
 var actual_grenades = 3
 
-@onready var health_bar = $Camera2D/HealthBar/Health
 
 const UP:Vector2 = Vector2(0,-1)
 const DOWN:Vector2 = Vector2(0,1)
@@ -73,29 +72,11 @@ var short_color:Color = Color("394f78")
 
 var items: Array
 
-var gun_actual:Gun
-var gun_1:Gun
-var gun_2:Gun
-var num_gun_actual:int = 1
-
 func _ready() -> void:
 	GameManager.is_in_game = true
-	gun_actual = GameManager.player_actual_gun
-	gun_1 = GameManager.player_gun_1
-	gun_2 = GameManager.player_gun_2
-	gun_1.pick_rarity()
-	gun_2.pick_rarity()
-	gun_spawner.add_child(gun_1)
-	gun_spawner.add_child(gun_2)
-	gun_2.process_mode = Node.PROCESS_MODE_DISABLED
-	gun_2.visible = false
-	gun_actual.update_ui()
-	ammo_ui.update_grenade_ui(actual_grenades)
 
 	no_enemy.body_entered.connect(on_no_enemy_body_entered)
 	
-	generate_items()
-
 func _physics_process(delta: float) -> void:
 	if !is_in_pc and !is_scene_changing:
 		GameManager.player_position = global_position
@@ -118,19 +99,6 @@ func _physics_process(delta: float) -> void:
 				is_dead = false
 			return
 		health_bar.update_health(life,max_life,shield,max_shield)
-		if Input.is_action_just_pressed("gun1") or Input.is_action_just_pressed("gun2") or Input.is_action_just_pressed("scroll"):
-			change_gun()
-		if Input.is_action_just_pressed("grenade"):
-			if is_holding_grenade:
-				is_holding_grenade = false
-				gun_spawner.get_child(1).queue_free()
-				gun_spawner.get_child(0).visible = true
-				gun_spawner.get_child(0).process_mode = Node.PROCESS_MODE_INHERIT
-			elif !is_holding_grenade:
-				gun_spawner.get_child(0).visible = false
-				gun_spawner.get_child(0).process_mode = Node.PROCESS_MODE_DISABLED
-				gun_spawner.get_child(0).add_sibling(load("res://guns/grenade.tscn").instantiate())
-				is_holding_grenade = true
 		if is_sliding:
 			process_table_slide(delta)
 			return
@@ -325,47 +293,14 @@ func on_no_enemy_body_entered(body: Node2D) -> void:
 func play_animationplayer(animation_name:String,bool_anim:bool = false):
 	anim.flip_h = bool_anim
 	anim_hand.flip_h = bool_anim
-	if bool_anim:
-		gun_spawner.position=Vector2(-5,4)
-	else:
-		gun_spawner.position=Vector2(6,4)
 	anim_comp.play(animation_name)
 
-func change_gun():
-	if (Input.is_action_just_pressed("gun1") and gun_actual!=gun_1) or (Input.is_action_just_pressed("scroll") and gun_actual==gun_2):
-		gun_actual = gun_1
-		num_gun_actual = 1
-		gun_2.process_mode = Node.PROCESS_MODE_DISABLED
-		gun_2.visible = false
-		gun_1.process_mode = Node.PROCESS_MODE_INHERIT
-		gun_1.visible = true
-		gun_actual.update_ui()
-	elif (Input.is_action_just_pressed("gun2") and gun_actual!=gun_2) or (Input.is_action_just_pressed("scroll") and gun_actual==gun_1):
-		gun_actual = gun_2
-		num_gun_actual = 2
-		gun_1.process_mode = Node.PROCESS_MODE_DISABLED
-		gun_1.visible = false
-		gun_2.process_mode = Node.PROCESS_MODE_INHERIT
-		gun_2.visible = true
-	gun_actual.update_ui()
 
 func active():
 	process_mode = PROCESS_MODE_INHERIT
 	visible = true
-	ammo_ui.visible = true
 	health_bar.visible = true
-	
-func generate_items():
-	items.append(gun_1)
-	items.append(gun_2)
-	for i in range(5):
-		var gun:Gun = GameManager.guns.pick_random().instantiate()
-		gun.pick_rarity()
-		items.append(gun)
-	items.append(load("res://objects/itens/hd.tscn").instantiate())
-	items.append(load("res://objects/itens/pendrive.tscn").instantiate())
-	items.append(load("res://objects/itens/ssd.tscn").instantiate())
-	items.append(load("res://objects/itens/nvme.tscn").instantiate())
+
 
 func check_flags():
 	max_life = max_life_default + flags["half_health_flag"] + flags["health_flag"]*2

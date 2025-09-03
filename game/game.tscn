@@ -1,75 +1,114 @@
-[gd_scene load_steps=4 format=3 uid="uid://cik0bwj2cj6df"]
+[res://scripts/player.gd]
 
-[ext_resource type="Script" uid="uid://cb85paiy0tqar" path="res://game/game.gd" id="1_4wi8o"]
-[ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="1_j6v2t"]
+state={
+"bookmarks": PackedInt32Array(),
+"breakpoints": PackedInt32Array(),
+"column": 30,
+"folded_lines": Array[int]([181, 272, 281, 290]),
+"h_scroll_position": 0,
+"row": 351,
+"scroll_position": 297.0,
+"selection": false,
+"syntax_highlighter": "GDScript"
+}
 
-[sub_resource type="LabelSettings" id="LabelSettings_06wq4"]
-font = ExtResource("1_j6v2t")
-font_size = 100
+[res://scripts/table.gd]
 
-[node name="Game" type="Node"]
-process_mode = 3
-script = ExtResource("1_4wi8o")
+state={
+"bookmarks": PackedInt32Array(),
+"breakpoints": PackedInt32Array(),
+"column": 0,
+"folded_lines": Array[int]([]),
+"h_scroll_position": 0,
+"row": 37,
+"scroll_position": 0.0,
+"selection": true,
+"selection_from_column": 0,
+"selection_from_line": 0,
+"selection_to_column": 0,
+"selection_to_line": 37,
+"syntax_highlighter": "GDScript"
+}
 
-[node name="UI" type="CanvasLayer" parent="."]
+[res://scripts/health_bar.gd]
 
-[node name="Label" type="Label" parent="UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -365.5
-offset_top = 80.0
-offset_right = 365.5
-offset_bottom = 180.0
-grow_horizontal = 2
-text = "Enter the UFF
-"
-label_settings = SubResource("LabelSettings_06wq4")
-horizontal_alignment = 1
-vertical_alignment = 1
+state={
+"bookmarks": PackedInt32Array(),
+"breakpoints": PackedInt32Array(),
+"column": 46,
+"folded_lines": Array[int]([]),
+"h_scroll_position": 0,
+"row": 54,
+"scroll_position": 39.0,
+"selection": false,
+"syntax_highlighter": "GDScript"
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.5
-offset_top = -47.0
-offset_right = 60.5
-offset_bottom = 47.0
-grow_horizontal = 2
-grow_vertical = 2
+[res://teste/teste_life.gd]
 
-[node name="PlayButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_j6v2t")
-theme_override_font_sizes/font_size = 50
-text = "PLAY"
+state={
+"bookmarks": PackedInt32Array(),
+"breakpoints": PackedInt32Array(),
+"column": 0,
+"folded_lines": Array[int]([]),
+"h_scroll_position": 0,
+"row": 25,
+"scroll_position": 0.0,
+"selection": false,
+"syntax_highlighter": "GDScript"
+}
 
-[node name="SettingsButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_j6v2t")
-theme_override_font_sizes/font_size = 50
-text = "SETTINGS
-"
+[res://scripts/bullet.gd]
 
-[node name="QuitButton" type="Button" parent="UI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -60.5
-offset_top = -59.0
-offset_right = 60.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_j6v2t")
-theme_override_font_sizes/font_size = 50
-text = "QUIT"
+state={
+"bookmarks": PackedInt32Array(),
+"breakpoints": PackedInt32Array(),
+"column": 33,
+"folded_lines": Array[int]([]),
+"h_scroll_position": 0,
+"row": 11,
+"scroll_position": 0.0,
+"selection": true,
+"selection_from_column": 1,
+"selection_from_line": 11,
+"selection_to_column": 33,
+"selection_to_line": 11,
+"syntax_highlighter": "GDScript"
+}
 
-[connection signal="pressed" from="UI/VBoxContainer/PlayButton" to="." method="_on_solo_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="UI/QuitButton" to="." method="_on_quit_button_pressed"]
+[res://scripts/ammo_ui.gd]
+
+state={
+"bookmarks": PackedInt32Array(),
+"breakpoints": PackedInt32Array(),
+"column": 15,
+"folded_lines": Array[int]([]),
+"h_scroll_position": 0,
+"row": 13,
+"scroll_position": 13.0,
+"selection": false,
+"syntax_highlighter": "GDScript"
+}
+
+[res://scripts/enemy.gd]
+
+state={
+"bookmarks": PackedInt32Array(),
+"breakpoints": PackedInt32Array(),
+"column": 0,
+"folded_lines": Array[int]([]),
+"h_scroll_position": 0,
+"row": 22,
+"scroll_position": 12.0,
+"selection": false,
+"syntax_highlighter": "GDScript"
+}
+
+[res://scripts/game_manager.gd]
+
+state={
+"bookmarks": PackedInt32Array(),
+"breakpoints": PackedInt32Array(),
+"column": 28,
+"folded_lines": Array[int]([]),
+"h_scroll_position":

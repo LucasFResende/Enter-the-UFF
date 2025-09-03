@@ -52,22 +52,13 @@ func get_type():
 
 func open():
 	if item_type == item_types.PENDRIVE:
-		return [get_coin(1,10),get_gun(0.5)]
+		return [get_coin(1,10)]
 	elif item_type == item_types.HD:
-		return [get_coin(11,25),get_gun(0.4)]
+		return [get_coin(11,25)]
 	elif item_type == item_types.SSD:
-		return [get_coin(26,40),get_gun(0.4)]
+		return [get_coin(26,40)]
 	elif item_type == item_types.NVME:
-		return [get_coin(41,99),get_gun(0.5)]
+		return [get_coin(41,99)]
 	
 func get_coin(min,max):
 	return randi_range(min,max)
-	
-func get_gun(drop_chance:float):
-	var chance:float = randf()
-	if chance<drop_chance:
-		var gun:Gun = GameManager.guns.pick_random().instantiate()
-		gun.pick_rarity()
-		return gun
-	else:
-		return null

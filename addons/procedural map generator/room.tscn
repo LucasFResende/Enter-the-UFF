@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6doghmr7w0i4"]
-
-[ext_resource type="Texture2D" uid="uid://wonj05whik8p" path="res://addons/procedural map generator/room.png" id="1_hijxo"]
-
-[node name="Room" type="Sprite2D"]
-visible = false
-texture = ExtResource("1_hijxo")

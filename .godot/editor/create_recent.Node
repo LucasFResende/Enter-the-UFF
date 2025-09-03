@@ -1,5 +1,6 @@
-ColorRect
 Button
+ColorRect
+Node2D
 Label
 HBoxContainer
 Control
@@ -11,5 +12,3 @@ VSlider
 VScrollBar
 PanelContainer
 Container
-ColorPicker
-AnimationPlayer

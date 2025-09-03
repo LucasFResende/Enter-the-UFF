@@ -37,6 +37,6 @@ script = ExtResource("1_y4nhs")
 unique_name_in_owner = true
 process_mode = 3
 libraries = {
-"": SubResource("AnimationLibrary_4nalu")
+&"": SubResource("AnimationLibrary_4nalu")
 }
 autoplay = "on"

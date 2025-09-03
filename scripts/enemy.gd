@@ -10,9 +10,9 @@ var is_moving:bool = false
 @onready var find_player:Area2D = $FindPlayer
 var is_burning:bool = false
 
-var shoot_scene:PackedScene = load("res://objects/bullet/bullet.tscn")
+var shoot_scene:PackedScene = load("res://objects/power_shoot/shoot.tscn")
 
-var drop_item:PackedScene = load("res://objects/life_ammo drop/life_ammo__drop.tscn")
+var drop_item:PackedScene = load("res://objects/life_drop/life_drop.tscn")
 
 func _ready() -> void:
 	find_player.body_entered.connect(on_find_player_body_entered)
@@ -50,7 +50,7 @@ func shoot():
 	shoot_bullet.position = position
 	shoot_bullet.direction = (GameManager.player_position - global_position).normalized()
 	shoot_bullet.shoot_owner = "enemy"
-	sprite.texture = load("res://addons/objects/enemy_bullet.png")
+	sprite.texture = load("res://addons/objects/enemy_shoot.png")
 	shoot_node.add_child(shoot_bullet)
 
 func move(delta):

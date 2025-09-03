@@ -31,12 +31,14 @@ Room="*res://addons/procedural map generator/room.tscn"
 Exit="*res://addons/procedural map generator/exit_room.tscn"
 player="*res://player/player.tscn"
 ShopItemsList="*res://scripts/shop_items_list.gd"
+ChangeControls="*res://scripts/change_controls.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://addons/cursor/pointer.svg"
 
 [editor]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://iapf7gej3aqc" path="res://objects/table/horizontal_table.tscn" id="3_ntm8i"]
 [ext_resource type="Script" uid="uid://dxlsusiml8u61" path="res://teste/teste_life.gd" id="5_v1k0b"]
 [ext_resource type="PackedScene" uid="uid://l68250x2rvm1" path="res://enemies/and.tscn" id="6_n4b4n"]
-[ext_resource type="PackedScene" uid="uid://c0t6tu025oq3q" path="res://objects/life_ammo drop/life_ammo__drop.tscn" id="6_wg8gh"]
+[ext_resource type="PackedScene" uid="uid://c0t6tu025oq3q" path="res://objects/life_drop/life_drop.tscn" id="6_wg8gh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uysc"]
 size = Vector2(16, 16)

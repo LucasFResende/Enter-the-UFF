@@ -18,42 +18,6 @@
 		"flag": "half_health_flag"
 	},
 	{
-		"nome": "Pen Drive",
-		"descrição": "Lootbox pendrive",
-		"custo": "20",
-		"icone": "res://addons/ui/pendrive_shop.png",
-		"quantidade": 20,
-		"tipo":1,
-		"item_path": "res://objects/itens/pendrive.tscn"
-	},
-	{
-		"nome": "HD",
-		"descrição": "Lootbox hd",
-		"custo": "35",
-		"icone": "res://addons/ui/hd_shop.png",
-		"quantidade": 20,
-		"tipo":1,
-		"item_path": "res://objects/itens/hd.tscn"
-	},
-	{
-		"nome": "SSD",
-		"descrição": "Lootbox ssd",
-		"custo": "50",
-		"icone": "res://addons/ui/ssd_shop.png",
-		"quantidade": 20,
-		"tipo":1,
-		"item_path": "res://objects/itens/ssd.tscn"
-	},
-	{
-		"nome": "NVME",
-		"descrição": "Lootbox nvme",
-		"custo": "70",
-		"icone": "res://addons/ui/nvme_shop.png",
-		"quantidade": 20,
-		"tipo":1,
-		"item_path": "res://objects/itens/nvme.tscn"
-	},
-	{
 		"nome": "Windows Defenser",
 		"descrição": "O player ganha +1/2 de escudo",
 		"custo": "20",
@@ -80,31 +44,4 @@
 		"tipo":0,
 		"flag": "speed_flag"
 	},
-	{
-		"nome": "Processador",
-		"descrição": "Aumenta a velocidade de recarga da arma do player",
-		"custo": "80",
-		"icone": "res://addons/ui/processador_shop.png",
-		"quantidade": 1,
-		"tipo":0,
-		"flag": "reload_speed"
-	},
-	{
-		"nome": "Mais drop",
-		"descrição": "Aumenta a chance de drop de municao e vida dos inimigos",
-		"custo": "55",
-		"icone": "res://addons/ui/drop_sorte.png",
-		"quantidade": 1,
-		"tipo":0,
-		"flag": "drop_luck"
-	},
-	{
-		"nome": "Sorte",
-		"descrição": "Aumenta a chance de conseguir drop melhor do bau",
-		"custo": "65",
-		"icone": "res://addons/ui/sorte.png",
-		"quantidade": 1,
-		"tipo":0,
-		"flag": "luck"
-	}
 ]

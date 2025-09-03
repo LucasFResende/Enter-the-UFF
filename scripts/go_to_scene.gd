@@ -5,6 +5,7 @@ extends Area2D
 @export var local_to_go:String
 @export var enemies_room_arrays:Array[PackedScene]
 @export var floor:int
+@export var is_dungeon:bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +15,8 @@ func _ready() -> void:
 
 func on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		
+		if is_dungeon:
+			player.is_in_dungeon = true
 		GameManager.local = local_to_go
 		GameManager.enimeis_array = enemies_room_arrays
 		GameManager.return_local = return_position

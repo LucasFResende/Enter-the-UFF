@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://wdrpal760xae" path="res://UI/health_bar.tscn" id="9_6nide"]
 [ext_resource type="PackedScene" uid="uid://0sbus5m66axk" path="res://UI/change_scene.tscn" id="9_pk5s7"]
 [ext_resource type="Texture2D" uid="uid://twkkl2qvx8o2" path="res://addons/player/player_idle_hand.png" id="10_8dsae"]
-[ext_resource type="PackedScene" uid="uid://bv41mu5ato7ay" path="res://UI/ammo_ui.tscn" id="10_uwx2e"]
 [ext_resource type="Texture2D" uid="uid://cg8xrv4i5dai3" path="res://addons/player/player_walk_hand.png" id="11_5upqd"]
 [ext_resource type="PackedScene" uid="uid://ckpetr2ir8bka" path="res://UI/pc_ui.tscn" id="12_h7te6"]
+[ext_resource type="Script" uid="uid://dkmjm16ikna2b" path="res://scripts/power_shoot.gd" id="15_wodsf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8g1ta"]
 
@@ -1938,9 +1938,9 @@ texture = ExtResource("2_ycnuw")
 shape = SubResource("CircleShape2D_8g1ta")
 
 [node name="NoEnemy" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoEnemy"]
+visible = false
 shape = SubResource("CircleShape2D_fpglm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -1954,15 +1954,12 @@ sprite_frames = SubResource("SpriteFrames_vmx64")
 animation = &"idle_front1"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 
 [node name="PcUi" parent="Camera2D" instance=ExtResource("12_h7te6")]
 layer = 2
 
 [node name="HealthBar" parent="Camera2D" instance=ExtResource("9_6nide")]
-
-[node name="AmmoUi" parent="Camera2D" instance=ExtResource("10_uwx2e")]
-visible = false
 
 [node name="ChangeScene" parent="Camera2D" instance=ExtResource("9_pk5s7")]
 
@@ -1971,7 +1968,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_w7bur")
 }
 
-[node name="SpawGun" type="Marker2D" parent="."]
-position = Vector2(6.00765, 3.99617)
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="PowerShootMarker" type="Marker2D" parent="Node2D"]
+position = Vector2(15, 0)
+script = ExtResource("15_wodsf")
 
 [connection signal="body_entered" from="NoEnemy" to="." method="_on_no_enemy_body_entered"]

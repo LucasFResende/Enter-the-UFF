@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3yjfbglp8nhe"]
-
-[ext_resource type="Texture2D" uid="uid://deesvm3sl4etw" path="res://addons/procedural map generator/exit_room.png" id="1_2ek81"]
-
-[node name="ExitRoom" type="Sprite2D"]
-visible = false
-texture = ExtResource("1_2ek81")
