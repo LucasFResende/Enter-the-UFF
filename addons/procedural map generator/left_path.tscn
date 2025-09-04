@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyygl7q81ruj4"]
+
+[ext_resource type="Texture2D" uid="uid://dj0rc6mfcf0rh" path="res://addons/procedural map generator/left_path.png" id="1_rglyk"]
+
+[node name="LeftPath" type="Sprite2D"]
+visible = false
+texture = ExtResource("1_rglyk")

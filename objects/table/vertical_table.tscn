@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://clgr7rfxnessy"]
+
+[ext_resource type="Script" uid="uid://ck1en861lxegt" path="res://scripts/table.gd" id="1_vec8q"]
+[ext_resource type="Texture2D" uid="uid://dwk1b0x82kwef" path="res://addons/objects/table_vertical.png" id="2_p2pjv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87b5f"]
+atlas = ExtResource("2_p2pjv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1j5w"]
+atlas = ExtResource("2_p2pjv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2doe"]
+atlas = ExtResource("2_p2pjv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j35qu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87b5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1j5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2doe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2r4f"]
+size = Vector2(16, 32)
+
+[node name="VerticalTable" type="StaticBody2D" groups=["object"]]
+collision_layer = 2
+script = ExtResource("1_vec8q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j35qu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k2r4f")
+
+[connection signal="flip" from="." to="." method="_on_flip"]

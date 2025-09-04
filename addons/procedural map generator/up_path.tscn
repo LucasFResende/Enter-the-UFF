@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl8kgmw6irp23"]
+
+[ext_resource type="Texture2D" uid="uid://krbj4ck3lamu" path="res://addons/procedural map generator/up_path.png" id="1_fcegi"]
+
+[node name="UpPath" type="Sprite2D"]
+visible = false
+texture = ExtResource("1_fcegi")
