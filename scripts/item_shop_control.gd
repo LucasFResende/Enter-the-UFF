@@ -12,7 +12,6 @@ var item_price: int
 var item_icon:Texture
 var item_amount:int
 var number:int
-var item_type:int
 
 
 func _ready() -> void:
@@ -22,14 +21,13 @@ func _ready() -> void:
 	amount_label.text = str(item_amount)
 	
 
-func list(_name:String, description:String, price:String, icon_path:String, amount:int,count:int,type:int):
+func list(_name:String, description:String, price:String, icon_path:String, amount:int,count:int):
 	item_name = _name
 	item_description = description
 	item_price = int(price)
 	item_icon = load(icon_path)
 	item_amount = amount
 	number = count
-	item_type = type
 
 
 func _on_button_pressed() -> void:
@@ -39,4 +37,3 @@ func _on_button_pressed() -> void:
 	shop.item_selected_price = item_price
 	shop.item_selected_amount = item_amount
 	shop.item_selected_number = number
-	shop.item_selected_type = item_type

@@ -1,45 +1,34 @@
-[res://MULTIPLAYER/map/uff_floor2_multiplayer.tscn]
+[remap]
 
-groups=[&"PlayerSpawPoint"]
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://innjy8d3sa5c"
+path="res://.godot/imported/tileset.png-2b3f40ca0449f3e6881e1328f505a300.ctex"
+metadata={
+"vram_texture": false
+}
 
-[res://MULTIPLAYER/dungeon/dungeon.tscn]
+[deps]
 
-groups=[&"PlayerSpawPoint"]
+source_file="res://addons/tiles/tileset.png"
+dest_files=["res://.godot/imported/tileset.png-2b3f40ca0449f3e6881e1328f505a300.ctex"]
 
-[res://MULTIPLAYER/objects/table/horizontal_table.tscn]
+[params]
 
-groups=[&"object"]
-
-[res://MULTIPLAYER/objects/table/vertical_table.tscn]
-
-groups=[&"object"]
-
-[res://MULTIPLAYER/map/uff_floor1_multiplayer.tscn]
-
-groups=[&"object", &"PlayerSpawPoint"]
-
-[res://MULTIPLAYER/player/player_m.tscn]
-
-groups=[&"player"]
-
-[res://MULTIPLAYER/enemies/and.tscn]
-
-groups=[&"enemy"]
-
-[res://MULTIPLAYER/enemies/arvore.tscn]
-
-groups=[&"enemy"]
-
-[res://MULTIPLAYER/enemies/automato.tscn]
-
-groups=[&"enemy"]
-
-[res://MULTIPLAYER/enemies/c++.tscn]
-
-groups=[&"enemy"]
-
-[res://MULTIPLAYER/enemies/c.tscn]
-
-groups=[&"enemy"]
-
-[res://MULTIPLAY
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

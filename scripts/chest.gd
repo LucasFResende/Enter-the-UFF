@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var ui:Control = $InterectUi
 @onready var anim:AnimatedSprite2D = $AnimatedSprite2D
+@onready var open_chest_anim:CanvasLayer = load("res://UI/open_chest.tscn").instantiate()
 
 var player_in:bool = false
 var opened:bool = false
@@ -17,6 +18,7 @@ func _process(delta: float) -> void:
 		if player_in and Input.is_action_just_pressed("interact"):
 			open()
 			anim.play("open")
+			get_parent().get_parent().get_parent().get_child(8).get_child(5).add_child(open_chest_anim)
 			$Area2D.queue_free()
 
 

@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://p4wd66fnnx7d"]
+
+[ext_resource type="Script" uid="uid://bxrlnaca8nlh6" path="res://UI/open_chest.gd" id="1_6bjed"]
+[ext_resource type="Texture2D" uid="uid://bvsf0a4eq7ias" path="res://addons/ui/anim/open_chest/open_chest_anim1.png" id="1_27465"]
+[ext_resource type="Texture2D" uid="uid://dhm2tgys3fs87" path="res://addons/ui/anim/open_chest/open_chest_anim2.png" id="2_6bjed"]
+[ext_resource type="Texture2D" uid="uid://cas7h6i5ivaxp" path="res://addons/ui/anim/open_chest/open_chest_anim3.png" id="3_lhat4"]
+[ext_resource type="Texture2D" uid="uid://b4f55tfqweqe5" path="res://addons/ui/anim/open_chest/open_chest_anim4.png" id="4_0yheu"]
+[ext_resource type="Texture2D" uid="uid://r2lxnb4e5chi" path="res://addons/ui/anim/open_chest/open_chest_anim5.png" id="5_4ql2o"]
+[ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="7_0yheu"]
+[ext_resource type="Texture2D" uid="uid://dc45mti7p4i4y" path="res://addons/ui/coin.png" id="8_4ql2o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7nlm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_27465")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6bjed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lhat4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0yheu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4ql2o")
+}],
+"loop": false,
+"name": &"open_chest",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7nlm"]
+font = ExtResource("7_0yheu")
+font_size = 90
+font_color = Color(0.565104, 0.449919, 0, 1)
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_6bjed")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_d7nlm")
+animation = &"open_chest"
+autoplay = "open_chest"
+frame = 4
+frame_progress = 1.0
+speed_scale = 1.5
+centered = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -283.0
+offset_right = -80.0
+offset_bottom = 91.0
+grow_horizontal = 0
+text = "+999"
+label_settings = SubResource("LabelSettings_d7nlm")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 80.0
+grow_horizontal = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+scale = Vector2(5, 5)
+texture = ExtResource("8_4ql2o")
+centered = false

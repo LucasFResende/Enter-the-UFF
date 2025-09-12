@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv34qnl51wmvr"
-path="res://.godot/imported/player_walk_one_hand.png-b94760a26855c8dc460788ab3b4efa32.ctex"
+uid="uid://cas7h6i5ivaxp"
+path="res://.godot/imported/open_chest_anim3.png-e13b938932048c8a000eec31e37f2348.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/player/player_walk_one_hand.png"
-dest_files=["res://.godot/imported/player_walk_one_hand.png-b94760a26855c8dc460788ab3b4efa32.ctex"]
+source_file="res://addons/ui/anim/open_chest/open_chest_anim3.png"
+dest_files=["res://.godot/imported/open_chest_anim3.png-e13b938932048c8a000eec31e37f2348.ctex"]
 
 [params]
 

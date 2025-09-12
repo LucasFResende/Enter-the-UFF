@@ -49,7 +49,7 @@ func update_ui():
 	var count = 1
 	for item in ShopItemsList.items:
 		var item_shop:ItemShop = load("res://UI/item_shop.tscn").instantiate()
-		item_shop.list(item["nome"],item["descrição"],item["custo"],item["icone"],item["quantidade"],count-1,item["tipo"])
+		item_shop.list(item["nome"],item["descrição"],item["custo"],item["icone"],item["quantidade"],count-1)
 		if count <=3:
 			HBox1.add_child(item_shop)
 		elif count <=6:

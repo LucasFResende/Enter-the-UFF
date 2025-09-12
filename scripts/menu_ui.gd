@@ -12,7 +12,6 @@ func _on_back_button_pressed() -> void:
 func _on_quit_main_button_pressed() -> void:
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	player.visible = false
-	player.ammo_ui.visible = false
 	player.health_bar.visible = false
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://game/game.tscn")

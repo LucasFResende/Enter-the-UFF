@@ -14,7 +14,7 @@ version="0.7"
 
 [application]
 
-config/name="Enter the uff"
+config/name="Arquivos de verificação"
 run/main_scene="res://game/game.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://addons/icon/enter_the_uff_icon.png"
@@ -40,6 +40,7 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://addons/cursor/pointer.svg"
+window/defaults/default_clear_color=Color(0, 0, 0, 1)
 
 [editor]
 

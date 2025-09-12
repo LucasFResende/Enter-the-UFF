@@ -24,20 +24,29 @@ var is_scene_changing:bool = false
 var shield_recover_cooldow:float
 var is_shield_recovering:bool = false
 var is_in_dungeon:bool = false
+var is_recovering_stamina:bool = false
+var recovering_stamina_cooldown:float = 3.0
+var recover_stamina_time:float = 1.0
 
 var coins:int = 0
 
 @onready var anim:AnimatedSprite2D = $AnimatedSprite2D
-@onready var anim_hand:AnimatedSprite2D = $HandAnimation
 @onready var anim_comp:AnimationPlayer = $AnimationPlayer
 @onready var no_enemy:Area2D = $NoEnemy
-@onready var change_scene:CanvasLayer = $Camera2D/ChangeScene
+@onready var change_scene:CanvasLayer = %ChangeScene
 @onready var camera:Camera2D = $Camera2D
-@onready var health_bar = $Camera2D/HealthBar/Health
+@onready var health_bar = %HealthBar
 
 @export var life:int = 6
 var max_life:int = 7
 var max_life_default:int = 7
+
+var stamina:int = 5
+var max_stamina:int = 10
+var max_stamina_default:int = 10
+
+var power_damage: int = 1
+var power_damage_default:int = 1
 
 @export var max_shield:int = 0
 var shield: int =0
@@ -90,6 +99,19 @@ func _physics_process(delta: float) -> void:
 				shield=max_shield
 				is_shield_recovering = false
 		
+		if is_recovering_stamina:
+			recover_stamina_time-=delta
+			if recover_stamina_time<=0:
+				stamina+=1
+				if stamina == max_stamina:
+					is_recovering_stamina=false
+				recover_stamina_time=1.0
+				update_health_ui()
+		elif !is_recovering_stamina:
+			recovering_stamina_cooldown-=delta
+			if recovering_stamina_cooldown<=0:
+				is_recovering_stamina = true
+		
 		if death_cooldown>0:
 			death_cooldown-=delta
 			if death_cooldown<=0:
@@ -98,7 +120,7 @@ func _physics_process(delta: float) -> void:
 				life = max_life
 				is_dead = false
 			return
-		health_bar.update_health(life,max_life,shield,max_shield)
+		update_health_ui()
 		if is_sliding:
 			process_table_slide(delta)
 			return
@@ -292,8 +314,7 @@ func on_no_enemy_body_entered(body: Node2D) -> void:
 
 func play_animationplayer(animation_name:String,bool_anim:bool = false):
 	anim.flip_h = bool_anim
-	anim_hand.flip_h = bool_anim
-	anim_comp.play(animation_name)
+	anim.play(animation_name)
 
 
 func active():
@@ -301,10 +322,14 @@ func active():
 	visible = true
 	health_bar.visible = true
 
+func update_health_ui():
+	health_bar.update_ui(life,max_life,shield,max_shield,stamina,max_stamina)
 
 func check_flags():
 	max_life = max_life_default + flags["half_health_flag"] + flags["health_flag"]*2
 	max_shield = max_shield_default + flags["half_shield_flag"] + flags["shield_flag"]*2
 	is_shield_recovering = true
-	SPEED = SPEED_default + flags["speed_flag"]*0.7
-	health_bar.update_health(life,max_life,shield,max_shield)
+	SPEED = SPEED_default + flags["speed_flag"]*0.3 + flags["speed_flag2"]*0.7
+	max_stamina = max_stamina_default + flags["stamina_flag"]*5 + flags["stamina_flag2"]*10
+	power_damage = power_damage_default + flags["damage_flag"] + flags["damage_flag2"]*2
+	update_health_ui()

@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cb4e4g3lpru2p"]
+[gd_scene load_steps=14 format=3 uid="uid://cb4e4g3lpru2p"]
 
 [ext_resource type="Script" uid="uid://c6qk0b3w0pc0b" path="res://scripts/shop_interface.gd" id="1_rr0xp"]
 [ext_resource type="FontFile" uid="uid://wlpg7r5avxq4" path="res://addons/fonts/Perfect DOS VGA 437.ttf" id="2_fsa2h"]
 [ext_resource type="StyleBox" uid="uid://biwwll0on0m1s" path="res://UI/PANEL/panel_button.tres" id="3_xfvfl"]
 [ext_resource type="StyleBox" uid="uid://brdr86uikixcj" path="res://UI/PANEL/panel_hover.tres" id="4_rg7s4"]
 [ext_resource type="PackedScene" uid="uid://d0x34x8ck1luu" path="res://UI/item_shop.tscn" id="6_rg7s4"]
-[ext_resource type="Texture2D" uid="uid://bljo033rnnnua" path="res://addons/ui/panel3.png" id="7_76du3"]
 
 [sub_resource type="Animation" id="Animation_r6rmt"]
 length = 0.001
@@ -110,8 +109,18 @@ font = ExtResource("2_fsa2h")
 font_size = 20
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfhbt"]
-texture = ExtResource("7_76du3")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqvql"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="ShopInterface" type="Control"]
 process_mode = 4
@@ -250,7 +259,7 @@ offset_right = -64.0
 offset_bottom = 352.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_wfhbt")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dqvql")
 
 [node name="VBoxShopContainer" type="VBoxContainer" parent="ShopContainer"]
 layout_mode = 2
@@ -261,25 +270,21 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 303
-alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ShopContainer/VBoxShopContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 303
-alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ShopContainer/VBoxShopContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 303
-alignment = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ShopContainer/VBoxShopContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 303
-alignment = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ShopContainer/VBoxShopContainer"]
 layout_mode = 2

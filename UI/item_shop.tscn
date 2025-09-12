@@ -11,6 +11,7 @@ texture = ExtResource("1_3yfa3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osbpc"]
 texture = ExtResource("1_kxk4x")
+region_rect = Rect2(0, 0, 560, 880)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ueayt"]
 texture = ExtResource("1_kxk4x")

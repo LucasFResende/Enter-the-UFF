@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csppuvyduus32"
-path="res://.godot/imported/player_idle_one_hand.png-e66a67c459db2cba4f6968a14791e1ac.ctex"
+uid="uid://c4a6chc2bwh7t"
+path="res://.godot/imported/processador_shop.png-e39a2bf10580090bebf096a002a69d92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/player/player_idle_one_hand.png"
-dest_files=["res://.godot/imported/player_idle_one_hand.png-e66a67c459db2cba4f6968a14791e1ac.ctex"]
+source_file="res://addons/ui/processador_shop.png"
+dest_files=["res://.godot/imported/processador_shop.png-e39a2bf10580090bebf096a002a69d92.ctex"]
 
 [params]
 

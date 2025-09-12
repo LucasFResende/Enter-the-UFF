@@ -5,7 +5,6 @@
 		"custo": "20",
 		"icone": "res://addons/ui/full_heart_upgrade2.png",
 		"quantidade": 3,
-		"tipo":0,
 		"flag": "health_flag"
 	},
 	{
@@ -14,7 +13,6 @@
 		"custo": "12",
 		"icone": "res://addons/ui/half_heart_upgrade2.png",
 		"quantidade": 3,
-		"tipo":0,
 		"flag": "half_health_flag"
 	},
 	{
@@ -23,7 +21,6 @@
 		"custo": "20",
 		"icone": "res://addons/ui/windows_defender_shop.png",
 		"quantidade": 4,
-		"tipo":0,
 		"flag": "half_shield_flag"
 	},
 	{
@@ -32,16 +29,54 @@
 		"custo": "25",
 		"icone": "res://addons/ui/avast_antivirus_shop.png",
 		"quantidade": 3,
-		"tipo":0,
 		"flag": "shield_flag"
 	},
 	{
 		"nome": "Memoria RAM",
-		"descrição": "Aumenta a velocidade de movimento do player",
+		"descrição": "Upgrade 1 de velocidade de movimento do player",
 		"custo": "60",
 		"icone": "res://addons/ui/memoria_ram_shop.png",
 		"quantidade": 1,
-		"tipo":0,
 		"flag": "speed_flag"
+	},
+	{
+		"nome": "Processador",
+		"descrição": "Upgrade 1 de dano dado pelo player",
+		"custo": "60",
+		"icone": "res://addons/ui/processador_shop.png",
+		"quantidade": 1,
+		"flag": "damage_falg"
+	},
+	{
+		"nome": "RedBull",
+		"descrição": "Aumenta em 5 a estamina do player",
+		"custo": "50",
+		"icone": "res://addons/ui/redbull_shop.png",
+		"quantidade": 1,
+		"flag": "stamina_flag"
+	},
+	{
+		"nome": "SSD NVME",
+		"descrição": "Upgrade 2 de velocidade de movimento do player, não necessita do upgrade 1",
+		"custo": "100",
+		"icone": "res://addons/ui/nvme_shop.png",
+		"quantidade": 1,
+		"flag": "speed_flag2"
+	},
+	{
+		"nome": "Placa de vídeo",
+		"descrição": "Upgrade 2 de dano dado pelo player, não necessita do upgrade 1",
+		"custo": "110",
+		"icone": "res://addons/ui/graphic_card_shop.png",
+		"quantidade": 1,
+		"flag": "damage_falg2"
+	},
+	{
+		"nome": "Monster",
+		"descrição": "Aumenta em 10 a estamina do player",
+		"custo": "85",
+		"icone": "res://addons/ui/monster_shop.png",
+		"quantidade": 1,
+		"flag": "stamina_flag2"
 	},
 ]

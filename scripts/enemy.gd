@@ -8,7 +8,7 @@ var shoot_cooldown:float = 3.0
 @onready var anim_sprite:AnimatedSprite2D = $AnimatedSprite2D
 var is_moving:bool = false
 @onready var find_player:Area2D = $FindPlayer
-var is_burning:bool = false
+@onready var damage:int = 1
 
 var shoot_scene:PackedScene = load("res://objects/power_shoot/shoot.tscn")
 
@@ -50,6 +50,7 @@ func shoot():
 	shoot_bullet.position = position
 	shoot_bullet.direction = (GameManager.player_position - global_position).normalized()
 	shoot_bullet.shoot_owner = "enemy"
+	shoot_bullet.damage = damage
 	sprite.texture = load("res://addons/objects/enemy_shoot.png")
 	shoot_node.add_child(shoot_bullet)
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckoj3hm23qxqq"
-path="res://.godot/imported/player_idle_two_hand.png-51096416bd643e0be00347f2ea8d1901.ctex"
+uid="uid://bvsf0a4eq7ias"
+path="res://.godot/imported/open_chest_anim1.png-1458ef7218c821ebf9fffeed2ab44edd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/player/player_idle_two_hand.png"
-dest_files=["res://.godot/imported/player_idle_two_hand.png-51096416bd643e0be00347f2ea8d1901.ctex"]
+source_file="res://addons/ui/anim/open_chest/open_chest_anim1.png"
+dest_files=["res://.godot/imported/open_chest_anim1.png-1458ef7218c821ebf9fffeed2ab44edd.ctex"]
 
 [params]
 

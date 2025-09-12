@@ -22,5 +22,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		var player:Player = body
 		player.life+=1
-		player.health_bar.update_health(player.life,player.max_life,player.shield,player.max_shield)
+		player.health_bar.update_ui(player.life,player.max_life,player.shield,player.max_shield)
 		call_deferred("queue_free")
